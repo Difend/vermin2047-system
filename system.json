@@ -1,0 +1,47 @@
+{
+  "id": "vermin-2047",
+  "title": "Vermin 2047",
+  "description": "The Vermin 2047 system for FoundryVTT!",
+  "authors": [
+    {
+      "name": "Difend Games",
+      "discord": "difend_games"
+    }
+  ],
+  "url": "Rhttps://github.com/Difend/vermin-2047",
+  "license": "LICENSE.txt",
+  "readme": "README.md",
+  "bugs": "https://github.com/Difend/vermin-2047/issues",
+  "changelog": "CHANGELOG.md",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/vermin-2047/assets/anvil-impact.png",
+      "thumbnail": "systems/vermin-2047/assets/anvil-impact.png"
+    }
+  ],
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": 11,
+    "verified": "11.315"
+  },
+  "esmodules": ["module/vermin-2047.mjs"],
+  "styles": ["css/vermin-2047.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [],
+  "packFolders": [],
+  "socket": false,
+  "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
+  "download": "This must link to a .zip file of the current version",
+  "background": "systems/vermin-2047/assets/anvil-impact.png",
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "power"
+}
