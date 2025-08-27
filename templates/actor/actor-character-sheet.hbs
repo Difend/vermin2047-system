@@ -63,21 +63,32 @@
           {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
-          <div class="abilities flexcol">
-            {{#each system.abilities as |ability key|}}
-            <div class="ability flexrow flex-group-center">
-              <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d20+@abilities.{{key}}.mod" data-label="{{localize (lookup @root.config.abilities key)}}">{{localize (lookup @root.config.abilities key)}}</label>
-              <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-              <span class="ability-mod rollable" data-roll="d20+@abilities.{{key}}.mod" data-label="{{localize (lookup @root.config.abilities key)}}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+          <div class="traits flexcol">
+            {{#each system.traits as |trait key|}}
+            <div class="trait flexrow flex-group-center">
+              <label for="system.traits.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="(@traits.{{key}}.value)d10" data-label="{{localize (lookup @root.config.traits key)}}">{{localize (lookup @root.config.traits key)}}</label>
+              <input type="text" name="system.traits.{{key}}.value" value="{{trait.value}}" data-dtype="Number"/>
             </div>
             {{/each}}
           </div>
         </aside>
-
+        
         {{!-- For the main features list, span the right two columns --}}
-        <section class="main grid-span-2">
+        <section class="main domains grid-span-2">
+          {{#each system.domains as |domain key|}}
+          <div class="domain flexrow flex-group-center">
+            <label for="system.domains.{{key}}.value" class="resource-label flexlarge align-left" data-label="{{localize (lookup @root.config.domains key)}}">{{localize (lookup @root.config.domains key)}}</label>
+            <input type="checkbox" name="system.domains.{{key}}.value" value="{{domain.value}}" {{checked domain.value}} data-dtype="Boolean"/>
+            {{#each domain.skills as |skill key2|}}
+            <div class="domain flexrow flex-group-center">
+              <label for="system.domains.{{key}}.skills.{{key2}}.value" class="resource-label flexlarge align-left" data-label="{{localize (lookup @root.config.skills key2)}}">{{localize (lookup @root.config.skills key2)}}</label>
+              <input type="text" name="system.domains.{{key}}.skills.{{key2}}.value" value="{{skill.value}}" data-dtype="Number"/>
+            </div>
+            {{/each}}
+          </div>
+          {{/each}}
           {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-          {{> "systems/vermin-2047/templates/actor/parts/actor-features.hbs"}}
+          <!--{{> "systems/vermin-2047/templates/actor/parts/actor-features.hbs"}}-->
         </section>
 
       </section>

@@ -1,12 +1,54 @@
 {
   "VERMIN_2047": {
-    "Ability": {
-      "Str": { "long": "Strength", "abbr": "str" },
-      "Con": { "long": "Constitution", "abbr": "con" },
-      "Dex": { "long": "Dexterity", "abbr": "dex" },
-      "Int": { "long": "Intelligence", "abbr": "int" },
-      "Wis": { "long": "Wisdom", "abbr": "wis" },
-      "Cha": { "long": "Charisma", "abbr": "cha" }
+    "Trait": {
+      "Vig": { "long": "Vigor", "abbr": "vig" },
+      "Hea": { "long": "Health", "abbr": "hea" },
+      "Acc": { "long": "Accuracy", "abbr": "acc" },
+      "Ref": { "long": "Reflexes", "abbr": "ref" },
+      "Per": { "long": "Perception", "abbr": "per" },
+      "Kno": { "long": "Knowledge", "abbr": "kno" },
+      "Wil": { "long": "Willpower", "abbr": "wil" },
+      "Emp": { "long": "Empathy", "abbr": "emp" }
+    },
+    "Domain": {
+      "Man": { "long": "Man", "abbr": "man"},
+      "Bea": { "long": "Beast", "abbr": "bea"},
+      "Mac": { "long": "Machine", "abbr": "mac"},
+      "Wea": { "long": "Weapon", "abbr": "wea"},
+      "Sur": { "long": "Survival", "abbr": "sur"},
+      "Ear": { "long": "Earth", "abbr": "ear"}
+    },
+    "Skill": {
+      "Art": { "long": "Arts", "abbr": "art"},
+      "Civ": { "long": "Civilization", "abbr": "civ"},
+      "Psy": { "long": "Psychology", "abbr": "psy"},
+      "Rum": { "long": "Rumors", "abbr": "rum"},
+      "Hel": { "long": "Heal", "abbr": "hel"},
+      "Ani": { "long": "Animalism", "abbr": "ani"},
+      "Dis": { "long": "Dissect", "abbr": "dis"},
+      "Anl": { "long": "Animal Life", "abbr": "anl"},
+      "Rep": { "long": "Repel", "abbr": "rep"},
+      "Tra": { "long": "Track", "abbr": "tra"},
+      "Cra": { "long": "Craft", "abbr": "cra"},
+      "Jur": { "long": "Jury-Rig", "abbr": "jur"},
+      "Mec": { "long": "Mecanics", "abbr": "mec"},
+      "Ste": { "long": "Steer", "abbr": "ste"},
+      "Tec": { "long": "Technology", "abbr": "tec"},
+      "Fir": { "long": "Firearms", "abbr": "fir"},
+      "Ran": { "long": "Ranged Weapons", "abbr": "ran"},
+      "Smi": { "long": "Smith Weapons", "abbr": "smi"},
+      "Thr": { "long": "Throw", "abbr": "thr"},
+      "Clo": { "long": "Close Combat", "abbr": "clo"},
+      "Nou": { "long": "Nourishment", "abbr": "nou"},
+      "Ath": { "long": "Athletics", "abbr": "ath"},
+      "Bra": { "long": "Brawl", "abbr": "bra"},
+      "Sne": { "long": "Sneak", "abbr": "sne"},
+      "Vig": { "long": "Vigilance", "abbr": "vig"},
+      "Env": { "long": "Environment", "abbr": "env"},
+      "Pla": { "long": "Plant Life", "abbr": "pla"},
+      "Roa": { "long": "Road", "abbr": "roa"},
+      "Tox": { "long": "Toxicity", "abbr": "tox"},
+      "Rui": { "long": "Ruins", "abbr": "rui"}
     },
     "SheetLabels": {
       "Actor": "Vermin2047 Actor Sheet",
