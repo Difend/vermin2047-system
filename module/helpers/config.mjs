@@ -113,6 +113,14 @@ VERMIN_2047.skills = {
   rui: 'VERMIN_2047.Skill.Rui.long'
 };
 
+VERMIN_2047.skillValues = {
+  non: 'VERMIN_2047.SkillLevel.Non.long',
+  beg: 'VERMIN_2047.SkillLevel.Beg.long',
+  adv: 'VERMIN_2047.SkillLevel.Adv.long',
+  exp: 'VERMIN_2047.SkillLevel.Exp.long',
+  mas: 'VERMIN_2047.SkillLevel.Mas.long'
+}
+
 /*
 VERMIN_2047.skillDomains = {
   man: {

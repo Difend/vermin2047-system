@@ -5,7 +5,10 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
   static defineSchema() {
     const fields = foundry.data.fields;
     const requiredInteger = { required: true, nullable: false, integer: true };
+    const requiredString = { required: true, blank: false };
     const schema = super.defineSchema();
+    
+    this.choices = {0: "Choice A", 1: "Choice B"};
 
     schema.attributes = new fields.SchemaField({
       level: new fields.SchemaField({
@@ -22,12 +25,11 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
     }, {}));
 
     schema.domains = new fields.SchemaField(Object.keys(CONFIG.VERMIN_2047.domains).reduce((obj, domain) => {
-      console.log(domain)
       obj[domain] = new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
         skills: new fields.SchemaField(Object.keys(CONFIG.VERMIN_2047.domainSkills[domain]).reduce((obj, skill) => {
           obj[skill] = new fields.SchemaField({
-            value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 4 })
+            value: new fields.StringField({ ...requiredString, initial: 'non'})
           });
           return obj;
         }, {}))
