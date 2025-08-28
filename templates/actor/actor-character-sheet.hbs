@@ -66,7 +66,7 @@
           <div class="traits flexcol">
             {{#each system.traits as |trait key|}}
             <div class="trait flexrow flex-group-center">
-              <label for="system.traits.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="(@traits.{{key}}.value)d10" data-label="{{localize (lookup @root.config.traits key)}}">{{localize (lookup @root.config.traits key)}}</label>
+              <label for="system.traits.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="(@{{key}}.mod)d10" data-label="{{localize (lookup @root.config.traits key)}}">{{localize (lookup @root.config.traits key)}}</label>
               <input type="text" name="system.traits.{{key}}.value" value="{{trait.value}}" data-dtype="Number"/>
             </div>
             {{/each}}
@@ -81,7 +81,7 @@
             <input type="checkbox" name="system.domains.{{key}}.value" value="{{domain.value}}" {{checked domain.value}} data-dtype="Boolean"/>
             {{#each domain.skills as |skill key2|}}
             <div class="domain flexrow flex-group-center">
-              <label for="system.domains.{{key}}.skills.{{key2}}.value" class="resource-label rollable flexlarge align-left" data-label="{{localize (lookup @root.config.skills key2)}}">{{localize (lookup @root.config.skills key2)}}</label>
+              <label for="system.domains.{{key}}.skills.{{key2}}.value" class="resource-label rollable flexlarge align-left" data-roll="(@{{key2}}.mod)d10" data-label="{{localize (lookup @root.config.skills key2)}}">{{localize (lookup @root.config.skills key2)}}</label>
               <select name="system.domains.{{key}}.skills.{{key2}}.value" data-dtype="String">
                 {{selectOptions @root.config.skillValues selected=skill.value localize=true}}
               </select>
