@@ -6,23 +6,23 @@ export const VERMIN_2047 = {};
  */
 VERMIN_2047.traits = {
   vig: 'VERMIN_2047.Trait.Vig.long',
-  hea: 'VERMIN_2047.Trait.Hea.long',
   acc: 'VERMIN_2047.Trait.Acc.long',
-  ref: 'VERMIN_2047.Trait.Ref.long',
-  per: 'VERMIN_2047.Trait.Per.long',
   kno: 'VERMIN_2047.Trait.Kno.long',
   wil: 'VERMIN_2047.Trait.Wil.long',
+  hea: 'VERMIN_2047.Trait.Hea.long',
+  ref: 'VERMIN_2047.Trait.Ref.long',
+  per: 'VERMIN_2047.Trait.Per.long',
   emp: 'VERMIN_2047.Trait.Emp.long',
 };
 
 VERMIN_2047.traitAbbreviations = {
   vig: 'VERMIN_2047.Trait.Vig.abbr',
-  hea: 'VERMIN_2047.Trait.Hea.abbr',
   acc: 'VERMIN_2047.Trait.Acc.abbr',
-  ref: 'VERMIN_2047.Trait.Ref.abbr',
-  per: 'VERMIN_2047.Trait.Per.abbr',
   kno: 'VERMIN_2047.Trait.Kno.abbr',
   wil: 'VERMIN_2047.Trait.Wil.abbr',
+  hea: 'VERMIN_2047.Trait.Hea.abbr',
+  ref: 'VERMIN_2047.Trait.Ref.abbr',
+  per: 'VERMIN_2047.Trait.Per.abbr',
   emp: 'VERMIN_2047.Trait.Emp.abbr',
 };
 
