@@ -1,5 +1,46 @@
 {
   "VERMIN_2047": {
+    "Identity": {
+      "Title": "Identity",
+      "Tot": { "long": "Totem", "abbr": "tot" },
+      "Arc": { "long": "Archetype", "abbr": "arc" },
+      "Rep": { "long": "Reputation", "abbr": "rep" },
+      "Age": { "long": "Age", "abbr": "age" }
+    },
+    "Age": {
+      "Non": { "long": "-", "abbr": "-"},
+      "New": { "long": "Newborn", "abbr": "new"},
+      "Adu": { "long": "Adult", "abbr": "adu"},
+      "Old": { "long": "Older", "abbr": "old"}
+    },
+    "Totem": {
+      "Hum": { "long": "Human", "abbr": "hum"},
+      "Ada": { "long": "Adapted", "abbr": "ada"},
+      "Pre": { "long": "Predator", "abbr": "pre"},
+      "Sca": { "long": "Scavenger", "abbr": "sca"},
+      "Sym": { "long": "Symbiote", "abbr": "sym"},
+      "Par": { "long": "Parasite", "abbr": "par"},
+      "Bui": { "long": "Builder", "abbr": "bui"},
+      "Hor": { "long": "Horde", "abbr": "hor"},
+      "Hiv": { "long": "Hive", "abbr": "hiv"},
+      "Lon": { "long": "Lone Wolf", "abbr": "lon"}
+    },
+    "Reputation": {
+      "Clo": { "long": "Close people", "abbr": "clo"},
+      "Com": { "long": "Community", "abbr": "com"},
+      "Vil": { "long": "Village", "abbr": "vil"},
+      "Cit": { "long": "City", "abbr": "cit"},
+      "Big": { "long": "Big city", "abbr": "big"},
+      "Dep": { "long": "Department", "abbr": "dep"},
+      "Reg": { "long": "Region", "abbr": "reg"},
+      "Cou": { "long": "Country", "abbr": "cou"},
+      "Con": { "long": "Continent", "abbr": "con"},
+      "Wor": { "long": "World", "abbr": "wor"}
+    },
+    "Pools": {
+      "Str": { "long": "Strain", "abbr": "str" },
+      "Ner": { "long": "Nerve", "abbr": "ner" }
+    },
     "Wound": {
       "Title": "Wounds",
       "Count": "Count",

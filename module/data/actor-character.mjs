@@ -7,8 +7,6 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
     const requiredInteger = { required: true, nullable: false, integer: true };
     const requiredString = { required: true, blank: false };
     const schema = super.defineSchema();
-    
-    this.choices = {0: "Choice A", 1: "Choice B"};
 
     schema.attributes = new fields.SchemaField({
       level: new fields.SchemaField({
@@ -16,7 +14,27 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
       }),
     });
 
-    // Iterate over ability names and create a new SchemaField for each.
+    schema.arc = new fields.SchemaField({
+      value: new fields.StringField({ initial: '' })
+    });
+
+    schema.identity = new fields.SchemaField(Object.keys(CONFIG.VERMIN_2047.identity).reduce((obj, info) => {
+      obj[info] = new fields.SchemaField({
+        value: new fields.StringField({ initial: '' })
+      });
+      return obj;
+    }, {}));
+
+    // Iterate over pools names and create a new SchemaField for each.
+    schema.pools = new fields.SchemaField(Object.keys(CONFIG.VERMIN_2047.pools).reduce((obj, pool) => {
+      obj[pool] = new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
+        total: new fields.NumberField({ ...requiredInteger, initial: 4, min: 4, max: 10 })
+      });
+      return obj;
+    }, {}));
+
+    // Iterate over traits names and create a new SchemaField for each.
     schema.traits = new fields.SchemaField(Object.keys(CONFIG.VERMIN_2047.traits).reduce((obj, trait) => {
       obj[trait] = new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 0, max: 3 }),

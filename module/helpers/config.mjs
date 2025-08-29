@@ -17,6 +17,54 @@ VERMIN_2047.npcTraits = {
   vig: 'VERMIN_2047.NpcTrait.Vig.long'
 };
 
+VERMIN_2047.identityTitle = 'VERMIN_2047.Identity.Title'
+
+VERMIN_2047.identity = {
+  tot: 'VERMIN_2047.Identity.Tot.long',
+  rep: 'VERMIN_2047.Identity.Rep.long',
+  age: 'VERMIN_2047.Identity.Age.long'
+};
+
+VERMIN_2047.characterArchetype = 'VERMIN_2047.Identity.Arc.long'
+
+VERMIN_2047.identityValues = {
+  tot: {
+    hum: 'VERMIN_2047.Totem.Hum.long',
+    ada: 'VERMIN_2047.Totem.Ada.long',
+    pre: 'VERMIN_2047.Totem.Pre.long',
+    sca: 'VERMIN_2047.Totem.Sca.long',
+    sym: 'VERMIN_2047.Totem.Sym.long',
+    par: 'VERMIN_2047.Totem.Par.long',
+    bui: 'VERMIN_2047.Totem.Bui.long',
+    hor: 'VERMIN_2047.Totem.Hor.long',
+    hiv: 'VERMIN_2047.Totem.Hiv.long',
+    lon: 'VERMIN_2047.Totem.Lon.long',
+  },
+  rep: {
+    clo: 'VERMIN_2047.Reputation.Clo.long',
+    com: 'VERMIN_2047.Reputation.Com.long',
+    vil: 'VERMIN_2047.Reputation.Vil.long',
+    cit: 'VERMIN_2047.Reputation.Cit.long',
+    big: 'VERMIN_2047.Reputation.Big.long',
+    dep: 'VERMIN_2047.Reputation.Dep.long',
+    reg: 'VERMIN_2047.Reputation.Reg.long',
+    cou: 'VERMIN_2047.Reputation.Cou.long',
+    con: 'VERMIN_2047.Reputation.Con.long',
+    wor: 'VERMIN_2047.Reputation.Wor.long'
+  },
+  age: {
+    non: 'VERMIN_2047.Age.Non.long',
+    new: 'VERMIN_2047.Age.New.long',
+    adu: 'VERMIN_2047.Age.Adu.long',
+    old: 'VERMIN_2047.Age.Old.long'
+  }
+}
+
+VERMIN_2047.pools = {
+  str: 'VERMIN_2047.Pools.Str.long',
+  ner: 'VERMIN_2047.Pools.Ner.long'
+};
+
 /**
  * The set of Traits Scores used within the system.
  * @type {Object}
@@ -128,6 +176,39 @@ VERMIN_2047.skills = {
   roa: 'VERMIN_2047.Skill.Roa.long',
   tox: 'VERMIN_2047.Skill.Tox.long',
   rui: 'VERMIN_2047.Skill.Rui.long'
+};
+
+VERMIN_2047.skillRarity = {
+  art: [0,0,0],
+  civ: [2,2,1],
+  psy: [1,1,1],
+  rum: [0,0,0],
+  hel: [1,1,1],
+  ani: [0,1,1],
+  dis: [2,2,2],
+  anl: [0,1,1],
+  rep: [0,0,0],
+  tra: [0,0,0],
+  cra: [2,2,2],
+  jur: [0,0,0],
+  mec: [2,2,2],
+  ste: [1,1,1],
+  tec: [2,2,1],
+  fir: [2,2,2],
+  ran: [0,0,0],
+  smi: [0,0,0],
+  thr: [0,0,0],
+  clo: [0,0,0],
+  nou: [0,0,0],
+  ath: [0,0,0],
+  bra: [0,0,0],
+  sne: [0,0,0],
+  vig: [0,0,0],
+  env: [1,1,1],
+  pla: [0,1,1],
+  roa: [0,0,0],
+  tox: [2,2,2],
+  rui: [1,1,0],
 };
 
 VERMIN_2047.skillValues = {
