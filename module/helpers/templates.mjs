@@ -10,6 +10,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/vermin-2047/templates/actor/parts/actor-items.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-spells.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-effects.hbs',
+    'systems/vermin-2047/templates/actor/parts/actor-wounds.hbs',
     // Item partials
     'systems/vermin-2047/templates/item/parts/item-effects.hbs',
   ]);
