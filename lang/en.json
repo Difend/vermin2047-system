@@ -1,5 +1,20 @@
 {
   "VERMIN_2047": {
+    "Wound": {
+      "Title": "Wounds",
+      "Count": "Count",
+      "Limit": "Limit",
+      "Threshold": "Threshold",
+      "Lig": { "long": "Light", "abbr": "lig" },
+      "Ser": { "long": "Serious", "abbr": "ser" },
+      "Let": { "long": "Lethal", "abbr": "let" }
+    },
+    "NpcTrait": {
+      "Title": "Traits",
+      "Vig": { "long": "Vigor", "abbr": "vig" },
+      "Dam": { "long": "Damage", "abbr": "dam" },
+      "Att": { "long": "Attack", "abbr": "att" }
+    },
     "Trait": {
       "Vig": { "long": "Vigor", "abbr": "vig" },
       "Hea": { "long": "Health", "abbr": "hea" },

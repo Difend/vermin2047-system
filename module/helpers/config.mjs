@@ -1,5 +1,22 @@
 export const VERMIN_2047 = {};
 
+VERMIN_2047.wounds = {
+  title: 'VERMIN_2047.Wound.Title',
+  threshold: 'VERMIN_2047.Wound.Threshold',
+  count: 'VERMIN_2047.Wound.Count',
+  limit: 'VERMIN_2047.Wound.Limit',
+  lig: 'VERMIN_2047.Wound.Lig.long',
+  ser: 'VERMIN_2047.Wound.Ser.long',
+  let: 'VERMIN_2047.Wound.Let.long',
+}
+
+VERMIN_2047.npcTraits = {
+  title: 'VERMIN_2047.NpcTrait.Title',
+  dam: 'VERMIN_2047.NpcTrait.Dam.long',
+  att: 'VERMIN_2047.NpcTrait.Att.long',
+  vig: 'VERMIN_2047.NpcTrait.Vig.long'
+};
+
 /**
  * The set of Traits Scores used within the system.
  * @type {Object}

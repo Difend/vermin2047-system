@@ -13,30 +13,59 @@
         {{!-- "flex-group-center" is also defined in the _grid.scss file
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
-        <div class="resource flex-group-center">
-          <label for="system.health.value" class="resource-label">Health</label>
+        <div class="resource flex-group-center flexcol grid-span-2">
+          <label class="resource-label">{{localize @root.config.wounds.title}}</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
+            <label for="system.wounds.light.threshold" class="resource-label flexlarge align-center" data-label="{{localize @root.config.wounds.threshold}}">{{localize @root.config.wounds.threshold}}</label>
+            <span> : </span>
+            <label for="system.wounds.light.value" class="resource-label flexlarge align-center" data-label="{{localize @root.config.wounds.count}}">{{localize @root.config.wounds.count}}</label>
             <span> / </span>
-            <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number"/>
+            <label for="system.wounds.light.limit" class="resource-label flexlarge align-center" data-label="{{localize @root.config.wounds.limit}}">{{localize @root.config.wounds.limit}}</label>
+          </div>
+          <div class="resource-content flexrow flex-center flex-between">
+            <label for="system.wounds.light.value" class="resource-label flexlarge align-left" data-label="{{localize @root.config.wounds.lig}}">{{localize @root.config.wounds.lig}}</label>
+            <input type="text" name="system.wounds.light.threshold" value="{{system.wounds.light.threshold}}" data-dtype="Number"/>
+            <span> : </span>
+            <input type="text" name="system.wounds.light.value" value="{{system.wounds.light.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="text" name="system.wounds.light.limit" value="{{system.wounds.light.limit}}" data-dtype="Number"/>
+          </div>
+          <div class="resource-content flexrow flex-center flex-between">
+            <label for="system.wounds.serious.value" class="resource-label flexlarge align-left" data-label="{{localize @root.config.wounds.ser}}">{{localize @root.config.wounds.ser}}</label>
+            <input type="text" name="system.wounds.serious.threshold" value="{{system.wounds.serious.threshold}}" data-dtype="Number"/>
+            <span> : </span>
+            <input type="text" name="system.wounds.serious.value" value="{{system.wounds.serious.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="text" name="system.wounds.serious.limit" value="{{system.wounds.serious.limit}}" data-dtype="Number"/>
+          </div>
+          <div class="resource-content flexrow flex-center flex-between">
+            <label for="system.wounds.lethal.value" class="resource-label flexlarge align-left" data-label="{{localize @root.config.wounds.let}}">{{localize @root.config.wounds.let}}</label>
+            <input type="text" name="system.wounds.lethal.threshold" value="{{system.wounds.lethal.threshold}}" data-dtype="Number"/>
+            <span> : </span>
+            <input type="text" name="system.wounds.lethal.value" value="{{system.wounds.lethal.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="text" name="system.wounds.lethal.limit" value="{{system.wounds.lethal.limit}}" data-dtype="Number"/>
           </div>
         </div>
-
-        <div class="resource flex-group-center">
-          <label for="system.power.value" class="resource-label">Power</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.power.value" value="{{system.power.value}}" data-dtype="Number"/>
-            <span> / </span>
-            <input type="text" name="system.power.max" value="{{system.power.max}}" data-dtype="Number"/>
+        <div class="resource flex-group-center flexcol">
+          <label class="resource-label">{{localize @root.config.npcTraits.title}}</label>
+          <div class="flexrow">
+            <label for="system.dam" class="resource-label">{{localize @root.config.npcTraits.dam}}</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.dam" value="{{system.dam}}" data-dtype="Number"/>
+            </div>
           </div>
-        </div>
-
-        <div class="resource flex-group-center">
-          <label for="system.cr" class="resource-label">CR / XP</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.cr" value="{{system.cr}}" data-dtype="Number"/>
-            <span> / </span>
-            <input type="text" disabled="true" name="system.xp" value="{{system.xp}}" data-dtype="Number"/>
+          <div class="flexrow">
+            <label for="system.vig" class="resource-label rollable" data-roll="(@vig)d10" data-label="{{localize @root.config.npcTraits.vig}}">{{localize @root.config.npcTraits.vig}}</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.vig" value="{{system.vig}}" data-dtype="Number"/>
+            </div>
+          </div>
+          <div class="flexrow">
+            <label for="system.att" class="resource-label rollable" data-roll="(@att)d10" data-label="{{localize @root.config.npcTraits.att}}">{{localize @root.config.npcTraits.att}}</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.att" value="{{system.att}}" data-dtype="Number"/>
+            </div>
           </div>
         </div>
 
