@@ -1,13 +1,13 @@
-<div class="resource flex-group-center flexcol">
-    <label class="resource-label">{{localize @root.config.identityTitle}}</label>
-    <div class="resource-content flexrow flex-center flex-between">
+<div class="resource-content flexcol flex-center flex-between">
+    <label class="resource-label flex-group-center">{{localize @root.config.identityTitle}}</label>
+    <div class="resource-content flexrow flex-center flex-between flex-group-left">
         <label for="system.arc.value" class="resource-label">{{localize @root.config.characterArchetype}}</label>
         <div class="resource-content flexrow flex-center flex-between">
             <input type="text" name="system.arc.value" value="{{system.arc.value}}" data-dtype="String"/>
         </div>
     </div>
     {{#each system.identity as |info key|}}
-    <div class="resource-content flexrow flex-center flex-between">
+    <div class="resource-content flexrow flex-center flex-between flex-group-left">
         <label for="system.identity.{{key}}.value" class="resource-label">{{localize (lookup @root.config.identity key)}}</label>
         <div class="resource-content flexrow flex-center flex-between">
             <select name="system.identity.{{key}}.value" data-dtype="String">

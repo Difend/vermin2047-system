@@ -27,6 +27,7 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="features">Features</a>
+    <a class="item" data-tab="identity">Identity</a>
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="items">Items</a>
     <a class="item" data-tab="spells">Spells</a>
@@ -40,6 +41,11 @@
     <div class="tab features" data-group="primary" data-tab="features">
       {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
       {{> "systems/vermin-2047/templates/actor/parts/actor-features.hbs"}}
+    </div>
+
+    {{!-- Identity Tab --}}
+    <div class="tab identity" data-group="primary" data-tab="identity">
+      {{> "systems/vermin-2047/templates/actor/parts/actor-identity.hbs"}}
     </div>
 
     {{!-- Biography Tab --}}
