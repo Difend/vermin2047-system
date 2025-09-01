@@ -17,23 +17,7 @@
           {{> "systems/vermin-2047/templates/actor/parts/actor-wounds.hbs"}}
         </div>
         <div class="resource flex-group-center flexcol">
-          <label class="resource-label">{{localize @root.config.identityTitle}}</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <label for="system.arc.value" class="resource-label">{{localize @root.config.characterArchetype}}</label>
-            <div class="resource-content flexrow flex-center flex-between">
-              <input type="text" name="system.arc.value" value="{{system.arc.value}}" data-dtype="String"/>
-            </div>
-          </div>
-          {{#each system.identity as |info key|}}
-          <div class="resource-content flexrow flex-center flex-between">
-          <label for="system.identity.{{key}}.value" class="resource-label">{{localize (lookup @root.config.identity key)}}</label>
-            <div class="resource-content flexrow flex-center flex-between">
-              <select name="system.identity.{{key}}.value" data-dtype="String">
-                {{selectOptions (lookup @root.config.identityValues key) selected=info.value localize=true}}
-              </select>
-            </div>
-          </div>
-          {{/each}}
+          {{> "systems/vermin-2047/templates/actor/parts/actor-pools.hbs"}}
         </div>
       </div>
     </div>
