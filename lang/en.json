@@ -1,7 +1,12 @@
 {
   "VERMIN_2047": {
+    "Labels": {
+      "Identity": "Identity",
+      "Traits": "Traits",
+      "Skills": "Skills",
+      "Wounds": "Wounds"
+    },
     "Identity": {
-      "Title": "Identity",
       "Tot": { "long": "Totem", "abbr": "tot" },
       "Arc": { "long": "Archetype", "abbr": "arc" },
       "Rep": { "long": "Reputation", "abbr": "rep" },
@@ -42,7 +47,6 @@
       "Ner": { "long": "Nerve", "abbr": "ner" }
     },
     "Wound": {
-      "Title": "Wounds",
       "Count": "Count",
       "Limit": "Limit",
       "Threshold": "Threshold",
@@ -51,7 +55,6 @@
       "Let": { "long": "Lethal", "abbr": "let" }
     },
     "NpcTrait": {
-      "Title": "Traits",
       "Vig": { "long": "Vigor", "abbr": "vig" },
       "Dam": { "long": "Damage", "abbr": "dam" },
       "Att": { "long": "Attack", "abbr": "att" }

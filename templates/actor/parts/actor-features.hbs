@@ -1,5 +1,6 @@
 <section class="grid">
   <section class="main traits grid-span-2">
+    <label class="resource-label flex-group-center flexcol">{{localize @root.config.labels.traits}}</label>
     <div class="traits flex-group-center">
       {{#each system.traits as |trait key|}}
       <div class="trait">
@@ -12,6 +13,7 @@
   </section>
   
   {{!-- For the main features list, span the right two columns --}}
+  <label class="resource-label flex-group-center flexcol grid-span-2">{{localize @root.config.labels.skills}}</label>
   <section class="main domains grid-span-2">
     {{#each system.domains as |domain key|}}
     <div class="domain flex-group-center">

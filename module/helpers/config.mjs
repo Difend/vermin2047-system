@@ -1,7 +1,14 @@
 export const VERMIN_2047 = {};
 
+VERMIN_2047.labels = {
+  traits: 'VERMIN_2047.Labels.Traits',
+  identity: 'VERMIN_2047.Labels.Identity',
+  skills: 'VERMIN_2047.Labels.Skills',
+  wounds: 'VERMIN_2047.Labels.Wounds',
+  archetype: 'VERMIN_2047.Labels.Archetype'
+};
+
 VERMIN_2047.wounds = {
-  title: 'VERMIN_2047.Wound.Title',
   threshold: 'VERMIN_2047.Wound.Threshold',
   count: 'VERMIN_2047.Wound.Count',
   limit: 'VERMIN_2047.Wound.Limit',
@@ -11,21 +18,16 @@ VERMIN_2047.wounds = {
 }
 
 VERMIN_2047.npcTraits = {
-  title: 'VERMIN_2047.NpcTrait.Title',
   dam: 'VERMIN_2047.NpcTrait.Dam.long',
   att: 'VERMIN_2047.NpcTrait.Att.long',
   vig: 'VERMIN_2047.NpcTrait.Vig.long'
 };
-
-VERMIN_2047.identityTitle = 'VERMIN_2047.Identity.Title'
 
 VERMIN_2047.identity = {
   tot: 'VERMIN_2047.Identity.Tot.long',
   rep: 'VERMIN_2047.Identity.Rep.long',
   age: 'VERMIN_2047.Identity.Age.long'
 };
-
-VERMIN_2047.characterArchetype = 'VERMIN_2047.Identity.Arc.long'
 
 VERMIN_2047.identityValues = {
   tot: {

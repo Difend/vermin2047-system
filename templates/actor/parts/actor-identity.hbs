@@ -1,5 +1,5 @@
 <div class="resource-content flexcol flex-center flex-between">
-    <label class="resource-label flex-group-center">{{localize @root.config.identityTitle}}</label>
+    <label class="resource-label flex-group-center">{{localize @root.config.labels.identity}}</label>
     <div class="resource-content flexrow flex-center flex-between flex-group-left">
         <label for="system.arc.value" class="resource-label">{{localize @root.config.characterArchetype}}</label>
         <div class="resource-content flexrow flex-center flex-between">
@@ -16,4 +16,5 @@
         </div>
     </div>
     {{/each}}
+    <textarea>{{thread.description}}</textarea>
 </div>
