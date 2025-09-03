@@ -6,6 +6,7 @@
 export const preloadHandlebarsTemplates = async function () {
   return loadTemplates([
     // Actor partials.
+    'systems/vermin-2047/templates/actor/parts/actor-specialities.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-identity.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-pools.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-features.hbs',

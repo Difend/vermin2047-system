@@ -104,6 +104,7 @@ export class Vermin2047ActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
+    const specialities = [];
     const features = [];
     const spells = {
       0: [],
@@ -126,6 +127,10 @@ export class Vermin2047ActorSheet extends ActorSheet {
         gear.push(i);
       }
       // Append to features.
+      else if (i.type === 'speciality') {
+        specialities.push(i);
+      }
+      // Append to features.
       else if (i.type === 'feature') {
         features.push(i);
       }
@@ -138,6 +143,7 @@ export class Vermin2047ActorSheet extends ActorSheet {
     }
 
     // Assign and return
+    context.specialities = specialities;
     context.gear = gear;
     context.features = features;
     context.spells = spells;
