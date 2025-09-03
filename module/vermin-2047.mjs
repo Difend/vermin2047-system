@@ -43,13 +43,27 @@ Hooks.once('init', function () {
   // with the Character/NPC as part of super.defineSchema()
   CONFIG.Actor.dataModels = {
     character: models.Vermin2047Character,
-    npc: models.Vermin2047NPC
+    npc: models.Vermin2047NPC,
+    vehicule: models.Vermin2047Vehicule,
+    community: models.Vermin2047Community,
+    party: models.Vermin2047Party
   }
   CONFIG.Item.documentClass = Vermin2047Item;
   CONFIG.Item.dataModels = {
     item: models.Vermin2047Item,
     feature: models.Vermin2047Feature,
-    spell: models.Vermin2047Spell
+    spell: models.Vermin2047Spell,
+    speciality: models.Vermin2047Speciality,
+    weapon: models.Vermin2047Weapon,
+    protection: models.Vermin2047Protection,
+    capacity: models.Vermin2047Capacity,
+    mutation: models.Vermin2047Mutation,
+    adaptation: models.Vermin2047Adaptation,
+    trauma: models.Vermin2047Trauma,
+    injury: models.Vermin2047Injury,
+    consumable: models.Vermin2047Consumable,
+    tool: models.Vermin2047Tool,
+    disease: models.Vermin2047Disease
   }
 
   // Active Effects are never copied to the Actor,

@@ -1,4 +1,4 @@
-import Vermin2047DataModel from "./base-model.mjs";
+import Vermin2047DataModel from "../base-model.mjs";
 
 export default class Vermin2047ActorBase extends Vermin2047DataModel {
 

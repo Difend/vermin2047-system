@@ -138,12 +138,26 @@
   "TYPES": {
     "Actor": {
       "character": "Character",
-      "npc": "NPC"
+      "npc": "NPC",
+      "vehicule": "Vehicule",
+      "community": "Community",
+      "party": "Party"
     },
     "Item": {
       "item": "Item",
       "feature": "Feature",
-      "spell": "Spell"
+      "spell": "Spell",
+      "speciality": "Speciality",
+      "weapon": "Weapon",
+      "protection": "Protection",
+      "capacity": "Capacity",
+      "mutation": "Mutation",
+      "adaptation": "Adaptation",
+      "trauma": "Trauma",
+      "injury": "Injury",
+      "consumable": "Consumable",
+      "tool": "Tool",
+      "disease": "Disease"
     }
   }
 }
