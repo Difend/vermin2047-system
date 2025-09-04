@@ -5,7 +5,16 @@ VERMIN_2047.labels = {
   identity: 'VERMIN_2047.Labels.Identity',
   skills: 'VERMIN_2047.Labels.Skills',
   wounds: 'VERMIN_2047.Labels.Wounds',
-  archetype: 'VERMIN_2047.Labels.Archetype'
+  archetype: 'VERMIN_2047.Labels.Archetype',
+  specialities: 'VERMIN_2047.Labels.Specialities',
+  rarity: 'VERMIN_2047.Labels.Rarity',
+  description: 'VERMIN_2047.Labels.Description',
+  attributes: 'VERMIN_2047.Labels.Attributes',
+  features: 'VERMIN_2047.Labels.Features',
+  pools: 'VERMIN_2047.Labels.Pools',
+  items: 'VERMIN_2047.Labels.Items',
+  effects: 'VERMIN_2047.Labels.Effects',
+  experience: 'VERMIN_2047.Labels.Experience'
 };
 
 VERMIN_2047.wounds = {

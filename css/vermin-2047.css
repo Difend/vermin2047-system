@@ -221,6 +221,18 @@
   margin: 10px;
 }
 
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.attribute {
+  width: 50px;
+}
+
 /* Styles limited to vermin-2047 sheets */
 .vermin-2047 .item-form {
   font-family: "Roboto", sans-serif;

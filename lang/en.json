@@ -4,7 +4,17 @@
       "Identity": "Identity",
       "Traits": "Traits",
       "Skills": "Skills",
-      "Wounds": "Wounds"
+      "Wounds": "Wounds",
+      "Archetype": "Archetype",
+      "Specialities": "Specialities",
+      "Rarity": "Rarity",
+      "Description": "Description",
+      "Attributes": "Attributes",
+      "Features": "Features",
+      "Pools": "Pools",
+      "Items": "Items",
+      "Effects": "Effects",
+      "Experience": "Experience"
     },
     "Identity": {
       "Tot": { "long": "Totem", "abbr": "tot" },
