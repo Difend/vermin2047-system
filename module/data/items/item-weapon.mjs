@@ -34,28 +34,24 @@ export default class Vermin2047Weapon extends Vermin2047ItemBase {
   }
 
   getRollData() {
-    const data = {};
-
     switch(this.skill.value) {
         case 'fir':
-          data.formula = '@acc+@fir';  
+          this.formula = `(@acc.mod+@fir.mod)d10`;  
           break;
         case 'ran':
-          data.formula = '@acc+@ran';  
+          this.formula = `(@acc.mod+@ran.mod)d10`;  
           break;
         case 'thr':
-          data.formula = '@vig+@thr';  
+          this.formula = `(@vig.mod+@thr.mod)d10`;  
           break;
         case 'clo':
-          data.formula = '@vig+@clo';  
+          this.formula = `(@vig.mod+@clo.mod)d10`;  
           break;
         case 'bra':
-          data.formula = '@vig+@bra';  
+          this.formula = `(@vig.mod+@bra.mod)d10`;  
           break;
         default:
-          data.formula = '@vig'
+          this.formula = `(@vig.mod)d10`
     }
-
-    return data
   }
 }
