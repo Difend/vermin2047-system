@@ -1,20 +1,20 @@
-<div class="resource-content flexcol flex-center flex-between">
-    <label class="resource-label flex-group-center">{{localize @root.config.labels.identity}}</label>
+<div class="resource flex-group-center flexcol">
     <div class="resource-content flexrow flex-center flex-between flex-group-left">
-        <label for="system.arc.value" class="resource-label">{{localize @root.config.characterArchetype}}</label>
-        <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.arc.value" value="{{system.arc.value}}" data-dtype="String"/>
-        </div>
+        <label for="system.arc.value" class="resource-label">{{localize @root.config.labels.archetype}}</label>
+        <input type="text" name="system.arc.value" value="{{system.arc.value}}" data-dtype="String"/>
     </div>
-    {{#each system.identity as |info key|}}
     <div class="resource-content flexrow flex-center flex-between flex-group-left">
+        <label for="system.exp.value" class="resource-label">{{localize @root.config.labels.experience}}</label>
+        <input type="text" name="system.exp.value" value="{{system.exp.value}}" data-dtype="String"/>
+    </div>
+</div>
+<div class="resource flex-group-center flexcol">
+    {{#each system.identity as |info key|}}
+    <div class="resource-content flexrow flex-center flex-between flex-group-right">
         <label for="system.identity.{{key}}.value" class="resource-label">{{localize (lookup @root.config.identity key)}}</label>
-        <div class="resource-content flexrow flex-center flex-between">
-            <select name="system.identity.{{key}}.value" data-dtype="String">
-            {{selectOptions (lookup @root.config.identityValues key) selected=info.value localize=true}}
-            </select>
-        </div>
+        <select name="system.identity.{{key}}.value" data-dtype="String">
+        {{selectOptions (lookup @root.config.identityValues key) selected=info.value localize=true}}
+        </select>
     </div>
     {{/each}}
-    <textarea>{{thread.description}}</textarea>
 </div>
