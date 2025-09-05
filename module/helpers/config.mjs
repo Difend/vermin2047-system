@@ -1,12 +1,15 @@
 export const VERMIN_2047 = {};
 
 VERMIN_2047.labels = {
+  name: 'VERMIN_2047.Labels.Name',
   traits: 'VERMIN_2047.Labels.Traits',
   identity: 'VERMIN_2047.Labels.Identity',
   skills: 'VERMIN_2047.Labels.Skills',
+  skill: 'VERMIN_2047.Labels.Skill',
   wounds: 'VERMIN_2047.Labels.Wounds',
   archetype: 'VERMIN_2047.Labels.Archetype',
   specialities: 'VERMIN_2047.Labels.Specialities',
+  specialities: 'VERMIN_2047.Labels.Speciality',
   rarity: 'VERMIN_2047.Labels.Rarity',
   description: 'VERMIN_2047.Labels.Description',
   attributes: 'VERMIN_2047.Labels.Attributes',

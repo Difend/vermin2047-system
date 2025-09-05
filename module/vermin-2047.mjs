@@ -56,6 +56,7 @@ Hooks.once('init', function () {
     speciality: models.Vermin2047Speciality,
     weapon: models.Vermin2047Weapon,
     protection: models.Vermin2047Protection,
+    trait: models.Vermin2047Trait,
     capacity: models.Vermin2047Capacity,
     mutation: models.Vermin2047Mutation,
     adaptation: models.Vermin2047Adaptation,

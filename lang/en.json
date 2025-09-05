@@ -1,12 +1,15 @@
 {
   "VERMIN_2047": {
     "Labels": {
+      "Name": "Name",
       "Identity": "Identity",
       "Traits": "Traits",
       "Skills": "Skills",
+      "Skill": "Skill",
       "Wounds": "Wounds",
       "Archetype": "Archetype",
       "Specialities": "Specialities",
+      "Speciality": "Speciality",
       "Rarity": "Rarity",
       "Description": "Description",
       "Attributes": "Attributes",
@@ -160,6 +163,7 @@
       "speciality": "Speciality",
       "weapon": "Weapon",
       "protection": "Protection",
+      "trait": "Trait",
       "capacity": "Capacity",
       "mutation": "Mutation",
       "adaptation": "Adaptation",
