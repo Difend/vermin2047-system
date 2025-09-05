@@ -8,17 +8,12 @@
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns.  --}}
-      <div class="resources grid grid-3col">
+      <div class="resources grid">
 
         {{!-- "flex-group-center" is also defined in the _grid.scss file
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
-        <div class="resource flex-group-center flexcol grid-span-2">
-          {{> "systems/vermin-2047/templates/actor/parts/actor-wounds.hbs"}}
-        </div>
-        <div class="resource flex-group-center flexcol">
-          {{> "systems/vermin-2047/templates/actor/parts/actor-pools.hbs"}}
-        </div>
+        {{> "systems/vermin-2047/templates/actor/parts/actor-identity.hbs"}}
       </div>
     </div>
   </header>
@@ -26,12 +21,12 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="features">Features</a>
-    <a class="item" data-tab="identity">Identity</a>
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="items">Items</a>
+    <a class="item" data-tab="features">{{localize @root.config.labels.features}}</a>
+    <a class="item" data-tab="pools">{{localize @root.config.labels.pools}}</a>
+    <a class="item" data-tab="description">{{localize @root.config.labels.description}}</a>
+    <a class="item" data-tab="items">{{localize @root.config.labels.items}}</a>
     <a class="item" data-tab="spells">Spells</a>
-    <a class="item" data-tab="effects">Effects</a>
+    <a class="item" data-tab="effects">{{localize @root.config.labels.effects}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -40,13 +35,16 @@
     {{!-- Owned Features Tab --}}
     <div class="tab features" data-group="primary" data-tab="features">
       {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-      {{> "systems/vermin-2047/templates/actor/parts/actor-specialities.hbs"}}
       {{> "systems/vermin-2047/templates/actor/parts/actor-features.hbs"}}
+      {{> "systems/vermin-2047/templates/actor/parts/actor-specialities.hbs"}}
     </div>
 
     {{!-- Identity Tab --}}
-    <div class="tab identity" data-group="primary" data-tab="identity">
-      {{> "systems/vermin-2047/templates/actor/parts/actor-identity.hbs"}}
+    <div class="tab pools" data-group="primary" data-tab="pools">
+      
+      {{> "systems/vermin-2047/templates/actor/parts/actor-wounds.hbs"}}
+      {{> "systems/vermin-2047/templates/actor/parts/actor-pools.hbs"}}
+      {{> "systems/vermin-2047/templates/actor/parts/actor-injuries.hbs"}}
     </div>
 
     {{!-- Biography Tab --}}
@@ -58,6 +56,9 @@
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
        {{> "systems/vermin-2047/templates/actor/parts/actor-items.hbs"}}
+       {{> "systems/vermin-2047/templates/actor/parts/actor-weapons.hbs"}}
+       {{> "systems/vermin-2047/templates/actor/parts/actor-protections.hbs"}}
+       {{> "systems/vermin-2047/templates/actor/parts/actor-abilities.hbs"}}
     </div>
 
     {{!-- Owned Spells Tab --}}

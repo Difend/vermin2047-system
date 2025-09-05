@@ -38,6 +38,7 @@ export class Vermin2047ActorSheet extends ActorSheet {
     // sheets are the actor object, the data object, whether or not it's
     // editable, the items array, and the effects array.
     const context = super.getData();
+    console.log(context)
 
     // Use a safe clone of the actor data for further operations.
     const actorData = this.document.toPlainObject();
@@ -104,49 +105,54 @@ export class Vermin2047ActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
+    const abilities = [];
+    const injuries = [];
+    const weapons = [];
+    const protections = [];
     const specialities = [];
-    const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: [],
-    };
+    
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || Item.DEFAULT_ICON;
-      // Append to gear.
-      if (i.type === 'item') {
-        gear.push(i);
-      }
-      // Append to features.
-      else if (i.type === 'speciality') {
-        specialities.push(i);
-      }
-      // Append to features.
-      else if (i.type === 'feature') {
-        features.push(i);
-      }
-      // Append to spells.
-      else if (i.type === 'spell') {
-        if (i.system.spellLevel != undefined) {
-          spells[i.system.spellLevel].push(i);
-        }
+
+      switch(i.type) {
+        case 'item':
+        case 'consumable':
+        case 'tool':
+          gear.push(i);
+          break;
+        case 'mutation':
+        case 'adaptation':
+        case 'capacity':
+          abilities.push(i);
+          break;
+        case 'trauma':
+        case 'injury':
+        case 'disease':
+          injuries.push(i);
+          break;
+        case 'weapon':
+          weapons.push(i);
+          break;
+        case 'protection':
+          protections.push(i);
+          break;
+        case 'speciality':
+          specialities.push(i);
+          break;
+        default:
+          gear.push(i);
       }
     }
 
     // Assign and return
-    context.specialities = specialities;
     context.gear = gear;
-    context.features = features;
-    context.spells = spells;
+    context.abilities = abilities;
+    context.injuries = injuries;
+    context.weapons = weapons;
+    context.protections = protections;
+    context.specialities = specialities;
   }
 
   /* -------------------------------------------- */

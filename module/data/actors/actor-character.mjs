@@ -8,13 +8,11 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
     const requiredString = { required: true, blank: false };
     const schema = super.defineSchema();
 
-    schema.attributes = new fields.SchemaField({
-      level: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 1 })
-      }),
+    schema.arc = new fields.SchemaField({
+      value: new fields.StringField({ initial: '' })
     });
 
-    schema.arc = new fields.SchemaField({
+    schema.exp = new fields.SchemaField({
       value: new fields.StringField({ initial: '' })
     });
 
@@ -127,9 +125,6 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
         }
       }
     }
-
-    console.log(data)
-    data.lvl = this.attributes.level.value;
 
     return data
   }
