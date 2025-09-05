@@ -6,9 +6,13 @@ export default class Vermin2047Weapon extends Vermin2047ItemBase {
     const fields = foundry.data.fields;
     const schema = super.defineSchema();
 
+    schema.skill = new fields.SchemaField({
+      value: new fields.StringField({ required: true, blank: false, initial: 'art' })
+    });
+
     schema.damage = new fields.SchemaField({
       amount: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 1, max: 20 }),
-      type: new fields.StringField({ required: true, blank: false, initial: 'cho' }),
+      type: new fields.StringField({ required: true, blank: false, initial: 'sho' }),
     });
 
     // 3 ranges (unit in meters):
@@ -27,5 +31,31 @@ export default class Vermin2047Weapon extends Vermin2047ItemBase {
     });
 
     return schema;
+  }
+
+  getRollData() {
+    const data = {};
+
+    switch(this.skill.value) {
+        case 'fir':
+          data.formula = '@acc+@fir';  
+          break;
+        case 'ran':
+          data.formula = '@acc+@ran';  
+          break;
+        case 'thr':
+          data.formula = '@vig+@thr';  
+          break;
+        case 'clo':
+          data.formula = '@vig+@clo';  
+          break;
+        case 'bra':
+          data.formula = '@vig+@bra';  
+          break;
+        default:
+          data.formula = '@vig'
+    }
+
+    return data
   }
 }

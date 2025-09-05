@@ -9,7 +9,6 @@ export {default as Vermin2047Party} from "./actors/actor-party.mjs";
 // Export Items
 export {default as Vermin2047ItemBase} from "./items/base-item.mjs";
 export {default as Vermin2047Item} from "./items/item-item.mjs";
-export {default as Vermin2047Trait} from "./items/item-trait.mjs";
 export {default as Vermin2047Feature} from "./items/item-feature.mjs";
 export {default as Vermin2047Spell} from "./items/item-spell.mjs";
 export {default as Vermin2047Speciality} from "./items/item-speciality.mjs"

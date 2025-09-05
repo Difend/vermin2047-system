@@ -17,7 +17,9 @@
       "Pools": "Pools",
       "Items": "Items",
       "Effects": "Effects",
-      "Experience": "Experience"
+      "Experience": "Experience",
+      "Range": "Range",
+      "Damage": "Damage"
     },
     "Identity": {
       "Tot": { "long": "Totem", "abbr": "tot" },
@@ -129,6 +131,12 @@
       "Exp": { "long": "Expert", "abbr": "exp" },
       "Mas": { "long": "Master", "abbr": "mas" }
     },
+    "Damage": {
+      "Sho": { "long": "Shock", "abbr": "(S)" },
+      "Bla": { "long": "Blade", "abbr": "(Bl)" },
+      "Fir": { "long": "Fir", "abbr": "(F)" },
+      "Bul": { "long": "Bullet", "abbr": "(Bu)" }
+    },
     "SheetLabels": {
       "Actor": "Vermin2047 Actor Sheet",
       "Item": "Vermin2047 Item Sheet"
@@ -143,7 +151,7 @@
       "Source": "Source",
       "Toggle": "Toggle Effect",
       "Temporary": "Temporary Effects",
-      "Passive": "Passive Effects",
+      "Permanent": "Permanent Effects",
       "Inactive": "Inactive Effects"
     }
   },
@@ -163,7 +171,6 @@
       "speciality": "Speciality",
       "weapon": "Weapon",
       "protection": "Protection",
-      "trait": "Trait",
       "capacity": "Capacity",
       "mutation": "Mutation",
       "adaptation": "Adaptation",

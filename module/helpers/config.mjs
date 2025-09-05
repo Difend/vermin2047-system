@@ -17,7 +17,9 @@ VERMIN_2047.labels = {
   pools: 'VERMIN_2047.Labels.Pools',
   items: 'VERMIN_2047.Labels.Items',
   effects: 'VERMIN_2047.Labels.Effects',
-  experience: 'VERMIN_2047.Labels.Experience'
+  experience: 'VERMIN_2047.Labels.Experience',
+  range: 'VERMIN_2047.Labels.Range',
+  damage: 'VERMIN_2047.Labels.Damage',
 };
 
 VERMIN_2047.wounds = {
@@ -190,6 +192,21 @@ VERMIN_2047.skills = {
   roa: 'VERMIN_2047.Skill.Roa.long',
   tox: 'VERMIN_2047.Skill.Tox.long',
   rui: 'VERMIN_2047.Skill.Rui.long'
+};
+
+VERMIN_2047.fightSkills = {
+  fir: 'VERMIN_2047.Skill.Fir.long',
+  ran: 'VERMIN_2047.Skill.Ran.long',
+  thr: 'VERMIN_2047.Skill.Thr.long',
+  clo: 'VERMIN_2047.Skill.Clo.long',
+  bra: 'VERMIN_2047.Skill.Bra.long',
+};
+
+VERMIN_2047.damageTypes = {
+  sho: 'VERMIN_2047.Damage.Sho.abbr',
+  bla: 'VERMIN_2047.Damage.Bla.abbr',
+  fir: 'VERMIN_2047.Damage.Fir.abbr',
+  bul: 'VERMIN_2047.Damage.Bul.abbr',
 };
 
 VERMIN_2047.skillRarity = {

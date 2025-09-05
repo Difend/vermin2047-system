@@ -89,5 +89,15 @@ export class Vermin2047ItemSheet extends ItemSheet {
     html.on('click', '.effect-control', (ev) =>
       onManageActiveEffect(ev, this.item)
     );
+
+    // Drag events for macros.
+    if (this.item.isOwner) {
+      let handler = (ev) => this._onDragStart(ev);
+      html.find('li.item').each((i, li) => {
+        if (li.classList.contains('inventory-header')) return;
+        li.setAttribute('draggable', true);
+        li.addEventListener('dragstart', handler, false);
+      });
+    }
   }
 }

@@ -41,14 +41,14 @@ export function onManageActiveEffect(event, owner) {
 export function prepareActiveEffectCategories(effects) {
   // Define effect header categories
   const categories = {
+    permanent: {
+      type: 'permanent',
+      label: game.i18n.localize('VERMIN_2047.Effect.Permanent'),
+      effects: [],
+    },
     temporary: {
       type: 'temporary',
       label: game.i18n.localize('VERMIN_2047.Effect.Temporary'),
-      effects: [],
-    },
-    passive: {
-      type: 'passive',
-      label: game.i18n.localize('VERMIN_2047.Effect.Passive'),
       effects: [],
     },
     inactive: {
@@ -62,7 +62,7 @@ export function prepareActiveEffectCategories(effects) {
   for (let e of effects) {
     if (e.disabled) categories.inactive.effects.push(e);
     else if (e.isTemporary) categories.temporary.effects.push(e);
-    else categories.passive.effects.push(e);
+    else categories.permanent.effects.push(e);
   }
   return categories;
 }
