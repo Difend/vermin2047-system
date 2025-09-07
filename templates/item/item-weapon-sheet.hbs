@@ -37,9 +37,7 @@
             class="attribute"
           />
           <select name="system.rarity.criteria" data-dtype='Number'>
-            <option value=0>-</option>
-            <option value=1>(I)</option>
-            <option value=2>(II)</option>
+            {{selectOptions @root.config.ranks selected=system.rarity.criteria localize=true}}
           </select>
         </div>
         <div class="resource mb-5">
