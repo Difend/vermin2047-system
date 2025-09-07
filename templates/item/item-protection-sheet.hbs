@@ -62,10 +62,14 @@
             data-dtype='Number'
             class="attribute"
           />
-          <label class='resource-label'>Mobility</label>
-          <select name="system.mobility.value" data-dtype='Number'>
-            {{selectOptions @root.config.ranks selected=system.mobility.value localize=true}}
-          </select>
+          /
+          <input
+            type='text'
+            name='system.reliability.value'
+            value='{{system.reliability.max}}'
+            data-dtype='Number'
+            class="attribute"
+          />
         </div>
         <div class="resource mb-5">
           <label class='resource-label'>Special</label>
@@ -78,6 +82,14 @@
           />
           <select name="system.index.special.type" data-dtype="String">
             {{selectOptions @root.config.damageTypes selected=system.index.special.type localize=true}}
+          </select>
+        </div>
+      </div>
+      <div class="flexrow">
+        <div class="resource mb-5">
+          <label class='resource-label'>Mobility</label>
+          <select name="system.mobility.value" data-dtype='Number'>
+            {{selectOptions @root.config.ranks selected=system.mobility.value localize=true}}
           </select>
         </div>
       </div>

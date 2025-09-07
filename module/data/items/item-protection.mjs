@@ -15,7 +15,8 @@ export default class Vermin2047Protection extends Vermin2047ItemBase {
     });
 
     schema.reliability = new fields.SchemaField({
-      value: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 1, max: 10 }),
+      value: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 0, max: 10 }),
+      max: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 0, max: 10 }),
     });
 
     schema.mobility = new fields.SchemaField({
