@@ -242,6 +242,13 @@ VERMIN_2047.skillRarity = {
   rui: [1,1,0],
 };
 
+VERMIN_2047.ranks = [
+  "-",
+  "(I)",
+  "(II)",
+  "(III)"
+]
+
 VERMIN_2047.skillValues = {
   non: 'VERMIN_2047.SkillLevel.Non.long',
   beg: 'VERMIN_2047.SkillLevel.Beg.long',

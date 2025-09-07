@@ -18,29 +18,77 @@
 
   {{! Sheet Tab Navigation }}
   <nav class='sheet-tabs tabs' data-group='primary'>
-    <a class='item' data-tab='description'>Description</a>
-    <a class='item' data-tab='attributes'>Attributes</a>
+    <a class='item' data-tab='attributes'>{{localize @root.config.labels.attributes}}</a>
   </nav>
 
   {{! Sheet Body }}
   <section class='sheet-body'>
-
-    {{! Description Tab }}
-    <div class='tab' data-group='primary' data-tab='description'>
-      {{! Editors must receive enriched text data from getData to properly handle rolls }}
-      {{editor
-        enrichedDescription
-        target='system.description'
-        engine='prosemirror'
-        button=true
-        editable=editable
-      }}
-    </div>
-
     {{! Attributes Tab }}
     <div class='tab attributes' data-group='primary' data-tab='attributes'>
       {{! As you add new fields, add them in here! }}
-      
+      <div class="flexrow">
+        <div class='resource mb-5'>
+          <label class='resource-label'>{{localize @root.config.labels.rarity}}</label>
+          <input
+            type='text'
+            name='system.rarity.value'
+            value='{{system.rarity.value}}'
+            data-dtype='Number'
+            class="attribute"
+          />
+          <select name="system.rarity.criteria" data-dtype='Number'>
+            {{selectOptions @root.config.ranks selected=system.rarity.criteria localize=true}}
+          </select>
+        </div>
+        <div class="resource mb-5">
+          <label class='resource-label'>Index</label>
+          <input
+            type='text'
+            name='system.index.value'
+            value='{{system.index.value}}'
+            data-dtype='Number'
+            class="attribute"
+          />
+          physical
+        </div>
+      </div>
+      <div class="flexrow">
+        <div class='resource mb-5'>
+          <label class='resource-label'>Reliability</label>
+          <input
+            type='text'
+            name='system.reliability.value'
+            value='{{system.reliability.value}}'
+            data-dtype='Number'
+            class="attribute"
+          />
+          <label class='resource-label'>Mobility</label>
+          <select name="system.mobility.value" data-dtype='Number'>
+            {{selectOptions @root.config.ranks selected=system.mobility.value localize=true}}
+          </select>
+        </div>
+        <div class="resource mb-5">
+          <label class='resource-label'>Special</label>
+          <input
+            type='text'
+            name='system.index.special.value'
+            value='{{system.index.special.value}}'
+            data-dtype='Number'
+            class="attribute"
+          />
+          <select name="system.index.special.type" data-dtype="String">
+            {{selectOptions @root.config.damageTypes selected=system.index.special.type localize=true}}
+          </select>
+        </div>
+      </div>
+      <div class="resource mb-5">
+        <label for="system.description" class="resource-label flexlarge align-left" data-label="{{localize @root.config.labels.description}}">{{localize @root.config.labels.description}}</label>
+        <textarea name="system.description" rows="4">{{system.description}}</textarea>
+      </div>
+      <div class="resource mb-50">
+        <label class="resource-label flex-group-center flexcol">{{localize @root.config.labels.traits}}</label>
+        {{> "systems/vermin-2047/templates/actor/parts/actor-effects.hbs"}}
+      </div>
     </div>
   </section>
 </form>
