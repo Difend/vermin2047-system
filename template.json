@@ -3,6 +3,6 @@
     "types": ["character", "npc", "vehicule", "community", "party"]
   },
   "Item": {
-    "types": ["item", "feature", "spell", "speciality", "weapon", "protection", "capacity", "injury", "consumable", "tool", "disease"]
+    "types": ["item", "special", "speciality", "weapon", "protection", "injury", "consumable", "tool", "disease"]
   }
 }

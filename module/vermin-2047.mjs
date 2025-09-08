@@ -51,12 +51,11 @@ Hooks.once('init', function () {
   CONFIG.Item.documentClass = Vermin2047Item;
   CONFIG.Item.dataModels = {
     item: models.Vermin2047Item,
-    feature: models.Vermin2047Feature,
-    spell: models.Vermin2047Spell,
+    capacity: models.Vermin2047Capacity,
     speciality: models.Vermin2047Speciality,
     weapon: models.Vermin2047Weapon,
     protection: models.Vermin2047Protection,
-    capacity: models.Vermin2047Capacity,
+    special: models.Vermin2047SpecialFeature,
     injury: models.Vermin2047Injury,
     consumable: models.Vermin2047Consumable,
     tool: models.Vermin2047Tool,
