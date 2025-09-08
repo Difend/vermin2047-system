@@ -19,7 +19,13 @@
       "Effects": "Effects",
       "Experience": "Experience",
       "Range": "Range",
-      "Damage": "Damage"
+      "Damage": "Damage",
+      "Type": "Type",
+      "Impact": "Impact",
+      "Symptoms": "Symptoms",
+      "Virulence": "Virulence",
+      "Healing": "Healing",
+      "Injuries": "Injuries"
     },
     "Identity": {
       "Tot": { "long": "Totem", "abbr": "tot" },
@@ -68,6 +74,17 @@
       "Lig": { "long": "Light", "abbr": "lig" },
       "Ser": { "long": "Serious", "abbr": "ser" },
       "Let": { "long": "Lethal", "abbr": "let" }
+    },
+    "Injury": {
+      "Scr": { "long": "Scratches", "abbr": "Scr" },
+      "Bru": { "long": "Bruises", "abbr": "Bru" },
+      "Ope": { "long": "Open wound", "abbr": "Ope" },
+      "Cut": { "long": "Cut", "abbr": "Cut" },
+      "Bit": { "long": "Bite", "abbr": "Bit" },
+      "Bur": { "long": "Burn", "abbr": "Bur" },
+      "Sun": { "long": "Sunburn", "abbr": "Sun" },
+      "Fro": { "long": "Frostbite", "abbr": "Fro" },
+      "Con": { "long": "Concussion", "abbr": "Con" }
     },
     "NpcTrait": {
       "Vig": { "long": "Vigor", "abbr": "vig" },

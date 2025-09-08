@@ -18,29 +18,43 @@
 
   {{! Sheet Tab Navigation }}
   <nav class='sheet-tabs tabs' data-group='primary'>
-    <a class='item' data-tab='description'>Description</a>
-    <a class='item' data-tab='attributes'>Attributes</a>
+    <a class='item' data-tab='attributes'>{{localize @root.config.labels.attributes}}</a>
   </nav>
 
   {{! Sheet Body }}
   <section class='sheet-body'>
-
-    {{! Description Tab }}
-    <div class='tab' data-group='primary' data-tab='description'>
-      {{! Editors must receive enriched text data from getData to properly handle rolls }}
-      {{editor
-        enrichedDescription
-        target='system.description'
-        engine='prosemirror'
-        button=true
-        editable=editable
-      }}
-    </div>
-
     {{! Attributes Tab }}
     <div class='tab attributes' data-group='primary' data-tab='attributes'>
       {{! As you add new fields, add them in here! }}
-      
+      <div class="flexrow">
+        <div class='resource mb-5'>
+          <label class='resource-label' data-label="{{localize @root.config.labels.type}}">{{localize @root.config.labels.type}}</label>
+          <select name="system.type" data-dtype='String'>
+            {{selectOptions @root.config.injuryTypes selected=system.type localize=true}}
+          </select>
+        </div>
+        <div class="resource mb-5">
+          <label for="system.wound" class="resource-label flexlarge align-left" data-label="{{localize @root.config.labels.wounds}}">{{localize @root.config.labels.wounds}}</label>
+          <select name="system.wound" data-dtype="String">
+            {{selectOptions @root.config.wounds selected=system.wound localize=true}}
+          </select>
+        </div>
+      </div>
+      <div class="flexrow">
+        <div class='resource mb-5'>
+          <label class='resource-label'>{{localize @root.config.labels.impact}}</label>
+          <input
+            type='text'
+            name='system.impact'
+            value='{{system.impact}}'
+            data-dtype='String'
+          />
+        </div>
+      </div>
+      <div class="resource mb-5">
+        <label for="system.description" class="resource-label flexlarge align-left" data-label="{{localize @root.config.labels.description}}">{{localize @root.config.labels.description}}</label>
+        <textarea name="system.description" rows="4">{{system.description}}</textarea>
+      </div>
     </div>
   </section>
 </form>

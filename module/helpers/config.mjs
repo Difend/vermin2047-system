@@ -20,12 +20,18 @@ VERMIN_2047.labels = {
   experience: 'VERMIN_2047.Labels.Experience',
   range: 'VERMIN_2047.Labels.Range',
   damage: 'VERMIN_2047.Labels.Damage',
-};
-
-VERMIN_2047.wounds = {
   threshold: 'VERMIN_2047.Wound.Threshold',
   count: 'VERMIN_2047.Wound.Count',
   limit: 'VERMIN_2047.Wound.Limit',
+  type: 'VERMIN_2047.Labels.Type',
+  impact: 'VERMIN_2047.Labels.Impact',
+  symptoms: 'VERMIN_2047.Labels.Symptoms',
+  virulence: 'VERMIN_2047.Labels.Virulence',
+  healing: 'VERMIN_2047.Labels.Healing',
+  injuries: 'VERMIN_2047.Labels.Injuries',
+};
+
+VERMIN_2047.wounds = {
   lig: 'VERMIN_2047.Wound.Lig.long',
   ser: 'VERMIN_2047.Wound.Ser.long',
   let: 'VERMIN_2047.Wound.Let.long',
@@ -208,6 +214,18 @@ VERMIN_2047.damageTypes = {
   fir: 'VERMIN_2047.Damage.Fir.abbr',
   bul: 'VERMIN_2047.Damage.Bul.abbr',
 };
+
+VERMIN_2047.injuryTypes = {
+  scr: 'VERMIN_2047.Injury.Scr.long',
+  bru: 'VERMIN_2047.Injury.Bru.long',
+  ope: 'VERMIN_2047.Injury.Ope.long',
+  cut: 'VERMIN_2047.Injury.Cut.long',
+  bit: 'VERMIN_2047.Injury.Bit.long',
+  bur: 'VERMIN_2047.Injury.Bur.long',
+  sun: 'VERMIN_2047.Injury.Sun.long',
+  fro: 'VERMIN_2047.Injury.Fro.long',
+  con: 'VERMIN_2047.Injury.Con.long',
+}
 
 VERMIN_2047.skillRarity = {
   art: [0,0,0],
