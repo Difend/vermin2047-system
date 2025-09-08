@@ -146,7 +146,7 @@ export class Vermin2047ActorSheet extends ActorSheet {
 
     // Assign and return
     context.gear = gear;
-    context.abilities = abilities;
+    context.special = special;
     context.injuries = injuries;
     context.weapons = weapons;
     context.protections = protections;

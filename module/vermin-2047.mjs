@@ -55,7 +55,7 @@ Hooks.once('init', function () {
     speciality: models.Vermin2047Speciality,
     weapon: models.Vermin2047Weapon,
     protection: models.Vermin2047Protection,
-    special: models.Vermin2047SpecialFeature,
+    special: models.Vermin2047Special,
     injury: models.Vermin2047Injury,
     consumable: models.Vermin2047Consumable,
     tool: models.Vermin2047Tool,

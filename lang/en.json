@@ -192,7 +192,6 @@
     },
     "Item": {
       "item": "Item",
-      "feature": "Feature",
       "speciality": "Speciality",
       "weapon": "Weapon",
       "protection": "Protection",
@@ -200,7 +199,8 @@
       "injury": "Injury",
       "consumable": "Consumable",
       "tool": "Tool",
-      "disease": "Disease"
+      "disease": "Disease",
+      "special": "Special Feature"
     }
   }
 }

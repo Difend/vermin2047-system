@@ -29,6 +29,7 @@ VERMIN_2047.labels = {
   healing: 'VERMIN_2047.Labels.Healing',
   protections: 'VERMIN_2047.Labels.Protections',
   capacities: 'VERMIN_2047.Labels.Capacities',
+  capacity: 'TYPES.Item.capacity',
   weapons: 'VERMIN_2047.Labels.Weapons',
   injuries: 'VERMIN_2047.Labels.Injuries',
   inventory: 'VERMIN_2047.Labels.Inventory',
