@@ -1,0 +1,43 @@
+<form class='{{cssClass}}' autocomplete='off'>
+  <header class='sheet-header'>
+    <img
+      class='profile-img'
+      src='{{item.img}}'
+      data-edit='img'
+      title='{{item.name}}'
+    />
+    <div class='header-fields'>
+      <h1 class='charname'><input
+          name='name'
+          type='text'
+          value='{{item.name}}'
+          placeholder='Name'
+        /></h1>
+    </div>
+  </header>
+
+  {{! Sheet Tab Navigation }}
+  <nav class='sheet-tabs tabs' data-group='primary'>
+    <a class='item' data-tab='attributes'>{{localize @root.config.labels.attributes}}</a>
+  </nav>
+
+  {{! Sheet Body }}
+  <section class='sheet-body'>
+    {{! Attributes Tab }}
+    <div class='tab attributes' data-group='primary' data-tab='attributes'>
+      {{! As you add new fields, add them in here! }}
+      <div class="flexrow">
+        <div class="resource mb-5">
+          <label for="system.type" class="resource-label flexlarge align-left" data-label="{{localize @root.config.labels.type}}">{{localize @root.config.labels.type}}</label>
+          <select name="system.type" data-dtype="String">
+            {{selectOptions @root.config.featureType selected=system.type localize=true}}
+          </select>
+        </div>
+      </div>
+      <div class="resource mb-5">
+        <label for="system.description" class="resource-label flexlarge align-left" data-label="{{localize @root.config.labels.description}}">{{localize @root.config.labels.description}}</label>
+        <textarea name="system.description" rows="4">{{system.description}}</textarea>
+      </div>
+    </div>
+  </section>
+</form>

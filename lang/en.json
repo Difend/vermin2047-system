@@ -25,7 +25,22 @@
       "Symptoms": "Symptoms",
       "Virulence": "Virulence",
       "Healing": "Healing",
-      "Injuries": "Injuries"
+      "Injuries": "Injuries",
+      "Protections": "Protections",
+      "Weapons": "Weapons",
+      "Capacities": "Capacities",
+      "Inventory": "Inventory",
+      "Biography": "Biography",
+      "Learning": "Learning",
+      "Level": "Level",
+      "Reliability": "Reliability",
+      "Mobility": "Mobility",
+      "Special": "Special"
+    },
+    "Feature": {
+      "His": { "long": "Historical element", "abbr": "his" },
+      "Ada": { "long": "Adaptation", "abbr": "ada" },
+      "Mut": { "long": "Mutation", "abbr": "mut" }
     },
     "Identity": {
       "Tot": { "long": "Totem", "abbr": "tot" },
@@ -158,12 +173,6 @@
       "Actor": "Vermin2047 Actor Sheet",
       "Item": "Vermin2047 Item Sheet"
     },
-    "Item": {
-      "Spell": {
-        "SpellLVL": "Level {level} Spells",
-        "AddLVL": "Add LVL {level}"
-      }
-    },
     "Effect": {
       "Source": "Source",
       "Toggle": "Toggle Effect",
@@ -184,14 +193,10 @@
     "Item": {
       "item": "Item",
       "feature": "Feature",
-      "spell": "Spell",
       "speciality": "Speciality",
       "weapon": "Weapon",
       "protection": "Protection",
       "capacity": "Capacity",
-      "mutation": "Mutation",
-      "adaptation": "Adaptation",
-      "trauma": "Trauma",
       "injury": "Injury",
       "consumable": "Consumable",
       "tool": "Tool",

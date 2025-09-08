@@ -9,7 +9,6 @@ VERMIN_2047.labels = {
   wounds: 'VERMIN_2047.Labels.Wounds',
   archetype: 'VERMIN_2047.Labels.Archetype',
   specialities: 'VERMIN_2047.Labels.Specialities',
-  specialities: 'VERMIN_2047.Labels.Speciality',
   rarity: 'VERMIN_2047.Labels.Rarity',
   description: 'VERMIN_2047.Labels.Description',
   attributes: 'VERMIN_2047.Labels.Attributes',
@@ -28,7 +27,17 @@ VERMIN_2047.labels = {
   symptoms: 'VERMIN_2047.Labels.Symptoms',
   virulence: 'VERMIN_2047.Labels.Virulence',
   healing: 'VERMIN_2047.Labels.Healing',
+  protections: 'VERMIN_2047.Labels.Protections',
+  capacities: 'VERMIN_2047.Labels.Capacities',
+  weapons: 'VERMIN_2047.Labels.Weapons',
   injuries: 'VERMIN_2047.Labels.Injuries',
+  inventory: 'VERMIN_2047.Labels.Inventory',
+  biography: 'VERMIN_2047.Labels.Biography',
+  learning: 'VERMIN_2047.Labels.Learning',
+  level: 'VERMIN_2047.Labels.Level',
+  reliability:'VERMIN_2047.Labels.Reliability',
+  mobility: 'VERMIN_2047.Labels.Mobility',
+  special: 'VERMIN_2047.Labels.Special',
 };
 
 VERMIN_2047.wounds = {
@@ -48,6 +57,12 @@ VERMIN_2047.identity = {
   rep: 'VERMIN_2047.Identity.Rep.long',
   age: 'VERMIN_2047.Identity.Age.long'
 };
+
+VERMIN_2047.featureType = {
+  his: 'VERMIN_2047.Feature.His.long',
+  ada: 'VERMIN_2047.Feature.Ada.long',
+  mut: 'VERMIN_2047.Feature.Mut.long',
+}
 
 VERMIN_2047.identityValues = {
   tot: {

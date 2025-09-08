@@ -6,16 +6,16 @@
 export const preloadHandlebarsTemplates = async function () {
   return loadTemplates([
     // Actor partials.
+    'systems/vermin-2047/templates/actor/parts/actor-traits.hbs',
+    'systems/vermin-2047/templates/actor/parts/actor-skills.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-specialities.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-identity.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-pools.hbs',
-    'systems/vermin-2047/templates/actor/parts/actor-features.hbs',
+    'systems/vermin-2047/templates/actor/parts/actor-special-features.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-items.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-weapons.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-protections.hbs',
-    'systems/vermin-2047/templates/actor/parts/actor-abilities.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-injuries.hbs',
-    'systems/vermin-2047/templates/actor/parts/actor-spells.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-effects.hbs',
     'systems/vermin-2047/templates/actor/parts/actor-wounds.hbs',
     // Item partials
