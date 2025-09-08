@@ -1,0 +1,12 @@
+<section class="main traits grid-span-2">
+    <label class="resource-label flex-group-center flexcol">{{localize @root.config.labels.traits}}</label>
+    <div class="traits flex-group-center">
+        {{#each system.traits as |trait key|}}
+        <div class="trait">
+        <label for="system.traits.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="(@{{key}}.mod)d10" data-label="{{localize (lookup @root.config.traits key)}}">{{localize (lookup @root.config.traits key)}}</label>
+        <br>
+        <input type="text" name="system.traits.{{key}}.value" value="{{trait.value}}" data-dtype="Number"/>
+        </div>
+        {{/each}}
+    </div>
+</section>
