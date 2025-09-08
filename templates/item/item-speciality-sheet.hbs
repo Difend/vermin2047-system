@@ -29,13 +29,9 @@
       <div class="flexrow">
         <div class='resource mb-5'>
           <label class='resource-label'>{{localize @root.config.labels.rarity}}</label>
-          <input
-            type='text'
-            name='system.rarity'
-            value='{{system.rarity}}'
-            data-dtype='Number'
-            class="attribute"
-          />
+          <select name="system.rarity" data-dtype="Number">
+            {{selectOptions @root.config.ranks selected=system.rarity localize=true}}
+          </select>
         </div>
         <div class="resource mb-5">
           <label for="system.skill.value" class="resource-label flexlarge align-left" data-label="{{localize @root.config.labels.skills}}">{{localize @root.config.labels.skills}}</label>
