@@ -39,7 +39,9 @@ VERMIN_2047.labels = {
   reliability:'VERMIN_2047.Labels.Reliability',
   mobility: 'VERMIN_2047.Labels.Mobility',
   special: 'VERMIN_2047.Labels.Special',
-  quantity: 'VERMIN_2047.Labels.Quantity'
+  quantity: 'VERMIN_2047.Labels.Quantity',
+  specialFeatures: 'VERMIN_2047.Labels.SpecialFeatures',
+  index: 'VERMIN_2047.Labels.Index',
 };
 
 VERMIN_2047.wounds = {

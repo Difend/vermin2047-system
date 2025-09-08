@@ -36,7 +36,9 @@
       "Reliability": "Reliability",
       "Mobility": "Mobility",
       "Special": "Special",
-      "Quantity": "Quantity"
+      "Quantity": "Quantity",
+      "SpecialFeatures": "Special Features",
+      "Index": "Index"
     },
     "Feature": {
       "His": { "long": "Historical element", "abbr": "his" },
