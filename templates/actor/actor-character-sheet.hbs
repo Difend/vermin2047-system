@@ -23,9 +23,8 @@
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="features">{{localize @root.config.labels.features}}</a>
     <a class="item" data-tab="pools">{{localize @root.config.labels.pools}}</a>
-    <a class="item" data-tab="description">{{localize @root.config.labels.description}}</a>
+    <a class="item" data-tab="biography">{{localize @root.config.labels.biography}}</a>
     <a class="item" data-tab="items">{{localize @root.config.labels.items}}</a>
-    <a class="item" data-tab="spells">Spells</a>
     <a class="item" data-tab="effects">{{localize @root.config.labels.effects}}</a>
   </nav>
 
@@ -35,7 +34,11 @@
     {{!-- Owned Features Tab --}}
     <div class="tab features" data-group="primary" data-tab="features">
       {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-      {{> "systems/vermin-2047/templates/actor/parts/actor-features.hbs"}}
+      <section class="grid">
+        {{> "systems/vermin-2047/templates/actor/parts/actor-traits.hbs"}}
+        {{> "systems/vermin-2047/templates/actor/parts/actor-skills.hbs"}}
+      </section>
+      {{> "systems/vermin-2047/templates/actor/parts/actor-special-features.hbs"}}
       {{> "systems/vermin-2047/templates/actor/parts/actor-specialities.hbs"}}
     </div>
 
@@ -48,22 +51,16 @@
     </div>
 
     {{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="description">
+    <div class="tab biography" data-group="primary" data-tab="biography">
       {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
       {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
     </div>
 
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/vermin-2047/templates/actor/parts/actor-items.hbs"}}
-       {{> "systems/vermin-2047/templates/actor/parts/actor-weapons.hbs"}}
-       {{> "systems/vermin-2047/templates/actor/parts/actor-protections.hbs"}}
-       {{> "systems/vermin-2047/templates/actor/parts/actor-abilities.hbs"}}
-    </div>
-
-    {{!-- Owned Spells Tab --}}
-    <div class="tab spells" data-group="primary" data-tab="spells">
-      {{> "systems/vermin-2047/templates/actor/parts/actor-spells.hbs"}}
+      {{> "systems/vermin-2047/templates/actor/parts/actor-protections.hbs"}}
+      {{> "systems/vermin-2047/templates/actor/parts/actor-weapons.hbs"}}
+      {{> "systems/vermin-2047/templates/actor/parts/actor-items.hbs"}}
     </div>
 
     {{!-- Active Effects Tab --}}

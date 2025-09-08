@@ -105,7 +105,7 @@ export class Vermin2047ActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
-    const abilities = [];
+    const special = [];
     const injuries = [];
     const weapons = [];
     const protections = [];
@@ -122,12 +122,10 @@ export class Vermin2047ActorSheet extends ActorSheet {
         case 'tool':
           gear.push(i);
           break;
-        case 'mutation':
-        case 'adaptation':
+        case 'special':
         case 'capacity':
-          abilities.push(i);
+          special.push(i);
           break;
-        case 'trauma':
         case 'injury':
         case 'disease':
           injuries.push(i);
