@@ -120,12 +120,13 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
 
     if (this.domains) {
       for (const i in this.domains) {
-        for (let [k,v] of Object.entries(this.domains[i].skills)) {
+        for (let [k,v] of Object.entries(this.domains)) {
           data[k] = foundry.utils.deepClone(v);
         }
       }
     }
 
+    console.log(data)
     return data
   }
 }
