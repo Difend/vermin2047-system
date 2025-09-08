@@ -35,7 +35,8 @@
       "Level": "Level",
       "Reliability": "Reliability",
       "Mobility": "Mobility",
-      "Special": "Special"
+      "Special": "Special",
+      "Quantity": "Quantity"
     },
     "Feature": {
       "His": { "long": "Historical element", "abbr": "his" },
@@ -176,6 +177,7 @@
     "Effect": {
       "Source": "Source",
       "Toggle": "Toggle Effect",
+      "TabDuration": "Duration",
       "Temporary": "Temporary Effects",
       "Permanent": "Permanent Effects",
       "Inactive": "Inactive Effects"
@@ -197,8 +199,6 @@
       "protection": "Protection",
       "capacity": "Capacity",
       "injury": "Injury",
-      "consumable": "Consumable",
-      "tool": "Tool",
       "disease": "Disease",
       "special": "Special Feature"
     }
