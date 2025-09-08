@@ -1,6 +1,6 @@
 import Vermin2047ItemBase from "./base-item.mjs";
 
-export default class Vermin2047SpecialFeature extends Vermin2047ItemBase {
+export default class Vermin2047Special extends Vermin2047ItemBase {
 
 
     static defineSchema() {
