@@ -1,12 +1,25 @@
-<label class="resource-label">{{localize @root.config.pools.ner}}</label>
-<div class="resource-content flexrow flex-center flex-between">
-    <input type="text" name="system.pools.ner.value" value="{{system.pools.ner.value}}" data-dtype="Number"/>
-    <span> / </span>
-    <input type="text" name="system.pools.ner.total" value="{{system.pools.ner.total}}" data-dtype="Number"/>
-</div>
-<label class="resource-label">{{localize @root.config.pools.str}}</label>
-<div class="resource-content flexrow flex-center flex-between">
-    <input type="text" name="system.pools.str.value" value="{{system.pools.str.value}}" data-dtype="Number"/>
-    <span> / </span>
-    <input type="text" name="system.pools.str.total" value="{{system.pools.str.total}}" data-dtype="Number"/>
-</div>
+<label class="resource-label flex-group-center flexcol">{{localize @root.config.labels.pools}}</label>
+<table>
+    <tr>
+        <td>
+            <label class="resource-label">{{localize @root.config.pools.ner}}</label>
+            <input type="text"  class="attribute"name="system.pools.ner.total" value="{{system.pools.ner.total}}" data-dtype="Number"/>
+        </td>
+        <td>
+            <label class="resource-label">{{localize @root.config.pools.str}}</label>
+            <input type="text" class="attribute" name="system.pools.str.total" value="{{system.pools.str.total}}" data-dtype="Number"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{#each system.arrays.pools.nerve as |val i|}}
+            <input class="check-pool" name="pools.ner.value" type="checkbox" data-dtype="Number" value={{i}} {{checked val}}>
+            {{/each}}
+        </td>
+        <td>
+            {{#each system.arrays.pools.strain as |val i|}}
+            <input class="check-pool" name="pools.str.value" type="checkbox" data-dtype="Number" value={{i}} {{checked val}}>
+            {{/each}}
+        </td>
+    </tr>
+</table>

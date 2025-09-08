@@ -1,32 +1,57 @@
-<label class="resource-label">{{localize @root.config.wounds.title}}</label>
-<div class="resource-content flexrow flex-center flex-between">
-    <label for="system.wounds.light.threshold" class="resource-label flexlarge align-center" data-label="{{localize @root.config.labels.threshold}}">{{localize @root.config.labels.threshold}}</label>
-    <span> : </span>
-    <label for="system.wounds.light.value" class="resource-label flexlarge align-center" data-label="{{localize @root.config.labels.count}}">{{localize @root.config.labels.count}}</label>
-    <span> / </span>
-    <label for="system.wounds.light.limit" class="resource-label flexlarge align-center" data-label="{{localize @root.config.labels.limit}}">{{localize @root.config.labels.limit}}</label>
-</div>
-<div class="resource-content flexrow flex-center flex-between">
-    <label for="system.wounds.light.value" class="resource-label flexlarge align-left" data-label="{{localize @root.config.wounds.lig}}">{{localize @root.config.wounds.lig}}</label>
-    <input type="text" name="system.wounds.light.threshold" value="{{system.wounds.light.threshold}}" data-dtype="Number"/>
-    <span> : </span>
-    <input type="text" name="system.wounds.light.value" value="{{system.wounds.light.value}}" data-dtype="Number"/>
-    <span> / </span>
-    <input type="text" name="system.wounds.light.limit" value="{{system.wounds.light.limit}}" data-dtype="Number"/>
-</div>
-<div class="resource-content flexrow flex-center flex-between">
-    <label for="system.wounds.serious.value" class="resource-label flexlarge align-left" data-label="{{localize @root.config.wounds.ser}}">{{localize @root.config.wounds.ser}}</label>
-    <input type="text" name="system.wounds.serious.threshold" value="{{system.wounds.serious.threshold}}" data-dtype="Number"/>
-    <span> : </span>
-    <input type="text" name="system.wounds.serious.value" value="{{system.wounds.serious.value}}" data-dtype="Number"/>
-    <span> / </span>
-    <input type="text" name="system.wounds.serious.limit" value="{{system.wounds.serious.limit}}" data-dtype="Number"/>
-</div>
-<div class="resource-content flexrow flex-center flex-between">
-    <label for="system.wounds.lethal.value" class="resource-label flexlarge align-left" data-label="{{localize @root.config.wounds.let}}">{{localize @root.config.wounds.let}}</label>
-    <input type="text" name="system.wounds.lethal.threshold" value="{{system.wounds.lethal.threshold}}" data-dtype="Number"/>
-    <span> : </span>
-    <input type="text" name="system.wounds.lethal.value" value="{{system.wounds.lethal.value}}" data-dtype="Number"/>
-    <span> / </span>
-    <input type="text" name="system.wounds.lethal.limit" value="{{system.wounds.lethal.limit}}" data-dtype="Number"/>
-</div>
+<label class="resource-label flex-group-center flexcol">{{localize @root.config.labels.wounds}}</label>
+<table>
+    <tr>
+        <th></th>
+        <th><label for="system.wounds.light.threshold" class="resource-label flexlarge align-center" data-label="{{localize @root.config.labels.threshold}}">{{localize @root.config.labels.threshold}}</label></th>
+        <th><label for="system.wounds.light.value" class="resource-label flexlarge align-center" data-label="{{localize @root.config.labels.count}}">{{localize @root.config.labels.count}}</label></th>
+        <th><label for="system.wounds.light.limit" class="resource-label flexlarge align-center" data-label="{{localize @root.config.labels.limit}}">{{localize @root.config.labels.limit}}</label></th>
+    </tr>
+    <tr>
+        <td>
+            <label for="system.wounds.light.value" class="resource-label flexlarge align-left" data-label="{{localize @root.config.wounds.lig}}">{{localize @root.config.wounds.lig}}</label>
+        </td>
+        <td>
+            <input type="text" class="attribute" name="system.wounds.light.threshold" value="{{system.wounds.light.threshold}}" data-dtype="Number"/>
+        </td>
+        <td>
+            {{#each system.arrays.wounds.light as |val i|}}
+            <input class="check-pool" name="wounds.light.value" type="checkbox" data-dtype="Number" value={{i}} {{checked val}}>
+            {{/each}}
+        </td>
+        <td>
+            <input type="text" class="attribute" name="system.wounds.light.limit" value="{{system.wounds.light.limit}}" data-dtype="Number"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="system.wounds.serious.value" class="resource-label flexlarge align-left" data-label="{{localize @root.config.wounds.ser}}">{{localize @root.config.wounds.ser}}</label>
+        </td>
+        <td>
+            <input type="text" class="attribute" name="system.wounds.serious.threshold" value="{{system.wounds.serious.threshold}}" data-dtype="Number"/>
+        </td>
+        <td>
+            {{#each system.arrays.wounds.serious as |val i|}}
+            <input class="check-pool" name="wounds.serious.value" type="checkbox" data-dtype="Number" value={{i}} {{checked val}}>
+            {{/each}}
+        </td>
+        <td>
+            <input type="text" class="attribute" name="system.wounds.serious.limit" value="{{system.wounds.serious.limit}}" data-dtype="Number"/>
+        </td>
+    </tr>
+        <tr>
+        <td>
+            <label for="system.wounds.lethal.value" class="resource-label flexlarge align-left" data-label="{{localize @root.config.wounds.let}}">{{localize @root.config.wounds.let}}</label>
+        </td>
+        <td>
+            <input type="text" class="attribute" name="system.wounds.lethal.threshold" value="{{system.wounds.lethal.threshold}}" data-dtype="Number"/>
+        </td>
+        <td>
+            {{#each system.arrays.wounds.lethal as |val i|}}
+            <input class="check-pool" name="wounds.lethal.value" type="checkbox" data-dtype="Number" value={{i}} {{checked val}}>
+            {{/each}}
+        </td>
+        <td>
+            <input type="text" class="attribute" name="system.wounds.lethal.limit" value="{{system.wounds.lethal.limit}}" data-dtype="Number"/>
+        </td>
+    </tr>
+</table>

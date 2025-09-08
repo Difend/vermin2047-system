@@ -233,6 +233,10 @@
   width: 50px;
 }
 
+.small {
+  width: 10px;
+}
+
 /* Styles limited to vermin-2047 sheets */
 .vermin-2047 .item-form {
   font-family: "Roboto", sans-serif;

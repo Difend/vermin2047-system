@@ -38,7 +38,7 @@ export class Vermin2047ActorSheet extends ActorSheet {
     // sheets are the actor object, the data object, whether or not it's
     // editable, the items array, and the effects array.
     const context = super.getData();
-    console.log(context)
+
 
     // Use a safe clone of the actor data for further operations.
     const actorData = this.document.toPlainObject();
@@ -158,6 +158,42 @@ export class Vermin2047ActorSheet extends ActorSheet {
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
+
+    html.find('.check-pool').click(ev => {
+      let harmValue = parseInt(ev.target.value)
+      switch(ev.target.name) {
+        case 'wounds.light.value':
+          if(this.actor.system.wounds.light.value == harmValue)
+            this.actor.update({'system.wounds.light.value': harmValue-1});
+          else
+            this.actor.update({'system.wounds.light.value': harmValue});
+          break;
+        case 'wounds.serious.value':
+          if(this.actor.system.wounds.serious.value == harmValue)
+            this.actor.update({'system.wounds.serious.value': harmValue-1});
+          else
+            this.actor.update({'system.wounds.serious.value': harmValue});
+          break;
+        case 'wounds.lethal.value':
+          if(this.actor.system.wounds.lethal.value == harmValue)
+            this.actor.update({'system.wounds.lethal.value': harmValue-1});
+          else
+            this.actor.update({'system.wounds.lethal.value': harmValue});
+          break;
+        case 'pools.ner.value':
+          if(this.actor.system.pools.ner.value == harmValue)
+            this.actor.update({'system.pools.ner.value': harmValue-1});
+          else
+            this.actor.update({'system.pools.ner.value': harmValue});
+          break;
+        case 'pools.str.value':
+          if(this.actor.system.pools.str.value == harmValue)
+            this.actor.update({'system.pools.str.value': harmValue-1});
+          else
+            this.actor.update({'system.pools.str.value': harmValue});
+          break;
+      }
+    })
 
     // Render the item sheet for viewing/editing prior to the editable check.
     html.on('click', '.item-edit', (ev) => {

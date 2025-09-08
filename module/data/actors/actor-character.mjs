@@ -61,11 +61,36 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
   }
 
   prepareDerivedData() {
+    console.log(this.wounds)
+    this.arrays = {};
+    this.arrays.wounds = {}
+    this.arrays.wounds.light = [];
+    this.arrays.wounds.serious = [];
+    this.arrays.wounds.lethal = [];
+    this.arrays.pools = {};
+    this.arrays.pools.nerve = [];
+    this.arrays.pools.strain = [];
 
     for(const key in this.traits) {
       // Handle ability label localization.
       this.traits[key].label = game.i18n.localize(CONFIG.VERMIN_2047.traits[key]) ?? key;
       this.traits[key].mod = this.traits[key].value;
+    }
+
+    for(let i = 1; i <= this.wounds.light.limit; i++) {
+      this.arrays.wounds.light[i] = (i <= this.wounds.light.value)
+    }
+    for(let i = 1; i <= this.wounds.serious.limit; i++) {
+      this.arrays.wounds.serious[i] = (i <= this.wounds.serious.value)
+    }
+    for(let i = 1; i <= this.wounds.lethal.limit; i++) {
+      this.arrays.wounds.lethal[i] = (i <= this.wounds.lethal.value)
+    }
+    for(let i = 1; i <= this.pools.ner.total; i++) {
+      this.arrays.pools.nerve[i] = (i <= this.pools.ner.value)
+    }
+    for(let i = 1; i <= this.pools.str.total; i++) {
+      this.arrays.pools.strain[i] = (i <= this.pools.str.value)
     }
 
     // Loop through domain scores, and add their modifiers to our sheet output.
