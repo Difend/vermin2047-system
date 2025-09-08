@@ -30,28 +30,29 @@ export default class Vermin2047Weapon extends Vermin2047ItemBase {
       criteria: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0, max: 2 }),
     });
 
+    schema.formula = new fields.StringField({ blank: true });
+
     return schema;
   }
 
-  getRollData() {
+  prepareDerivedData() {
     switch(this.skill.value) {
-        case 'fir':
-          this.formula = `(@acc.mod+@fir.mod)d10`;  
-          break;
-        case 'ran':
-          this.formula = `(@acc.mod+@ran.mod)d10`;  
-          break;
-        case 'thr':
-          this.formula = `(@vig.mod+@thr.mod)d10`;  
-          break;
-        case 'clo':
-          this.formula = `(@vig.mod+@clo.mod)d10`;  
-          break;
-        case 'bra':
-          this.formula = `(@vig.mod+@bra.mod)d10`;  
-          break;
-        default:
-          this.formula = `(@vig.mod)d10`
+      case 'fir':
+        this.formula = `(@acc.mod+@wea.skills.fir.mod+@wea.value)d10`;  
+        break;
+      case 'ran':
+        this.formula = `(@acc.mod+@wea.skills.ran.mod+@wea.value)d10`;  
+        break;
+      case 'thr':
+        this.formula = `(@vig.mod+@wea.skills.thr.mod+@wea.value)d10`;  
+        break;
+      case 'bra':
+        this.formula = `(@vig.mod+@sur.skills.bra.mod+@sur.value)d10`;  
+        break;
+      default:
+      case 'clo':
+        this.formula = `(@vig.mod+@wea.skills.clo.mod+@wea.value)d10`;  
+        break;
     }
   }
 }
