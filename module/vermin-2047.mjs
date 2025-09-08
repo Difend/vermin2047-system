@@ -57,8 +57,6 @@ Hooks.once('init', function () {
     protection: models.Vermin2047Protection,
     special: models.Vermin2047Special,
     injury: models.Vermin2047Injury,
-    consumable: models.Vermin2047Consumable,
-    tool: models.Vermin2047Tool,
     disease: models.Vermin2047Disease
   }
 
