@@ -125,8 +125,6 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
         }
       }
     }
-
-    console.log(data)
     return data
   }
 }
