@@ -15,6 +15,11 @@ export default class Vermin2047Weapon extends Vermin2047ItemBase {
       type: new fields.StringField({ required: true, blank: false, initial: 'sho' }),
     });
 
+    schema.reliability = new fields.SchemaField({
+      value: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 0, max: 10 }),
+      max: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 0, max: 10 }),
+    });
+
     // 3 ranges (unit in meters):
     // - short: included between 0 and max_short
     // - medium: included between max_short and max_medium
