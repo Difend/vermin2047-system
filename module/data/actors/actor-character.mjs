@@ -27,7 +27,7 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
     schema.pools = new fields.SchemaField(Object.keys(CONFIG.VERMIN_2047.pools).reduce((obj, pool) => {
       obj[pool] = new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
-        total: new fields.NumberField({ ...requiredInteger, initial: 4, min: 4, max: 10 })
+        total: new fields.NumberField({ ...requiredInteger, initial: 6, min: 4, max: 10 })
       });
       return obj;
     }, {}));
