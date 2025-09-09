@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "npc", "vehicule", "community", "party"]
+    "types": ["character", "npc"]
   },
   "Item": {
     "types": ["item", "special", "capacity", "speciality", "weapon", "protection", "injury", "disease"]
