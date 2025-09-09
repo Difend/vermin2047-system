@@ -1,0 +1,208 @@
+{
+  "VERMIN_2047": {
+    "Labels": {
+      "Name": "Nom",
+      "Identity": "Identité",
+      "Traits": "Traits",
+      "Skills": "Compétences",
+      "Skill": "Compétence",
+      "Wounds": "Blessures",
+      "Archetype": "Archetype",
+      "Specialities": "Spécialités",
+      "Speciality": "Spécialité",
+      "Rarity": "Rareté",
+      "Description": "Description",
+      "Attributes": "Attributs",
+      "Features": "Caractéristiques",
+      "Pools": "Réserves",
+      "Items": "Objets",
+      "Effects": "Effets",
+      "Experience": "Expérience",
+      "Range": "Portée",
+      "Damage": "Dégats",
+      "Type": "Type",
+      "Impact": "Impact",
+      "Symptoms": "Symptômes",
+      "Virulence": "Virulence",
+      "Healing": "Guérison",
+      "Injuries": "Blessures",
+      "Protections": "Protections",
+      "Weapons": "Armes",
+      "Capacities": "Capacités",
+      "Inventory": "Inventaire",
+      "Biography": "Biographie",
+      "Learning": "Apprentissage",
+      "Level": "Niveau",
+      "Reliability": "Fiabilité",
+      "Mobility": "Mobilité",
+      "Special": "Spécial",
+      "Quantity": "Quantité",
+      "SpecialFeatures": "Carac- spéciales",
+      "Index": "Indice"
+    },
+    "Feature": {
+      "His": { "long": "Elément d'historique", "abbr": "his" },
+      "Ada": { "long": "Adaptation", "abbr": "ada" },
+      "Mut": { "long": "Mutation", "abbr": "mut" }
+    },
+    "Identity": {
+      "Tot": { "long": "Totem", "abbr": "tot" },
+      "Arc": { "long": "Archetype", "abbr": "arc" },
+      "Rep": { "long": "Réputation", "abbr": "rep" },
+      "Age": { "long": "Age", "abbr": "age" }
+    },
+    "Age": {
+      "Non": { "long": "-", "abbr": "-"},
+      "New": { "long": "Nouveau-né", "abbr": "new"},
+      "Adu": { "long": "Adulte", "abbr": "adu"},
+      "Old": { "long": "Ancien", "abbr": "old"}
+    },
+    "Totem": {
+      "Hum": { "long": "Humain", "abbr": "hum"},
+      "Ada": { "long": "Adapté", "abbr": "ada"},
+      "Pre": { "long": "Prédateur", "abbr": "pre"},
+      "Sca": { "long": "Charognard", "abbr": "sca"},
+      "Sym": { "long": "Symbiote", "abbr": "sym"},
+      "Par": { "long": "Parasite", "abbr": "par"},
+      "Bui": { "long": "Constructeur", "abbr": "bui"},
+      "Hor": { "long": "Horde", "abbr": "hor"},
+      "Hiv": { "long": "Ruche", "abbr": "hiv"},
+      "Lon": { "long": "Loup Solitaire", "abbr": "lon"}
+    },
+    "Reputation": {
+      "Clo": { "long": "Proches", "abbr": "clo"},
+      "Com": { "long": "Communauté", "abbr": "com"},
+      "Vil": { "long": "Village", "abbr": "vil"},
+      "Cit": { "long": "Ville", "abbr": "cit"},
+      "Big": { "long": "Grande ville", "abbr": "big"},
+      "Dep": { "long": "Département", "abbr": "dep"},
+      "Reg": { "long": "Région", "abbr": "reg"},
+      "Cou": { "long": "Pays", "abbr": "cou"},
+      "Con": { "long": "Continent", "abbr": "con"},
+      "Wor": { "long": "Monde", "abbr": "wor"}
+    },
+    "Pools": {
+      "Str": { "long": "Effort", "abbr": "str" },
+      "Ner": { "long": "Sang-froid", "abbr": "ner" }
+    },
+    "Wound": {
+      "Count": "Nombre",
+      "Limit": "Limite",
+      "Threshold": "Seuil",
+      "Lig": { "long": "Légère", "abbr": "lig" },
+      "Ser": { "long": "Grave", "abbr": "ser" },
+      "Let": { "long": "Létale", "abbr": "let" }
+    },
+    "Injury": {
+      "Scr": { "long": "Griffures", "abbr": "Scr" },
+      "Bru": { "long": "Bleus", "abbr": "Bru" },
+      "Ope": { "long": "Plaie ouverte", "abbr": "Ope" },
+      "Cut": { "long": "Coupure", "abbr": "Cut" },
+      "Bit": { "long": "Morsure", "abbr": "Bit" },
+      "Bur": { "long": "Brûlure", "abbr": "Bur" },
+      "Sun": { "long": "Coup de soleil", "abbr": "Sun" },
+      "Fro": { "long": "Engelure", "abbr": "Fro" },
+      "Con": { "long": "Commotion", "abbr": "Con" }
+    },
+    "NpcTrait": {
+      "Vig": { "long": "Vigueur", "abbr": "vig" },
+      "Dam": { "long": "Dégats", "abbr": "dam" },
+      "Att": { "long": "Attaque", "abbr": "att" }
+    },
+    "Trait": {
+      "Vig": { "long": "Vigueur", "abbr": "vig" },
+      "Hea": { "long": "Santé", "abbr": "hea" },
+      "Acc": { "long": "Précision", "abbr": "acc" },
+      "Ref": { "long": "Réflexes", "abbr": "ref" },
+      "Per": { "long": "Perception", "abbr": "per" },
+      "Kno": { "long": "Savoir", "abbr": "kno" },
+      "Wil": { "long": "Volonté", "abbr": "wil" },
+      "Emp": { "long": "Empathie", "abbr": "emp" }
+    },
+    "Domain": {
+      "Man": { "long": "L'Homme", "abbr": "man" },
+      "Bea": { "long": "La Bête", "abbr": "bea" },
+      "Mac": { "long": "La Machine", "abbr": "mac" },
+      "Wea": { "long": "L'Arme", "abbr": "wea" },
+      "Sur": { "long": "La Survie", "abbr": "sur" },
+      "Ear": { "long": "La Terre", "abbr": "ear"}
+    },
+    "Skill": {
+      "Art": { "long": "Arts", "abbr": "art" },
+      "Civ": { "long": "Civilisation", "abbr": "civ" },
+      "Psy": { "long": "Psychologie", "abbr": "psy" },
+      "Rum": { "long": "Rumeurs", "abbr": "rum" },
+      "Hel": { "long": "Soin", "abbr": "hel" },
+      "Ani": { "long": "Animalisme", "abbr": "ani" },
+      "Dis": { "long": "Dissection", "abbr": "dis" },
+      "Anl": { "long": "Faune", "abbr": "anl" },
+      "Rep": { "long": "Répulsion", "abbr": "rep" },
+      "Tra": { "long": "Traces", "abbr": "tra" },
+      "Cra": { "long": "Artisanat", "abbr": "cra" },
+      "Jur": { "long": "Bricolage", "abbr": "jur" },
+      "Mec": { "long": "Mécanique", "abbr": "mec" },
+      "Ste": { "long": "Pilotage", "abbr": "ste" },
+      "Tec": { "long": "Technologie", "abbr": "tec" },
+      "Fir": { "long": "Armes à feu", "abbr": "fir" },
+      "Ran": { "long": "Armes de tir", "abbr": "ran" },
+      "Smi": { "long": "Armurerie", "abbr": "smi" },
+      "Thr": { "long": "Lancer", "abbr": "thr" },
+      "Clo": { "long": "Mêlée", "abbr": "clo" },
+      "Nou": { "long": "Alimentation", "abbr": "nou" },
+      "Ath": { "long": "Athlétisme", "abbr": "ath" },
+      "Bra": { "long": "Corps à corps", "abbr": "bra" },
+      "Sne": { "long": "Discrétion", "abbr": "sne" },
+      "Vig": { "long": "Vigilance", "abbr": "vig" },
+      "Env": { "long": "Environnement", "abbr": "env" },
+      "Pla": { "long": "Flore", "abbr": "pla" },
+      "Roa": { "long": "Route", "abbr": "roa" },
+      "Tox": { "long": "Toxiques", "abbr": "tox" },
+      "Rui": { "long": "Vestiges", "abbr": "rui" }
+    },
+    "SkillLevel": {
+      "Non": { "long": "Aucun", "abbr": "non" },
+      "Beg": { "long": "Débutant", "abbr": "beg" },
+      "Adv": { "long": "Confirmé", "abbr": "adv" },
+      "Exp": { "long": "Expert", "abbr": "exp" },
+      "Mas": { "long": "Maître", "abbr": "mas" }
+    },
+    "Damage": {
+      "Sho": { "long": "Choc", "abbr": "(C)" },
+      "Bla": { "long": "Lame", "abbr": "(L)" },
+      "Fir": { "long": "Feu", "abbr": "(F)" },
+      "Bul": { "long": "Balle", "abbr": "(B)" }
+    },
+    "SheetLabels": {
+      "Actor": "Vermin2047 Feuille d'Acteur",
+      "Item": "Vermin2047 Feuille d'Objet"
+    },
+    "Effect": {
+      "Source": "Source",
+      "Toggle": "Basculer l'effet",
+      "TabDuration": "Durée",
+      "Temporary": "Effets temporaires",
+      "Permanent": "Effets permanents",
+      "Inactive": "Effets inactifs"
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "character": "Personnage",
+      "npc": "PNJ",
+      "vehicule": "Véhicule",
+      "community": "Communauté",
+      "party": "Groupe"
+    },
+    "Item": {
+      "item": "Objet",
+      "speciality": "Spécialité",
+      "weapon": "Arme",
+      "protection": "Protection",
+      "capacity": "Capacité",
+      "injury": "Blessure",
+      "disease": "Maladie",
+      "special": "Carac- Spéciale"
+    }
+  }
+}

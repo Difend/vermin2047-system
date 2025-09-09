@@ -16,14 +16,14 @@
   "media": [
     {
       "type": "setup",
-      "url": "systems/vermin-2047/assets/anvil-impact.png",
-      "thumbnail": "systems/vermin-2047/assets/anvil-impact.png"
+      "url": "systems/vermin-2047/assets/horde.png",
+      "thumbnail": "systems/vermin-2047/assets/horde.png"
     }
   ],
-  "version": "0.0.1",
+  "version": "0.1.0",
   "compatibility": {
     "minimum": 11,
-    "verified": "11.315"
+    "verified": "13.347"
   },
   "esmodules": ["module/vermin-2047.mjs"],
   "styles": ["css/vermin-2047.css"],
@@ -32,6 +32,11 @@
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
     }
   ],
   "packs": [],
@@ -40,8 +45,8 @@
   "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
   "download": "This must link to a .zip file of the current version",
   "background": "systems/vermin-2047/assets/horde.png",
-  "gridDistance": 5,
-  "gridUnits": "ft",
+  "grid.distance": 2,
+  "grid.units": "m",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power"
 }
