@@ -8,32 +8,30 @@
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns.  --}}
-      <div class="resources grid grid-3col">
+      <div class="resources">
 
         {{!-- "flex-group-center" is also defined in the _grid.scss file
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
-        <div class="resource flex-group-center flexcol grid-span-2">
-          {{> "systems/vermin-2047/templates/actor/parts/actor-wounds.hbs"}}
-        </div>
         <div class="resource flex-group-center flexcol">
-          <label class="resource-label">{{localize @root.config.labels.traits}}</label>
           <div class="flexrow">
-            <label for="system.dam" class="resource-label">{{localize @root.config.npcTraits.dam}}</label>
-            <div class="resource-content flexrow flex-center flex-between">
-              <input type="text" name="system.dam" value="{{system.dam}}" data-dtype="Number"/>
+            <div class="flexcol">
+              <label for="system.dam" class="resource-label">{{localize @root.config.npcTraits.dam}}</label>
+              <div class="resource-content flexrow flex-center flex-between">
+                <input type="text" name="system.dam" value="{{system.dam}}" data-dtype="Number"/>
+              </div>
             </div>
-          </div>
-          <div class="flexrow">
-            <label for="system.vig" class="resource-label rollable" data-roll="(@vig)d10" data-label="{{localize @root.config.npcTraits.vig}}">{{localize @root.config.npcTraits.vig}}</label>
-            <div class="resource-content flexrow flex-center flex-between">
-              <input type="text" name="system.vig" value="{{system.vig}}" data-dtype="Number"/>
+            <div class="flexcol">
+              <label for="system.vig" class="resource-label rollable" data-roll="(@vig)d10" data-label="{{localize @root.config.npcTraits.vig}}">{{localize @root.config.npcTraits.vig}}</label>
+              <div class="resource-content flexrow flex-center flex-between">
+                <input type="text" name="system.vig" value="{{system.vig}}" data-dtype="Number"/>
+              </div>
             </div>
-          </div>
-          <div class="flexrow">
-            <label for="system.att" class="resource-label rollable" data-roll="(@att)d10" data-label="{{localize @root.config.npcTraits.att}}">{{localize @root.config.npcTraits.att}}</label>
-            <div class="resource-content flexrow flex-center flex-between">
-              <input type="text" name="system.att" value="{{system.att}}" data-dtype="Number"/>
+            <div class="flexcol">
+              <label for="system.att" class="resource-label rollable" data-roll="(@att)d10" data-label="{{localize @root.config.npcTraits.att}}">{{localize @root.config.npcTraits.att}}</label>
+              <div class="resource-content flexrow flex-center flex-between">
+                <input type="text" name="system.att" value="{{system.att}}" data-dtype="Number"/>
+              </div>
             </div>
           </div>
         </div>
@@ -46,6 +44,7 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="pools">Pools</a>
     <a class="item" data-tab="items">Items</a>
     <a class="item" data-tab="effects">Effects</a>
   </nav>
@@ -59,9 +58,16 @@
       {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
     </div>
 
+    {{!-- Pools Tab --}}
+    <div class="tab pools" data-group="primary" data-tab="pools">
+      {{> "systems/vermin-2047/templates/actor/parts/actor-wounds.hbs"}}
+    </div>
+
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/vermin-2047/templates/actor/parts/actor-items.hbs"}}
+      {{> "systems/vermin-2047/templates/actor/parts/actor-items.hbs"}}
+      {{> "systems/vermin-2047/templates/actor/parts/actor-weapons.hbs"}}
+      {{> "systems/vermin-2047/templates/actor/parts/actor-protections.hbs"}}
     </div>
 
     {{!-- Active Effects Tab --}}

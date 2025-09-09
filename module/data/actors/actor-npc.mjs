@@ -15,7 +15,23 @@ export default class Vermin2047NPC extends Vermin2047ActorBase {
   }
 
   prepareDerivedData() {
-    this.xp = this.cr * this.cr * 100;
+    this.arrays = {
+      wounds: {
+        light: [],
+        serious: [],
+        lethal: []
+      }
+    };
+
+    for(let i = 1; i <= this.wounds.light.limit; i++) {
+      this.arrays.wounds.light[i] = (i <= this.wounds.light.value)
+    }
+    for(let i = 1; i <= this.wounds.serious.limit; i++) {
+      this.arrays.wounds.serious[i] = (i <= this.wounds.serious.value)
+    }
+    for(let i = 1; i <= this.wounds.lethal.limit; i++) {
+      this.arrays.wounds.lethal[i] = (i <= this.wounds.lethal.value)
+    }
   }
 
   getRollData() {
