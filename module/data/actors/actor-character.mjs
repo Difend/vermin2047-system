@@ -61,15 +61,17 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
   }
 
   prepareDerivedData() {
-    console.log(this.wounds)
-    this.arrays = {};
-    this.arrays.wounds = {}
-    this.arrays.wounds.light = [];
-    this.arrays.wounds.serious = [];
-    this.arrays.wounds.lethal = [];
-    this.arrays.pools = {};
-    this.arrays.pools.nerve = [];
-    this.arrays.pools.strain = [];
+    this.arrays = {
+      wounds: {
+        light: [],
+        serious: [],
+        lethal: []
+      },
+      pools: {
+        nerve: [],
+        strain: []
+      }
+    };
 
     for(const key in this.traits) {
       // Handle ability label localization.
