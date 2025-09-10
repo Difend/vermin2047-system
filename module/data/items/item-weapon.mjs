@@ -25,8 +25,8 @@ export default class Vermin2047Weapon extends Vermin2047ItemBase {
     // - medium: included between max_short and max_medium
     // - long: included between max_medium and infinite
     schema.range = new fields.SchemaField({
-      max_short: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0, max: 200 }),
-      max_medium: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0, max: 200 }),
+      max_short: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0 }),
+      max_medium: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0 }),
     });
 
     // Defines rarity for the loot actions value (criteria)
