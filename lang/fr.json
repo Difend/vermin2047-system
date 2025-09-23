@@ -43,7 +43,9 @@
     "Feature": {
       "His": { "long": "Elément d'historique", "abbr": "his" },
       "Ada": { "long": "Adaptation", "abbr": "ada" },
-      "Mut": { "long": "Mutation", "abbr": "mut" }
+      "Mut": { "long": "Mutation", "abbr": "mut" },
+      "Tra": { "long": "Traumatisme", "abbr": "tra"},
+      "Sha": { "long": "Rite chamanique", "abbr": "sha"}
     },
     "Identity": {
       "Tot": { "long": "Totem", "abbr": "tot" },

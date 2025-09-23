@@ -66,6 +66,8 @@ VERMIN_2047.featureType = {
   his: 'VERMIN_2047.Feature.His.long',
   ada: 'VERMIN_2047.Feature.Ada.long',
   mut: 'VERMIN_2047.Feature.Mut.long',
+  tra: 'VERMIN_2047.Feature.Tra.long',
+  sha: 'VERMIN_2047.Feature.Sha.long'
 }
 
 VERMIN_2047.identityValues = {
