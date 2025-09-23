@@ -64,7 +64,7 @@
       "Sca": { "long": "Charognard", "abbr": "sca"},
       "Sym": { "long": "Symbiote", "abbr": "sym"},
       "Par": { "long": "Parasite", "abbr": "par"},
-      "Bui": { "long": "Constructeur", "abbr": "bui"},
+      "Bui": { "long": "Bâtisseur", "abbr": "bui"},
       "Hor": { "long": "Horde", "abbr": "hor"},
       "Hiv": { "long": "Ruche", "abbr": "hiv"},
       "Lon": { "long": "Loup Solitaire", "abbr": "lon"}
