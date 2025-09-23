@@ -283,7 +283,8 @@ VERMIN_2047.ranks = [
   "-",
   "(I)",
   "(II)",
-  "(III)"
+  "(III)",
+  "(IV)"
 ]
 
 VERMIN_2047.skillValues = {
