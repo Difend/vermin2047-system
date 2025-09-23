@@ -67,7 +67,7 @@
       "Bui": { "long": "Bâtisseur", "abbr": "bui"},
       "Hor": { "long": "Horde", "abbr": "hor"},
       "Hiv": { "long": "Ruche", "abbr": "hiv"},
-      "Lon": { "long": "Loup Solitaire", "abbr": "lon"}
+      "Lon": { "long": "Solitaire", "abbr": "lon"}
     },
     "Reputation": {
       "Clo": { "long": "Proches", "abbr": "clo"},
