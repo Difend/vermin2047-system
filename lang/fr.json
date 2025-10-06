@@ -123,7 +123,7 @@
     },
     "Domain": {
       "Man": { "long": "L'Homme", "abbr": "man" },
-      "Bea": { "long": "La Bête", "abbr": "bea" },
+      "Bea": { "long": "L'Animal", "abbr": "bea" },
       "Mac": { "long": "La Machine", "abbr": "mac" },
       "Wea": { "long": "L'Arme", "abbr": "wea" },
       "Sur": { "long": "La Survie", "abbr": "sur" },
