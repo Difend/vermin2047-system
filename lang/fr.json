@@ -55,7 +55,7 @@
     },
     "Age": {
       "Non": { "long": "-", "abbr": "-"},
-      "New": { "long": "Nouveau-né", "abbr": "new"},
+      "New": { "long": "Jeune", "abbr": "new"},
       "Adu": { "long": "Adulte", "abbr": "adu"},
       "Old": { "long": "Ancien", "abbr": "old"}
     },
