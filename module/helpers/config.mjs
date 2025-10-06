@@ -45,67 +45,67 @@ VERMIN_2047.labels = {
 };
 
 VERMIN_2047.wounds = {
-  lig: 'VERMIN_2047.Wound.Lig.long',
-  ser: 'VERMIN_2047.Wound.Ser.long',
-  let: 'VERMIN_2047.Wound.Let.long',
+  lig: 'VERMIN_2047.Wound.Lig',
+  ser: 'VERMIN_2047.Wound.Ser',
+  let: 'VERMIN_2047.Wound.Let',
 }
 
 VERMIN_2047.npcTraits = {
-  dam: 'VERMIN_2047.NpcTrait.Dam.long',
-  att: 'VERMIN_2047.NpcTrait.Att.long',
-  vig: 'VERMIN_2047.NpcTrait.Vig.long'
+  dam: 'VERMIN_2047.NpcTrait.Dam',
+  att: 'VERMIN_2047.NpcTrait.Att',
+  vig: 'VERMIN_2047.NpcTrait.Vig'
 };
 
 VERMIN_2047.identity = {
-  tot: 'VERMIN_2047.Identity.Tot.long',
-  rep: 'VERMIN_2047.Identity.Rep.long',
-  age: 'VERMIN_2047.Identity.Age.long'
+  tot: 'VERMIN_2047.Identity.Tot',
+  rep: 'VERMIN_2047.Identity.Rep',
+  age: 'VERMIN_2047.Identity.Age'
 };
 
 VERMIN_2047.featureType = {
-  his: 'VERMIN_2047.Feature.His.long',
-  ada: 'VERMIN_2047.Feature.Ada.long',
-  mut: 'VERMIN_2047.Feature.Mut.long',
-  tra: 'VERMIN_2047.Feature.Tra.long',
-  sha: 'VERMIN_2047.Feature.Sha.long'
+  his: 'VERMIN_2047.Feature.His',
+  ada: 'VERMIN_2047.Feature.Ada',
+  mut: 'VERMIN_2047.Feature.Mut',
+  tra: 'VERMIN_2047.Feature.Tra',
+  sha: 'VERMIN_2047.Feature.Sha'
 }
 
 VERMIN_2047.identityValues = {
   tot: {
-    hum: 'VERMIN_2047.Totem.Hum.long',
-    ada: 'VERMIN_2047.Totem.Ada.long',
-    pre: 'VERMIN_2047.Totem.Pre.long',
-    sca: 'VERMIN_2047.Totem.Sca.long',
-    sym: 'VERMIN_2047.Totem.Sym.long',
-    par: 'VERMIN_2047.Totem.Par.long',
-    bui: 'VERMIN_2047.Totem.Bui.long',
-    hor: 'VERMIN_2047.Totem.Hor.long',
-    hiv: 'VERMIN_2047.Totem.Hiv.long',
-    lon: 'VERMIN_2047.Totem.Lon.long',
+    hum: 'VERMIN_2047.Totem.Hum',
+    ada: 'VERMIN_2047.Totem.Ada',
+    pre: 'VERMIN_2047.Totem.Pre',
+    sca: 'VERMIN_2047.Totem.Sca',
+    sym: 'VERMIN_2047.Totem.Sym',
+    par: 'VERMIN_2047.Totem.Par',
+    bui: 'VERMIN_2047.Totem.Bui',
+    hor: 'VERMIN_2047.Totem.Hor',
+    hiv: 'VERMIN_2047.Totem.Hiv',
+    lon: 'VERMIN_2047.Totem.Lon',
   },
   rep: {
-    clo: 'VERMIN_2047.Reputation.Clo.long',
-    com: 'VERMIN_2047.Reputation.Com.long',
-    vil: 'VERMIN_2047.Reputation.Vil.long',
-    cit: 'VERMIN_2047.Reputation.Cit.long',
-    big: 'VERMIN_2047.Reputation.Big.long',
-    dep: 'VERMIN_2047.Reputation.Dep.long',
-    reg: 'VERMIN_2047.Reputation.Reg.long',
-    cou: 'VERMIN_2047.Reputation.Cou.long',
-    con: 'VERMIN_2047.Reputation.Con.long',
-    wor: 'VERMIN_2047.Reputation.Wor.long'
+    clo: 'VERMIN_2047.Reputation.Clo',
+    com: 'VERMIN_2047.Reputation.Com',
+    vil: 'VERMIN_2047.Reputation.Vil',
+    cit: 'VERMIN_2047.Reputation.Cit',
+    big: 'VERMIN_2047.Reputation.Big',
+    dep: 'VERMIN_2047.Reputation.Dep',
+    reg: 'VERMIN_2047.Reputation.Reg',
+    cou: 'VERMIN_2047.Reputation.Cou',
+    con: 'VERMIN_2047.Reputation.Con',
+    wor: 'VERMIN_2047.Reputation.Wor'
   },
   age: {
-    non: 'VERMIN_2047.Age.Non.long',
-    new: 'VERMIN_2047.Age.New.long',
-    adu: 'VERMIN_2047.Age.Adu.long',
-    old: 'VERMIN_2047.Age.Old.long'
+    non: 'VERMIN_2047.Age.Non',
+    new: 'VERMIN_2047.Age.New',
+    adu: 'VERMIN_2047.Age.Adu',
+    old: 'VERMIN_2047.Age.Old'
   }
 }
 
 VERMIN_2047.pools = {
-  str: 'VERMIN_2047.Pools.Str.long',
-  ner: 'VERMIN_2047.Pools.Ner.long'
+  str: 'VERMIN_2047.Pools.Str',
+  ner: 'VERMIN_2047.Pools.Ner'
 };
 
 /**
@@ -113,120 +113,109 @@ VERMIN_2047.pools = {
  * @type {Object}
  */
 VERMIN_2047.traits = {
-  vig: 'VERMIN_2047.Trait.Vig.long',
-  acc: 'VERMIN_2047.Trait.Acc.long',
-  kno: 'VERMIN_2047.Trait.Kno.long',
-  wil: 'VERMIN_2047.Trait.Wil.long',
-  hea: 'VERMIN_2047.Trait.Hea.long',
-  ref: 'VERMIN_2047.Trait.Ref.long',
-  per: 'VERMIN_2047.Trait.Per.long',
-  emp: 'VERMIN_2047.Trait.Emp.long',
-};
-
-VERMIN_2047.traitAbbreviations = {
-  vig: 'VERMIN_2047.Trait.Vig.abbr',
-  acc: 'VERMIN_2047.Trait.Acc.abbr',
-  kno: 'VERMIN_2047.Trait.Kno.abbr',
-  wil: 'VERMIN_2047.Trait.Wil.abbr',
-  hea: 'VERMIN_2047.Trait.Hea.abbr',
-  ref: 'VERMIN_2047.Trait.Ref.abbr',
-  per: 'VERMIN_2047.Trait.Per.abbr',
-  emp: 'VERMIN_2047.Trait.Emp.abbr',
+  vig: 'VERMIN_2047.Trait.Vig',
+  acc: 'VERMIN_2047.Trait.Acc',
+  kno: 'VERMIN_2047.Trait.Kno',
+  wil: 'VERMIN_2047.Trait.Wil',
+  hea: 'VERMIN_2047.Trait.Hea',
+  ref: 'VERMIN_2047.Trait.Ref',
+  per: 'VERMIN_2047.Trait.Per',
+  emp: 'VERMIN_2047.Trait.Emp',
 };
 
 VERMIN_2047.domains = {
-  man: 'VERMIN_2047.Domain.Man.long',
-  mac: 'VERMIN_2047.Domain.Mac.long',
-  wea: 'VERMIN_2047.Domain.Wea.long',
-  bea: 'VERMIN_2047.Domain.Bea.long',
-  sur: 'VERMIN_2047.Domain.Sur.long',
-  ear: 'VERMIN_2047.Domain.Ear.long',
+  man: 'VERMIN_2047.Domain.Man',
+  mac: 'VERMIN_2047.Domain.Mac',
+  wea: 'VERMIN_2047.Domain.Wea',
+  bea: 'VERMIN_2047.Domain.Bea',
+  sur: 'VERMIN_2047.Domain.Sur',
+  ear: 'VERMIN_2047.Domain.Ear',
 };
 
 VERMIN_2047.domainSkills = {
   man: {
-    art: 'VERMIN_2047.Skill.Art.long',
-    civ: 'VERMIN_2047.Skill.Civ.long',
-    psy: 'VERMIN_2047.Skill.Psy.long',
-    rum: 'VERMIN_2047.Skill.Rum.long',
-    hel: 'VERMIN_2047.Skill.Hel.long'
+    art: 'VERMIN_2047.Skill.Art',
+    civ: 'VERMIN_2047.Skill.Civ',
+    psy: 'VERMIN_2047.Skill.Psy',
+    rum: 'VERMIN_2047.Skill.Rum',
+    hel: 'VERMIN_2047.Skill.Hel'
   },
   mac: {
-    cra: 'VERMIN_2047.Skill.Cra.long',
-    jur: 'VERMIN_2047.Skill.Jur.long',
-    mec: 'VERMIN_2047.Skill.Mec.long',
-    ste: 'VERMIN_2047.Skill.Ste.long',
-    tec: 'VERMIN_2047.Skill.Tec.long'
+    cra: 'VERMIN_2047.Skill.Cra',
+    jur: 'VERMIN_2047.Skill.Jur',
+    mec: 'VERMIN_2047.Skill.Mec',
+    ste: 'VERMIN_2047.Skill.Ste',
+    tec: 'VERMIN_2047.Skill.Tec'
   },
     wea: {
-    fir: 'VERMIN_2047.Skill.Fir.long',
-    ran: 'VERMIN_2047.Skill.Ran.long',
-    smi: 'VERMIN_2047.Skill.Smi.long',
-    thr: 'VERMIN_2047.Skill.Thr.long',
-    clo: 'VERMIN_2047.Skill.Clo.long'
+    fir: 'VERMIN_2047.Skill.Fir',
+    ran: 'VERMIN_2047.Skill.Ran',
+    smi: 'VERMIN_2047.Skill.Smi',
+    thr: 'VERMIN_2047.Skill.Thr',
+    clo: 'VERMIN_2047.Skill.Clo'
   },
   bea: {
-    ani: 'VERMIN_2047.Skill.Ani.long',
-    dis: 'VERMIN_2047.Skill.Dis.long',
-    anl: 'VERMIN_2047.Skill.Anl.long',
-    rep: 'VERMIN_2047.Skill.Rep.long',
-    tra: 'VERMIN_2047.Skill.Tra.long'
+    ani: 'VERMIN_2047.Skill.Ani',
+    dis: 'VERMIN_2047.Skill.Dis',
+    anl: 'VERMIN_2047.Skill.Anl',
+    rep: 'VERMIN_2047.Skill.Rep',
+    tra: 'VERMIN_2047.Skill.Tra'
   },
   sur: {
-    nou: 'VERMIN_2047.Skill.Nou.long',
-    ath: 'VERMIN_2047.Skill.Ath.long',
-    bra: 'VERMIN_2047.Skill.Bra.long',
-    sne: 'VERMIN_2047.Skill.Sne.long',
-    vig: 'VERMIN_2047.Skill.Vig.long'
+    nou: 'VERMIN_2047.Skill.Nou',
+    ath: 'VERMIN_2047.Skill.Ath',
+    bra: 'VERMIN_2047.Skill.Bra',
+    sne: 'VERMIN_2047.Skill.Sne',
+    vig: 'VERMIN_2047.Skill.Vig'
   },
   ear: {
-    env: 'VERMIN_2047.Skill.Env.long',
-    pla: 'VERMIN_2047.Skill.Pla.long',
-    roa: 'VERMIN_2047.Skill.Roa.long',
-    tox: 'VERMIN_2047.Skill.Tox.long',
-    rui: 'VERMIN_2047.Skill.Rui.long'
+    env: 'VERMIN_2047.Skill.Env',
+    pla: 'VERMIN_2047.Skill.Pla',
+    roa: 'VERMIN_2047.Skill.Roa',
+    tox: 'VERMIN_2047.Skill.Tox',
+    rui: 'VERMIN_2047.Skill.Rui'
   }
 };
 
 VERMIN_2047.skills = {
-  art: 'VERMIN_2047.Skill.Art.long',
-  civ: 'VERMIN_2047.Skill.Civ.long',
-  psy: 'VERMIN_2047.Skill.Psy.long',
-  rum: 'VERMIN_2047.Skill.Rum.long',
-  hel: 'VERMIN_2047.Skill.Hel.long',
-  ani: 'VERMIN_2047.Skill.Ani.long',
-  dis: 'VERMIN_2047.Skill.Dis.long',
-  anl: 'VERMIN_2047.Skill.Anl.long',
-  rep: 'VERMIN_2047.Skill.Rep.long',
-  tra: 'VERMIN_2047.Skill.Tra.long',
-  cra: 'VERMIN_2047.Skill.Cra.long',
-  jur: 'VERMIN_2047.Skill.Jur.long',
-  mec: 'VERMIN_2047.Skill.Mec.long',
-  ste: 'VERMIN_2047.Skill.Ste.long',
-  tec: 'VERMIN_2047.Skill.Tec.long',
-  fir: 'VERMIN_2047.Skill.Fir.long',
-  ran: 'VERMIN_2047.Skill.Ran.long',
-  smi: 'VERMIN_2047.Skill.Smi.long',
-  thr: 'VERMIN_2047.Skill.Thr.long',
-  clo: 'VERMIN_2047.Skill.Clo.long',
-  nou: 'VERMIN_2047.Skill.Nou.long',
-  ath: 'VERMIN_2047.Skill.Ath.long',
-  bra: 'VERMIN_2047.Skill.Bra.long',
-  sne: 'VERMIN_2047.Skill.Sne.long',
-  vig: 'VERMIN_2047.Skill.Vig.long',
-  env: 'VERMIN_2047.Skill.Env.long',
-  pla: 'VERMIN_2047.Skill.Pla.long',
-  roa: 'VERMIN_2047.Skill.Roa.long',
-  tox: 'VERMIN_2047.Skill.Tox.long',
-  rui: 'VERMIN_2047.Skill.Rui.long'
+  art: 'VERMIN_2047.Skill.Art',
+  civ: 'VERMIN_2047.Skill.Civ',
+  psy: 'VERMIN_2047.Skill.Psy',
+  rum: 'VERMIN_2047.Skill.Rum',
+  hel: 'VERMIN_2047.Skill.Hel',
+  ani: 'VERMIN_2047.Skill.Ani',
+  dis: 'VERMIN_2047.Skill.Dis',
+  anl: 'VERMIN_2047.Skill.Anl',
+  rep: 'VERMIN_2047.Skill.Rep',
+  tra: 'VERMIN_2047.Skill.Tra',
+  cra: 'VERMIN_2047.Skill.Cra',
+  jur: 'VERMIN_2047.Skill.Jur',
+  mec: 'VERMIN_2047.Skill.Mec',
+  ste: 'VERMIN_2047.Skill.Ste',
+  tec: 'VERMIN_2047.Skill.Tec',
+  fir: 'VERMIN_2047.Skill.Fir',
+  ran: 'VERMIN_2047.Skill.Ran',
+  smi: 'VERMIN_2047.Skill.Smi',
+  thr: 'VERMIN_2047.Skill.Thr',
+  clo: 'VERMIN_2047.Skill.Clo',
+  nou: 'VERMIN_2047.Skill.Nou',
+  ath: 'VERMIN_2047.Skill.Ath',
+  bra: 'VERMIN_2047.Skill.Bra',
+  sne: 'VERMIN_2047.Skill.Sne',
+  vig: 'VERMIN_2047.Skill.Vig',
+  env: 'VERMIN_2047.Skill.Env',
+  pla: 'VERMIN_2047.Skill.Pla',
+  roa: 'VERMIN_2047.Skill.Roa',
+  tox: 'VERMIN_2047.Skill.Tox',
+  rui: 'VERMIN_2047.Skill.Rui'
 };
 
 VERMIN_2047.fightSkills = {
-  fir: 'VERMIN_2047.Skill.Fir.long',
-  ran: 'VERMIN_2047.Skill.Ran.long',
-  thr: 'VERMIN_2047.Skill.Thr.long',
-  clo: 'VERMIN_2047.Skill.Clo.long',
-  bra: 'VERMIN_2047.Skill.Bra.long',
+  fir: 'VERMIN_2047.Skill.Fir',
+  ran: 'VERMIN_2047.Skill.Ran',
+  thr: 'VERMIN_2047.Skill.Thr',
+  clo: 'VERMIN_2047.Skill.Clo',
+  bra: 'VERMIN_2047.Skill.Bra',
 };
 
 VERMIN_2047.damageTypes = {
@@ -237,15 +226,15 @@ VERMIN_2047.damageTypes = {
 };
 
 VERMIN_2047.injuryTypes = {
-  scr: 'VERMIN_2047.Injury.Scr.long',
-  bru: 'VERMIN_2047.Injury.Bru.long',
-  ope: 'VERMIN_2047.Injury.Ope.long',
-  cut: 'VERMIN_2047.Injury.Cut.long',
-  bit: 'VERMIN_2047.Injury.Bit.long',
-  bur: 'VERMIN_2047.Injury.Bur.long',
-  sun: 'VERMIN_2047.Injury.Sun.long',
-  fro: 'VERMIN_2047.Injury.Fro.long',
-  con: 'VERMIN_2047.Injury.Con.long',
+  scr: 'VERMIN_2047.Injury.Scr',
+  bru: 'VERMIN_2047.Injury.Bru',
+  ope: 'VERMIN_2047.Injury.Ope',
+  cut: 'VERMIN_2047.Injury.Cut',
+  bit: 'VERMIN_2047.Injury.Bit',
+  bur: 'VERMIN_2047.Injury.Bur',
+  sun: 'VERMIN_2047.Injury.Sun',
+  fro: 'VERMIN_2047.Injury.Fro',
+  con: 'VERMIN_2047.Injury.Con',
 }
 
 VERMIN_2047.skillRarity = {
@@ -290,11 +279,11 @@ VERMIN_2047.ranks = [
 ]
 
 VERMIN_2047.skillValues = {
-  non: 'VERMIN_2047.SkillLevel.Non.long',
-  beg: 'VERMIN_2047.SkillLevel.Beg.long',
-  adv: 'VERMIN_2047.SkillLevel.Adv.long',
-  exp: 'VERMIN_2047.SkillLevel.Exp.long',
-  mas: 'VERMIN_2047.SkillLevel.Mas.long'
+  non: 'VERMIN_2047.SkillLevel.Non',
+  beg: 'VERMIN_2047.SkillLevel.Beg',
+  adv: 'VERMIN_2047.SkillLevel.Adv',
+  exp: 'VERMIN_2047.SkillLevel.Exp',
+  mas: 'VERMIN_2047.SkillLevel.Mas'
 }
 
 /*
@@ -334,8 +323,8 @@ VERMIN_2047.skillDomains = {
 
 /*
 VERMIN_2047.manSkills = {
-  art: 'VERMIN_2047.Skill.Art.long',
-  civ: 'VERMIN_2047.Skill.Civ.long'
+  art: 'VERMIN_2047.Skill.Art',
+  civ: 'VERMIN_2047.Skill.Civ'
 };
 */
 /**
