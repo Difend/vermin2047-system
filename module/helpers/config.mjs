@@ -136,9 +136,9 @@ VERMIN_2047.traitAbbreviations = {
 
 VERMIN_2047.domains = {
   man: 'VERMIN_2047.Domain.Man.long',
-  bea: 'VERMIN_2047.Domain.Bea.long',
   mac: 'VERMIN_2047.Domain.Mac.long',
   wea: 'VERMIN_2047.Domain.Wea.long',
+  bea: 'VERMIN_2047.Domain.Bea.long',
   sur: 'VERMIN_2047.Domain.Sur.long',
   ear: 'VERMIN_2047.Domain.Ear.long',
 };
@@ -151,13 +151,6 @@ VERMIN_2047.domainSkills = {
     rum: 'VERMIN_2047.Skill.Rum.long',
     hel: 'VERMIN_2047.Skill.Hel.long'
   },
-  bea: {
-    ani: 'VERMIN_2047.Skill.Ani.long',
-    dis: 'VERMIN_2047.Skill.Dis.long',
-    anl: 'VERMIN_2047.Skill.Anl.long',
-    rep: 'VERMIN_2047.Skill.Rep.long',
-    tra: 'VERMIN_2047.Skill.Tra.long'
-  },
   mac: {
     cra: 'VERMIN_2047.Skill.Cra.long',
     jur: 'VERMIN_2047.Skill.Jur.long',
@@ -165,12 +158,19 @@ VERMIN_2047.domainSkills = {
     ste: 'VERMIN_2047.Skill.Ste.long',
     tec: 'VERMIN_2047.Skill.Tec.long'
   },
-  wea: {
+    wea: {
     fir: 'VERMIN_2047.Skill.Fir.long',
     ran: 'VERMIN_2047.Skill.Ran.long',
     smi: 'VERMIN_2047.Skill.Smi.long',
     thr: 'VERMIN_2047.Skill.Thr.long',
     clo: 'VERMIN_2047.Skill.Clo.long'
+  },
+  bea: {
+    ani: 'VERMIN_2047.Skill.Ani.long',
+    dis: 'VERMIN_2047.Skill.Dis.long',
+    anl: 'VERMIN_2047.Skill.Anl.long',
+    rep: 'VERMIN_2047.Skill.Rep.long',
+    tra: 'VERMIN_2047.Skill.Tra.long'
   },
   sur: {
     nou: 'VERMIN_2047.Skill.Nou.long',
