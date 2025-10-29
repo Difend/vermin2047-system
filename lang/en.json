@@ -4,6 +4,7 @@
       "Name": "Name",
       "Identity": "Identity",
       "Traits": "Traits",
+      "Trait": "Trait",
       "Skills": "Skills",
       "Skill": "Skill",
       "Wounds": "Wounds",
@@ -38,7 +39,10 @@
       "Special": "Special",
       "Quantity": "Quantity",
       "SpecialFeatures": "Special Features",
-      "Index": "Index"
+      "Index": "Index",
+      "Bonus": "Bonus",
+      "SkillCheck": "Skill check",
+      "Roll": "Roll"
     },
     "Feature": {
       "His": "Historical element",

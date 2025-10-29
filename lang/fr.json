@@ -4,6 +4,7 @@
       "Name": "Nom",
       "Identity": "Identité",
       "Traits": "Traits",
+      "Trait": "Trait",
       "Skills": "Compétences",
       "Skill": "Compétence",
       "Wounds": "Blessures",
@@ -38,7 +39,10 @@
       "Special": "Spécial",
       "Quantity": "Quantité",
       "SpecialFeatures": "Carac- spéciales",
-      "Index": "Indice"
+      "Index": "Indice",
+      "Bonus": "Bonus",
+      "SkillCheck": "Jet de compétence",
+      "Roll": "Lancer"
     },
     "Feature": {
       "His": "Elément d'historique",

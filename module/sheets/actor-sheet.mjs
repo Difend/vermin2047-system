@@ -230,6 +230,9 @@ export class Vermin2047ActorSheet extends ActorSheet {
     // Rollable abilities.
     html.on('click', '.rollable', this._onRoll.bind(this));
 
+    // Rollable abilities.
+    html.on('click', '.skill-check', this._onSkillCheck.bind(this));
+
     // Drag events for macros.
     if (this.actor.isOwner) {
       let handler = (ev) => this._onDragStart(ev);
@@ -291,6 +294,93 @@ export class Vermin2047ActorSheet extends ActorSheet {
     if (dataset.roll) {
       let label = dataset.label ? `${dataset.label}` : '';
       let roll = new Roll(dataset.roll, this.actor.getRollData());
+      roll.toMessage({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: label,
+        rollMode: game.settings.get('core', 'rollMode'),
+      });
+      return roll;
+    }
+  }
+
+    /**
+   * Handle clickable rolls for skills.
+   * @param {Event} event   The originating click event
+   * @private
+   */
+  async _onSkillCheck(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+
+    console.log(dataset)
+
+    const fields = foundry.applications.fields;
+
+    const textInput = fields.createNumberInput({
+      name: 'bonus',
+      value: 0
+    });
+
+    const textGroup = fields.createFormGroup({
+      input: textInput,
+      label: game.i18n.localize('VERMIN_2047.Labels.Bonus')
+    });
+
+    const selectInput = fields.createSelectInput({
+      options: [
+        {
+          label: game.i18n.localize('VERMIN_2047.Trait.Vig'),
+          value: '(@vig.mod)d10'
+        }, {
+          label: game.i18n.localize('VERMIN_2047.Trait.Acc'),
+          value: '(@acc.mod)d10'
+        }, {
+          label: game.i18n.localize('VERMIN_2047.Trait.Kno'),
+          value: '(@kno.mod)d10'
+        }, {
+          label: game.i18n.localize('VERMIN_2047.Trait.Wil'),
+          value: '(@wil.mod)d10'
+        }, {
+          label: game.i18n.localize('VERMIN_2047.Trait.Hea'),
+          value: '(@hea.mod)d10'
+        }, {
+          label: game.i18n.localize('VERMIN_2047.Trait.Ref'),
+          value: '(@ref.mod)d10'
+        }, {
+          label: game.i18n.localize('VERMIN_2047.Trait.Per'),
+          value: '(@per.mod)d10'
+        }, {
+          label: game.i18n.localize('VERMIN_2047.Trait.Emp'),
+          value: '(@emp.mod)d10'
+        }
+      ],
+      name: 'trait'
+    })
+
+    const selectGroup = fields.createFormGroup({
+      input: selectInput,
+      label: game.i18n.localize('VERMIN_2047.Labels.Trait')
+    })
+
+    const content = `${selectGroup.outerHTML} ${textGroup.outerHTML}`
+
+    const results =  await foundry.applications.api.DialogV2.input({
+      window: { title: game.i18n.localize('VERMIN_2047.Labels.SkillCheck')+': '+dataset.label },
+      content: content,
+      ok: {
+        label: game.i18n.localize('VERMIN_2047.Labels.Roll'),
+        icon: "fa-solid fa-dice",
+      }
+    })
+
+    if(results.bonus==null) results.bonus=0;
+    const test = results.trait+'+'+dataset.roll+'+'+results.bonus+'d10'
+
+    // Handle rolls that supply the formula directly.
+    if (dataset.roll) {
+      let label = dataset.label ? `${dataset.label}` : '';
+      let roll = new Roll(test, this.actor.getRollData());
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: label,
