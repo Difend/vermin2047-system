@@ -42,7 +42,12 @@
       "Index": "Index",
       "Bonus": "Bonus",
       "SkillCheck": "Skill check",
-      "Roll": "Roll"
+      "Roll": "Roll",
+      "Success": "Success",
+      "Failure": "Failure",
+      "None": "Aucun",
+      "Difficulty": "Difficulty",
+      "Handicap": "Handicap"
     },
     "Feature": {
       "His": "Historical element",
@@ -189,6 +194,13 @@
       "Temporary": "Temporary Effects",
       "Permanent": "Permanent Effects",
       "Inactive": "Inactive Effects"
+    },
+    "RollDifficulty": {
+      "VeryEasy": "Very easy (3)",
+      "Easy": "Easy (5)",
+      "Medium": "Medium (7)",
+      "Hard": "Hard (9)",
+      "VeryHard": "Very hard (10)"
     }
   },
 

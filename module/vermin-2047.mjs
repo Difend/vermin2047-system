@@ -9,6 +9,7 @@ import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
 import { VERMIN_2047 } from './helpers/config.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
+import SkillRoll from './rolls/skill.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -25,6 +26,7 @@ Hooks.once('init', function () {
 
   // Add custom constants for configuration.
   CONFIG.VERMIN_2047 = VERMIN_2047;
+  CONFIG.Dice.rolls = [SkillRoll]
 
   /**
    * Set an initiative formula for the system
@@ -97,6 +99,19 @@ Handlebars.registerHelper('toLowerCase', function (str) {
 Hooks.once('ready', function () {
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
   Hooks.on('hotbarDrop', (bar, data, slot) => createItemMacro(data, slot));
+});
+
+
+Hooks.on('renderChatMessage', (message, html)=>{
+  if (!message.rolls[0]) return;
+  let $diceTooltip = $('<div class="dice-tooltip" style="display:block">');
+  let $tooltipPart = $('<section class="tooltip-part">');
+  let $dice = $('<div class="dice">');
+  let $ol = $('<ol class="dice-rolls" style="display:flex; justify-content: center; flex-wrap: wrap;">');
+  html.find("li.roll.die").each(function(){ $ol.append($(this).clone()); });
+  html.find(".dice-tooltip").remove();$dice.append($ol); $tooltipPart.append($dice);
+  $diceTooltip.append($tooltipPart)
+  html.find("div.dice-formula").after($diceTooltip);
 });
 
 /* -------------------------------------------- */

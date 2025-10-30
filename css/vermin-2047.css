@@ -398,3 +398,15 @@
 .vermin-2047 .effects .item .effect-controls {
   border: none;
 }
+
+.failure {
+  color: #aa0200;
+  background-color: #f7dfde;
+  filter: sepia(0.5) hue-rotate(-60deg);
+}
+
+.success {
+  color: #18520b;
+  background-color: #e4f8df;
+  filter: sepia(0.5) hue-rotate(60deg);
+}

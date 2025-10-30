@@ -42,7 +42,12 @@
       "Index": "Indice",
       "Bonus": "Bonus",
       "SkillCheck": "Jet de compétence",
-      "Roll": "Lancer"
+      "Roll": "Lancer",
+      "Success": "Succès",
+      "Failure": "Echec",
+      "None": "Aucun",
+      "Difficulty": "Difficulté",
+      "Handicap": "Handicap"
     },
     "Feature": {
       "His": "Elément d'historique",
@@ -189,6 +194,13 @@
       "Temporary": "Effets temporaires",
       "Permanent": "Effets permanents",
       "Inactive": "Effets inactifs"
+    },
+    "RollDifficulty": {
+      "VeryEasy": "Très facile (3)",
+      "Easy": "Facile (5)",
+      "Medium": "Moyen (7)",
+      "Hard": "Difficile (9)",
+      "VeryHard": "Très difficile (10)"
     }
   },
 
