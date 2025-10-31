@@ -2,8 +2,7 @@ import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
 } from '../helpers/effects.mjs';
-import VerminRoll from '../rolls/base.mjs';
-import SkillRoll from '../rolls/skill.mjs';
+import FeatureRoll from '../rolls/feature.mjs';
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -233,7 +232,10 @@ export class Vermin2047ActorSheet extends ActorSheet {
     html.on('click', '.rollable', this._onRoll.bind(this));
 
     // Rollable abilities.
-    html.on('click', '.skill-check', this._onSkillCheck.bind(this));
+    html.on('click', '.skill-check', this._onFeatureCheck.bind(this));
+
+    // Rollable abilities.
+    html.on('click', '.trait-check', this._onFeatureCheck.bind(this));
 
     // Drag events for macros.
     if (this.actor.isOwner) {
@@ -305,61 +307,15 @@ export class Vermin2047ActorSheet extends ActorSheet {
     }
   }
 
-    /**
-   * Handle clickable rolls for skills.
-   * @param {Event} event   The originating click event
-   * @private
-   */
-  async _onSkillCheck(event) {
-    event.preventDefault();
-    const element = event.currentTarget;
-    const dataset = element.dataset;
-    console.log(dataset.roll)
-
+  getFeatureModalContent(displayTraits) {
     const fields = foundry.applications.fields;
 
-    const textInput = fields.createNumberInput({
-      name: 'bonus',
-      value: 0
-    });
-
-    const textGroup = fields.createFormGroup({
-      input: textInput,
+    const bonusGroup = fields.createFormGroup({
+      input: fields.createNumberInput({ name: 'bonus', value: 0}),
       label: game.i18n.localize('VERMIN_2047.Labels.Bonus')
     });
 
-    const selectInput = fields.createSelectInput({
-      options: [
-        {
-          label: game.i18n.localize('VERMIN_2047.Trait.Vig'),
-          value: '@vig.mod'
-        }, {
-          label: game.i18n.localize('VERMIN_2047.Trait.Acc'),
-          value: '@acc.mod'
-        }, {
-          label: game.i18n.localize('VERMIN_2047.Trait.Kno'),
-          value: '@kno.mod'
-        }, {
-          label: game.i18n.localize('VERMIN_2047.Trait.Wil'),
-          value: '@wil.mod'
-        }, {
-          label: game.i18n.localize('VERMIN_2047.Trait.Hea'),
-          value: '@hea.mod'
-        }, {
-          label: game.i18n.localize('VERMIN_2047.Trait.Ref'),
-          value: '@ref.mod'
-        }, {
-          label: game.i18n.localize('VERMIN_2047.Trait.Per'),
-          value: '@per.mod'
-        }, {
-          label: game.i18n.localize('VERMIN_2047.Trait.Emp'),
-          value: '@emp.mod'
-        }
-      ],
-      name: 'trait'
-    })
-
-    const selectInput2 = fields.createSelectInput({
+    const difficultyInput = fields.createSelectInput({
       options: [
         {
           label: game.i18n.localize('VERMIN_2047.RollDifficulty.Medium'),
@@ -381,7 +337,12 @@ export class Vermin2047ActorSheet extends ActorSheet {
       name: 'difficulty'
     })
 
-    const selectInput3 = fields.createSelectInput({
+    const difficultyGroup = fields.createFormGroup({
+      input: difficultyInput,
+      label: game.i18n.localize('VERMIN_2047.Labels.Difficulty')
+    });
+
+    const handicapInput = fields.createSelectInput({
       options: [
         {
           label: game.i18n.localize('VERMIN_2047.Labels.None'),
@@ -400,27 +361,68 @@ export class Vermin2047ActorSheet extends ActorSheet {
       name: 'handicap'
     })
 
-    const selectGroup = fields.createFormGroup({
-      input: selectInput,
-      label: game.i18n.localize('VERMIN_2047.Labels.Trait')
-    })
-
-
-    const selectGroup2 = fields.createFormGroup({
-      input: selectInput2,
-      label: game.i18n.localize('VERMIN_2047.Labels.Difficulty')
-    });
-
-    const selectGroup3 = fields.createFormGroup({
-      input: selectInput3,
+    const handicapGroup = fields.createFormGroup({
+      input: handicapInput,
       label: game.i18n.localize('VERMIN_2047.Labels.Handicap')
     });
 
-    const content = `${selectGroup.outerHTML} ${textGroup.outerHTML} ${selectGroup2.outerHTML} ${selectGroup3.outerHTML}`
+    if(displayTraits) {
+      const traitInput = fields.createSelectInput({
+        options: [
+          {
+            label: game.i18n.localize('VERMIN_2047.Trait.Vig'),
+            value: '@vig.mod'
+          }, {
+            label: game.i18n.localize('VERMIN_2047.Trait.Acc'),
+            value: '@acc.mod'
+          }, {
+            label: game.i18n.localize('VERMIN_2047.Trait.Kno'),
+            value: '@kno.mod'
+          }, {
+            label: game.i18n.localize('VERMIN_2047.Trait.Wil'),
+            value: '@wil.mod'
+          }, {
+            label: game.i18n.localize('VERMIN_2047.Trait.Hea'),
+            value: '@hea.mod'
+          }, {
+            label: game.i18n.localize('VERMIN_2047.Trait.Ref'),
+            value: '@ref.mod'
+          }, {
+            label: game.i18n.localize('VERMIN_2047.Trait.Per'),
+            value: '@per.mod'
+          }, {
+            label: game.i18n.localize('VERMIN_2047.Trait.Emp'),
+            value: '@emp.mod'
+          }
+        ],
+        name: 'trait'
+      })
+
+      const traitGroup = fields.createFormGroup({
+        input: traitInput,
+        label: game.i18n.localize('VERMIN_2047.Labels.Trait')
+      })
+
+      return `${traitGroup.outerHTML} ${bonusGroup.outerHTML} ${difficultyGroup.outerHTML} ${handicapGroup.outerHTML}`
+    }
+
+    return `${bonusGroup.outerHTML} ${difficultyGroup.outerHTML} ${handicapGroup.outerHTML}`
+  }
+
+  /**
+   * Handle clickable rolls for features (traits and skills).
+   * @param {Event} event   The originating click event
+   * @private
+   */
+  async _onFeatureCheck(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+    event.handleObj.selector == '.skill-check'
 
     const results =  await foundry.applications.api.DialogV2.input({
-      window: { title: game.i18n.localize('VERMIN_2047.Labels.SkillCheck')+': '+dataset.label },
-      content: content,
+      window: { title: (event.handleObj.selector == '.skill-check') ? game.i18n.localize('VERMIN_2047.Labels.SkillCheck')+': '+dataset.label : game.i18n.localize('VERMIN_2047.Labels.TraitCheck')+': '+dataset.label},
+      content: this.getFeatureModalContent((event.handleObj.selector == '.skill-check')),
       ok: {
         label: game.i18n.localize('VERMIN_2047.Labels.Roll'),
         icon: "fa-solid fa-dice",
@@ -429,13 +431,12 @@ export class Vermin2047ActorSheet extends ActorSheet {
 
     if(results) {
       if(results.bonus==null) results.bonus=0;
-      const test = `(${results.trait}+${dataset.roll}.mod+${results.bonus})d10x${dataset.roll}.rer<${results.difficulty}`
       const options = {difficulty: results.difficulty, handicap: results.handicap}
 
       // Handle rolls that supply the formula directly.
       if (dataset.roll) {
-        let label = dataset.label ? game.i18n.localize('VERMIN_2047.Labels.SkillCheck')+`: ${dataset.label}` : game.i18n.localize('VERMIN_2047.Labels.SkillCheck');
-        let roll = new SkillRoll(test, this.actor.getRollData(), options);
+        let label = (event.handleObj.selector == '.skill-check') ? game.i18n.localize('VERMIN_2047.Labels.SkillCheck')+`: ${dataset.label}` : game.i18n.localize('VERMIN_2047.Labels.TraitCheck')+`: ${dataset.label}`;
+        let roll = new FeatureRoll((event.handleObj.selector == '.skill-check') ? `(${results.trait}+${dataset.roll}.mod+${results.bonus})d10x${dataset.roll}.rer<${results.difficulty}` : `(${dataset.roll}.mod+${results.bonus})d10`, this.actor.getRollData(), options);
         roll.toMessage({
           speaker: ChatMessage.getSpeaker({ actor: this.actor }),
           flavor: label,
@@ -444,6 +445,5 @@ export class Vermin2047ActorSheet extends ActorSheet {
         return roll;
       }
     }
-
   }
 }

@@ -21,6 +21,6 @@ export const preloadHandlebarsTemplates = async function () {
     // Item partials
     'systems/vermin-2047/templates/item/parts/item-effects.hbs',
     // Roll partials
-    'systems/vermin-2047/templates/rolls/skills.hbs',
+    'systems/vermin-2047/templates/rolls/features.hbs',
   ]);
 };

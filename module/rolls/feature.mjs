@@ -1,8 +1,8 @@
 import VerminRoll from "./base.mjs";
 
-export default class SkillRoll extends VerminRoll {
+export default class FeatureRoll extends VerminRoll {
   /**
-   * @param {string} [formula="1d10"]        Default skill check is a flat 1d10.
+   * @param {string} [formula="1d10"]        Default feature check is a flat 1d10.
    * @param {Record<string, any>} [data]     Roll data.
    * @param {{ flavor?: string, successThreshold?: number, handicap?: number }} [options]  Options to modify roll display.
    */
@@ -12,7 +12,7 @@ export default class SkillRoll extends VerminRoll {
 
   /* -------------------------------------------------- */
 
-  static CHAT_TEMPLATE = "systems/vermin-2047/templates/rolls/skills.hbs"
+  static CHAT_TEMPLATE = "systems/vermin-2047/templates/rolls/features.hbs"
 
   /* -------------------------------------------------- */
 
@@ -37,7 +37,7 @@ export default class SkillRoll extends VerminRoll {
   /* -------------------------------------------------- */
 
   /**
-   * Did the skill check succeed
+   * Did the feature check succeed
    * @returns {boolean}
    */
   get comparison() {
@@ -76,7 +76,7 @@ export default class SkillRoll extends VerminRoll {
 
   /** @inheritdoc */
   async toMessage(messageData, messageOptions) {
-    // Skill checks always create Skill check messages
+    // Features checks always create Feature check messages
     // `system.effect` is expected to be passed; if not it will throw in construction
     //messageData.type = "test";
     return super.toMessage(messageData, messageOptions);

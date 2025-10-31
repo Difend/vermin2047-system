@@ -9,7 +9,7 @@ import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
 import { VERMIN_2047 } from './helpers/config.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
-import SkillRoll from './rolls/skill.mjs';
+import FeatureRoll from './rolls/feature.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -26,7 +26,7 @@ Hooks.once('init', function () {
 
   // Add custom constants for configuration.
   CONFIG.VERMIN_2047 = VERMIN_2047;
-  CONFIG.Dice.rolls = [SkillRoll]
+  CONFIG.Dice.rolls = [FeatureRoll]
 
   /**
    * Set an initiative formula for the system
