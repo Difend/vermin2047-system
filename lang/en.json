@@ -16,6 +16,7 @@
       "Attributes": "Attributes",
       "Features": "Features",
       "Pools": "Pools",
+      "Pool": "Pool",
       "Items": "Items",
       "Effects": "Effects",
       "Experience": "Experience",
@@ -48,7 +49,10 @@
       "Failure": "Failure",
       "None": "Aucun",
       "Difficulty": "Difficulty",
-      "Handicap": "Handicap"
+      "Handicap": "Handicap",
+      "Moral": "Moral",
+      "Deadline": "Deadline",
+      "Objectives": "Objectives"
     },
     "Feature": {
       "His": "Historical element",
@@ -56,6 +60,18 @@
       "Mut": "Mutation",
       "Tra": "Trauma",
       "Sha": "Shamanic rite"
+    },
+    "Objective": {
+      "Maj": "Major",
+      "Min": "Minor",
+      "Opt": "Optional"
+    },
+    "Deadline": {
+      "Non": "None",
+      "Day": "Few days",
+      "Wek": "A week",
+      "Mon": "A month",
+      "Yea": "A year"
     },
     "Identity": {
       "Tot": "Totem",
@@ -92,6 +108,12 @@
       "Cou": "Country",
       "Con": "Continent",
       "Wor": "World"
+    },
+    "Moral":  {
+      "Hig": "High (+1D)",
+      "Reg": "Regular",
+      "Low": "Low (-1D)",
+      "Cri": "In crisis (-1D and no group capacity)"
     },
     "Pools": {
       "Str": "Strain",

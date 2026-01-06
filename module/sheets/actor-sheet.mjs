@@ -57,8 +57,8 @@ export class Vermin2047ActorSheet extends ActorSheet {
       this._prepareCharacterData(context);
     }
 
-    // Prepare NPC data and items.
-    if (actorData.type == 'npc') {
+    // Prepare NPC, party and community data and items.
+    if (actorData.type == 'npc' || actorData.type == 'party' || actorData.type == 'community') {
       this._prepareItems(context);
     }
 
@@ -111,6 +111,7 @@ export class Vermin2047ActorSheet extends ActorSheet {
     const weapons = [];
     const protections = [];
     const specialities = [];
+    const objectives = [];
     
 
     // Iterate through items, allocating to containers
@@ -140,6 +141,9 @@ export class Vermin2047ActorSheet extends ActorSheet {
         case 'speciality':
           specialities.push(i);
           break;
+        case 'objective':
+          objectives.push(i);
+          break;
         default:
           gear.push(i);
       }
@@ -152,6 +156,7 @@ export class Vermin2047ActorSheet extends ActorSheet {
     context.weapons = weapons;
     context.protections = protections;
     context.specialities = specialities;
+    context.objectives = objectives;
   }
 
   /* -------------------------------------------- */

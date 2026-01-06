@@ -59,7 +59,8 @@ Hooks.once('init', function () {
     protection: models.Vermin2047Protection,
     special: models.Vermin2047Special,
     injury: models.Vermin2047Injury,
-    disease: models.Vermin2047Disease
+    disease: models.Vermin2047Disease,
+    objective: models.Vermin2047Objective
   }
 
   // Active Effects are never copied to the Actor,

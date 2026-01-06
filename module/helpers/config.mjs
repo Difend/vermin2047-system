@@ -14,6 +14,7 @@ VERMIN_2047.labels = {
   attributes: 'VERMIN_2047.Labels.Attributes',
   features: 'VERMIN_2047.Labels.Features',
   pools: 'VERMIN_2047.Labels.Pools',
+  pool: 'VERMIN_2047.Labels.Pool',
   items: 'VERMIN_2047.Labels.Items',
   effects: 'VERMIN_2047.Labels.Effects',
   experience: 'VERMIN_2047.Labels.Experience',
@@ -42,6 +43,9 @@ VERMIN_2047.labels = {
   quantity: 'VERMIN_2047.Labels.Quantity',
   specialFeatures: 'VERMIN_2047.Labels.SpecialFeatures',
   index: 'VERMIN_2047.Labels.Index',
+  moral: 'VERMIN_2047.Labels.Moral',
+  deadline: 'VERMIN_2047.Labels.Deadline',
+  objectives: 'VERMIN_2047.Labels.Objectives'
 };
 
 VERMIN_2047.wounds = {
@@ -68,6 +72,27 @@ VERMIN_2047.featureType = {
   mut: 'VERMIN_2047.Feature.Mut',
   tra: 'VERMIN_2047.Feature.Tra',
   sha: 'VERMIN_2047.Feature.Sha'
+}
+
+VERMIN_2047.objectiveType = {
+  maj: 'VERMIN_2047.Objective.Maj',
+  min: 'VERMIN_2047.Objective.Min',
+  opt: 'VERMIN_2047.Objective.Opt'
+}
+
+VERMIN_2047.deadline = {
+  non: 'VERMIN_2047.Deadline.Non',
+  day: 'VERMIN_2047.Deadline.Day',
+  wek: 'VERMIN_2047.Deadline.Wek',
+  mon: 'VERMIN_2047.Deadline.Mon',
+  yea: 'VERMIN_2047.Deadline.Yea',
+}
+
+VERMIN_2047.moral = {
+  hig: 'VERMIN_2047.Moral.Hig',
+  reg: 'VERMIN_2047.Moral.Reg',
+  low: 'VERMIN_2047.Moral.Low',
+  cri: 'VERMIN_2047.Moral.Cri',
 }
 
 VERMIN_2047.identityValues = {

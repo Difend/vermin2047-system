@@ -16,6 +16,7 @@
       "Attributes": "Attributs",
       "Features": "Caractéristiques",
       "Pools": "Réserves",
+      "Pool": "Réserve",
       "Items": "Objets",
       "Effects": "Effets",
       "Experience": "Expérience",
@@ -48,7 +49,10 @@
       "Failure": "Echec",
       "None": "Aucun",
       "Difficulty": "Difficulté",
-      "Handicap": "Handicap"
+      "Handicap": "Handicap",
+      "Moral": "Moral",
+      "Deadline": "Date limite",
+      "Objectives": "Objectifs"
     },
     "Feature": {
       "His": "Elément d'historique",
@@ -56,6 +60,18 @@
       "Mut": "Mutation",
       "Tra": "Traumatisme",
       "Sha": "Rite chamanique"
+    },
+    "Objective": {
+      "Maj": "Majeur",
+      "Min": "Mineur",
+      "Opt": "Optionnel"
+    },
+    "Deadline": {
+      "Non": "Aucune",
+      "Day": "Quelques jours",
+      "Wek": "Une semaine",
+      "Mon": "Un mois",
+      "Yea": "Une année"
     },
     "Identity": {
       "Tot": "Totem",
@@ -92,6 +108,12 @@
       "Cou": "Pays",
       "Con": "Continent",
       "Wor": "Monde"
+    },
+    "Moral":  {
+      "Hig": "Haut (+1D)",
+      "Reg": "Moyen",
+      "Low": "Bas (-1D)",
+      "Cri": "En crise (-1D et pas de capacité de groupe)"
     },
     "Pools": {
       "Str": "Effort",
