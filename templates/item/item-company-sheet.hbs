@@ -1,0 +1,67 @@
+<form class='{{cssClass}}' autocomplete='off'>
+  <header class='sheet-header'>
+    <img
+      class='profile-img'
+      src='{{item.img}}'
+      data-edit='img'
+      title='{{item.name}}'
+    />
+    <div class='header-fields'>
+      <h1 class='charname'><input
+          name='name'
+          type='text'
+          value='{{item.name}}'
+          placeholder='Name'
+        /></h1>
+    </div>
+  </header>
+
+  {{! Sheet Tab Navigation }}
+  <nav class='sheet-tabs tabs' data-group='primary'>
+    <a class='item' data-tab='attributes'>{{localize @root.config.labels.attributes}}</a>
+  </nav>
+
+  {{! Sheet Body }}
+  <section class='sheet-body'>
+    {{! Attributes Tab }}
+    <div class='tab attributes' data-group='primary' data-tab='attributes'>
+      {{! As you add new fields, add them in here! }}
+      <div class="flexrow">
+        <div class='resource mb-5'>
+          <label class='resource-label'>{{localize @root.config.labels.workforce}}</label>
+          <input
+            type='text'
+            name='system.workforce'
+            value='{{system.workforce}}'
+            data-dtype='Number'
+            class="attribute"
+          />
+        </div>
+        <div class="resource mb-5 flexlarge">
+          <label for="system.speciality" class="resource-label">{{localize @root.config.labels.speciality}}</label>
+          <input
+            type='text'
+            name='system.speciality'
+            value='{{system.speciality}}'
+            data-dtype='String'
+            class="text"
+          />
+        </div>
+        <div class='resource mb-5'>
+          <label for="system.pool" class="resource-label">{{localize @root.config.labels.pool}}</label>
+          <input
+            type='text'
+            name='system.pool'
+            value='{{system.pool}}'
+            data-dtype='Number'
+            class="attribute"
+          />
+        </div>
+      </div>
+      <div class="resource mb-5">
+        <label for="system.description" class="resource-label flexlarge align-left" data-label="{{localize @root.config.labels.description}}">{{localize @root.config.labels.description}}</label>
+        <textarea name="system.description" rows="10">{{system.description}}</textarea>
+      </div>
+    </div>
+  </section>
+</form>
