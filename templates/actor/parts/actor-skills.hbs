@@ -7,10 +7,10 @@
         <input type="checkbox" name="system.domains.{{key}}.value" value="{{domain.value}}" {{checked domain.value}} data-dtype="Boolean"/>
         {{#each domain.skills as |skill key2|}}
         <div class="skill flexrow flex-group-left">
-        <label for="system.domains.{{key}}.skills.{{key2}}.value" class="resource-label skill-check flexlarge align-left" data-roll="@{{key}}.skills.{{key2}}" data-label="{{localize (lookup @root.config.skills key2)}}">{{localize (lookup @root.config.skills key2)}}</label>
-        <select name="system.domains.{{key}}.skills.{{key2}}.value" data-dtype="String">
-            {{selectOptions @root.config.skillValues selected=skill.value localize=true}}
-        </select>
+            <label for="system.domains.{{key}}.skills.{{key2}}.value" class="resource-label skill-check flexlarge align-left" data-roll="@{{key}}.skills.{{key2}}" data-label="{{localize (lookup @root.config.skills key2)}}">{{localize (lookup @root.config.skills key2)}}</label>
+            <select name="system.domains.{{key}}.skills.{{key2}}.value" data-dtype="String">
+                {{selectOptions @root.config.skillValues selected=skill.value localize=true}}
+            </select>
         </div>
         {{/each}}
     </div>
