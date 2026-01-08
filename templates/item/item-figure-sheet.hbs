@@ -1,0 +1,91 @@
+<form class='{{cssClass}}' autocomplete='off'>
+  <header class='sheet-header'>
+    <img
+      class='profile-img'
+      src='{{item.img}}'
+      data-edit='img'
+      title='{{item.name}}'
+    />
+    <div class='header-fields'>
+      <h1 class='charname'><input
+          name='name'
+          type='text'
+          value='{{item.name}}'
+          placeholder='Name'
+        /></h1>
+    </div>
+  </header>
+
+  {{! Sheet Tab Navigation }}
+  <nav class='sheet-tabs tabs' data-group='primary'>
+    <a class='item' data-tab='attributes'>{{localize @root.config.labels.attributes}}</a>
+  </nav>
+
+  {{! Sheet Body }}
+  <section class='sheet-body'>
+    {{! Attributes Tab }}
+    <div class='tab attributes' data-group='primary' data-tab='attributes'>
+      {{! As you add new fields, add them in here! }}
+      <div class="flexrow">
+        <div class="resource mb-5 flexlarge">
+          <label for="system.age" class="resource-label">{{localize @root.config.identity.age}}</label>
+          <input
+            type='text'
+            name='system.age'
+            value='{{system.age}}'
+            data-dtype='String'
+            class="text"
+          />
+        </div>
+        <div class="resource mb-5 flexlarge">
+          <label for="system.personnality" class="resource-label">{{localize @root.config.labels.personnality}}</label>
+          <input
+            type='text'
+            name='system.personnality'
+            value='{{system.personnality}}'
+            data-dtype='String'
+            class="text"
+          />
+        </div>
+        <div class="resource mb-5 flexlarge">
+          <label for="system.profile" class="resource-label">{{localize @root.config.labels.profile}}</label>
+          <input
+            type='text'
+            name='system.profile'
+            value='{{system.profile}}'
+            data-dtype='String'
+            class="text"
+          />
+        </div>
+        <div class="resource mb-5 flexlarge">
+          <label for="system.skill" class="resource-label">{{localize @root.config.labels.skill}}</label>
+          <select name="system.skill" data-dtype="String">
+              {{selectOptions @root.config.skills selected=system.skill localize=true}}
+          </select>
+        </div>
+        <div class="resource mb-5 flexlarge">
+          <label for="system.speciality" class="resource-label">{{localize @root.config.labels.speciality}}</label>
+          <input
+            type='text'
+            name='system.speciality'
+            value='{{system.speciality}}'
+            data-dtype='String'
+            class="text"
+          />
+        </div>
+      </div>
+      <div class="resource mb-5">
+        <label for="system.objective" class="resource-label flexlarge align-left" data-label="{{localize @root.config.labels.objective}}">{{localize @root.config.labels.objective}}</label>
+        <textarea name="system.objective" rows="2">{{system.objective}}</textarea>
+      </div>
+      <div class="resource mb-5">
+        <label for="system.threat" class="resource-label flexlarge align-left" data-label="{{localize @root.config.labels.threat}}">{{localize @root.config.labels.threat}}</label>
+        <textarea name="system.threat" rows="2">{{system.threat}}</textarea>
+      </div>
+      <div class="resource mb-5">
+        <label for="system.description" class="resource-label flexlarge align-left" data-label="{{localize @root.config.labels.description}}">{{localize @root.config.labels.description}}</label>
+        <textarea name="system.description" rows="10">{{system.description}}</textarea>
+      </div>
+    </div>
+  </section>
+</form>
