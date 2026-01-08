@@ -112,6 +112,8 @@ export class Vermin2047ActorSheet extends ActorSheet {
     const protections = [];
     const specialities = [];
     const objectives = [];
+    const companies = [];
+    const figures = [];
     
 
     // Iterate through items, allocating to containers
@@ -144,6 +146,12 @@ export class Vermin2047ActorSheet extends ActorSheet {
         case 'objective':
           objectives.push(i);
           break;
+        case 'company':
+          companies.push(i)
+          break;
+        case 'figure':
+          figures.push(i)
+          break;
         default:
           gear.push(i);
       }
@@ -157,6 +165,8 @@ export class Vermin2047ActorSheet extends ActorSheet {
     context.protections = protections;
     context.specialities = specialities;
     context.objectives = objectives;
+    context.companies = companies;
+    context.figures = figures;
   }
 
   /* -------------------------------------------- */
