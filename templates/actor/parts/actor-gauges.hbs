@@ -1,0 +1,16 @@
+{{!-- For the main features list, span the right two columns --}}
+<label class="resource-label flex-group-center flexcol grid-span-2">{{localize @root.config.labels.gauges}}</label>
+<section class="main domains grid-span-2">
+    {{#each system.domains as |domain key|}}
+    <div class="domain flex-group-center">
+        <label for="system.domains.{{key}}.value" class="resource-label flexlarge align-left" data-label="{{localize (lookup @root.config.communityDomains key)}}">{{localize (lookup @root.config.communityDomains key)}}</label>
+        {{#each domain.gauges as |gauge key2|}}
+        <div class="gauge flexrow flex-group-left">
+            <label for="system.domains.{{key}}.gauges.{{key2}}.value" class="resource-label skill-check flexlarge align-left" data-label="{{localize (lookup @root.config.gauges key2)}}">{{localize (lookup @root.config.gauges key2)}}</label>
+            <input type="text" name="system.domains.{{key}}.gauges.{{key2}}.value" value="{{gauge.value}}" data-dtype="String"/>
+            {{localize (lookup @root.config.gaugeStatus gauge.status)}}
+        </div>
+        {{/each}}
+    </div>
+    {{/each}}
+</section>

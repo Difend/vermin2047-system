@@ -1,0 +1,12 @@
+<div class="flexcol">
+    <div class="flexrow">
+        <label for="system.size.value" class="resource-label">{{localize @root.config.labels.size}}</label>
+        <input type="text" name="system.size.value" value="{{system.size.value}}" data-dtype="String"/>
+    </div>
+    <div class="flexrow">
+        <label for="system.globalStatus.value" class="resource-label">{{localize @root.config.labels.status}}</label>
+        <div class="ressource-label ml-5">
+            {{localize (lookup @root.config.gaugeStatus system.globalStatus.value)}}
+        </div>
+    </div>
+</div>
