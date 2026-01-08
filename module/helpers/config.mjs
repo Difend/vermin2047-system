@@ -1,5 +1,9 @@
 export const VERMIN_2047 = {};
 
+////////////////////////////////////////////////////////////////////////////
+//                           COMMON CONFIG                                //   
+////////////////////////////////////////////////////////////////////////////
+
 VERMIN_2047.labels = {
   name: 'VERMIN_2047.Labels.Name',
   traits: 'VERMIN_2047.Labels.Traits',
@@ -9,6 +13,7 @@ VERMIN_2047.labels = {
   wounds: 'VERMIN_2047.Labels.Wounds',
   archetype: 'VERMIN_2047.Labels.Archetype',
   specialities: 'VERMIN_2047.Labels.Specialities',
+  speciality: 'TYPES.Item.speciality',
   rarity: 'VERMIN_2047.Labels.Rarity',
   description: 'VERMIN_2047.Labels.Description',
   attributes: 'VERMIN_2047.Labels.Attributes',
@@ -45,26 +50,22 @@ VERMIN_2047.labels = {
   index: 'VERMIN_2047.Labels.Index',
   moral: 'VERMIN_2047.Labels.Moral',
   deadline: 'VERMIN_2047.Labels.Deadline',
-  objectives: 'VERMIN_2047.Labels.Objectives'
+  objectives: 'VERMIN_2047.Labels.Objectives',
+  size:'VERMIN_2047.Labels.Size',
+  status: 'VERMIN_2047.Labels.Status',
+  gauges: 'VERMIN_2047.Labels.Gauges',
+  workforce: 'VERMIN_2047.Labels.Workforce',
+  profile: 'VERMIN_2047.Labels.Profile',
+  personnality: 'VERMIN_2047.Labels.Personnality',
+  objective: 'VERMIN_2047.Labels.Objective',
+  threat: 'VERMIN_2047.Labels.Threat',
+  companies: 'VERMIN_2047.Labels.Companies',
+  figures: 'VERMIN_2047.Labels.Figures'
 };
 
-VERMIN_2047.wounds = {
-  lig: 'VERMIN_2047.Wound.Lig',
-  ser: 'VERMIN_2047.Wound.Ser',
-  let: 'VERMIN_2047.Wound.Let',
-}
-
-VERMIN_2047.npcTraits = {
-  dam: 'VERMIN_2047.NpcTrait.Dam',
-  att: 'VERMIN_2047.NpcTrait.Att',
-  vig: 'VERMIN_2047.NpcTrait.Vig'
-};
-
-VERMIN_2047.identity = {
-  tot: 'VERMIN_2047.Identity.Tot',
-  rep: 'VERMIN_2047.Identity.Rep',
-  age: 'VERMIN_2047.Identity.Age'
-};
+////////////////////////////////////////////////////////////////////////////
+//                       SPECIAL FEATURE CONFIG                           //
+////////////////////////////////////////////////////////////////////////////
 
 VERMIN_2047.featureType = {
   his: 'VERMIN_2047.Feature.His',
@@ -73,6 +74,10 @@ VERMIN_2047.featureType = {
   tra: 'VERMIN_2047.Feature.Tra',
   sha: 'VERMIN_2047.Feature.Sha'
 }
+
+////////////////////////////////////////////////////////////////////////////
+//                        OBJECTIVE CONFIG                                //
+////////////////////////////////////////////////////////////////////////////
 
 VERMIN_2047.objectiveType = {
   maj: 'VERMIN_2047.Objective.Maj',
@@ -88,12 +93,90 @@ VERMIN_2047.deadline = {
   yea: 'VERMIN_2047.Deadline.Yea',
 }
 
+////////////////////////////////////////////////////////////////////////////
+//                           PARTY CONFIG                                 //
+////////////////////////////////////////////////////////////////////////////
+
 VERMIN_2047.moral = {
   hig: 'VERMIN_2047.Moral.Hig',
   reg: 'VERMIN_2047.Moral.Reg',
   low: 'VERMIN_2047.Moral.Low',
   cri: 'VERMIN_2047.Moral.Cri',
 }
+
+////////////////////////////////////////////////////////////////////////////
+//                         COMMUNITY CONFIG                               //
+////////////////////////////////////////////////////////////////////////////
+
+VERMIN_2047.communityDomains = {
+  res: 'VERMIN_2047.CommunityDomain.Res',
+  sec: 'VERMIN_2047.CommunityDomain.Sec',
+  dyn: 'VERMIN_2047.CommunityDomain.Dyn',
+  rel: 'VERMIN_2047.CommunityDomain.Rel'
+};
+
+VERMIN_2047.gaugeStatus = {
+  opu: 'VERMIN_2047.GaugeStatus.Opu',
+  sta: 'VERMIN_2047.GaugeStatus.Sta',
+  low: 'VERMIN_2047.GaugeStatus.Low',
+  cri: 'VERMIN_2047.GaugeStatus.Cri',
+}
+
+VERMIN_2047.communityGauges = {
+  res: {
+    foo: 'VERMIN_2047.CommunityGauge.Foo',
+    sup: 'VERMIN_2047.CommunityGauge.Sup'
+  },
+  sec: {
+    def: 'VERMIN_2047.CommunityGauge.Def',
+    car: 'VERMIN_2047.CommunityGauge.Car'
+  },
+  dyn: {
+    coh: 'VERMIN_2047.CommunityGauge.Coh',
+    pro: 'VERMIN_2047.CommunityGauge.Pro'
+  },
+  rel: {
+    hum: 'VERMIN_2047.CommunityGauge.Hum',
+    eco: 'VERMIN_2047.CommunityGauge.Eco'
+  }
+};
+
+VERMIN_2047.gauges = {
+  foo: 'VERMIN_2047.CommunityGauge.Foo',
+  sup: 'VERMIN_2047.CommunityGauge.Sup',
+  def: 'VERMIN_2047.CommunityGauge.Def',
+  car: 'VERMIN_2047.CommunityGauge.Car',
+  coh: 'VERMIN_2047.CommunityGauge.Coh',
+  pro: 'VERMIN_2047.CommunityGauge.Pro',
+  hum: 'VERMIN_2047.CommunityGauge.Hum',
+  eco: 'VERMIN_2047.CommunityGauge.Eco'
+};
+
+////////////////////////////////////////////////////////////////////////////
+//                             NPC CONFIG                                 //
+////////////////////////////////////////////////////////////////////////////
+
+VERMIN_2047.npcTraits = {
+  dam: 'VERMIN_2047.NpcTrait.Dam',
+  att: 'VERMIN_2047.NpcTrait.Att',
+  vig: 'VERMIN_2047.NpcTrait.Vig'
+};
+
+////////////////////////////////////////////////////////////////////////////
+//                         CHARACTER CONFIG                               //
+////////////////////////////////////////////////////////////////////////////
+
+VERMIN_2047.wounds = {
+  lig: 'VERMIN_2047.Wound.Lig',
+  ser: 'VERMIN_2047.Wound.Ser',
+  let: 'VERMIN_2047.Wound.Let',
+}
+
+VERMIN_2047.identity = {
+  tot: 'VERMIN_2047.Identity.Tot',
+  rep: 'VERMIN_2047.Identity.Rep',
+  age: 'VERMIN_2047.Identity.Age'
+};
 
 VERMIN_2047.identityValues = {
   tot: {
@@ -310,53 +393,6 @@ VERMIN_2047.skillValues = {
   exp: 'VERMIN_2047.SkillLevel.Exp',
   mas: 'VERMIN_2047.SkillLevel.Mas'
 }
-
-/*
-VERMIN_2047.skillDomains = {
-  man: {
-    label: "VERMIN_2047.SkillDomainMan",
-    fullKey: "man",
-    skills: [VERMIN_2047.skills.art, VERMIN_2047.skills.civ, VERMIN_2047.skills.psy, VERMIN_2047.skills.rum, VERMIN_2047.skills.hel]
-  },
-  beast: {
-    label: "VERMIN_2047.SkillDomainBeast",
-    fullKey: "beast",
-    skills: [VERMIN_2047.skills.ani, VERMIN_2047.skills.dis, VERMIN_2047.skills.anl, VERMIN_2047.skills.rep, VERMIN_2047.skills.tra]
-  },
-  machine: {
-    label: "VERMIN_2047.SkillDomainMachine",
-    fullKey: "machine",
-    skills: [VERMIN_2047.skills.cra, VERMIN_2047.skills.jug, VERMIN_2047.skills.mec, VERMIN_2047.skills.ste, VERMIN_2047.skills.tec]
-  },
-  weapon: {
-    label: "VERMIN_2047.SkillDomainWeapon",
-    fullKey: "weapon",
-    skills: [VERMIN_2047.skills.fir, VERMIN_2047.skills.ran, VERMIN_2047.skills.smi, VERMIN_2047.skills.thr, VERMIN_2047.skills.clo]
-  },
-  survival: {
-    label: "VERMIN_2047.SkillDomainSurvival",
-    fullKey: "survival",
-    skills: [VERMIN_2047.skills.nou, VERMIN_2047.skills.ath, VERMIN_2047.skills.bra, VERMIN_2047.skills.sne, VERMIN_2047.skills.vig]
-  },
-  earth: {
-    label: "VERMIN_2047.SkillDomainEarth",
-    fullKey: "earth",
-    skills: [VERMIN_2047.skills.env, VERMIN_2047.skills.pla, VERMIN_2047.skills.roa, VERMIN_2047.skills.tox, VERMIN_2047.skills.rui]
-  }
-}
-  */
-
-/*
-VERMIN_2047.manSkills = {
-  art: 'VERMIN_2047.Skill.Art',
-  civ: 'VERMIN_2047.Skill.Civ'
-};
-*/
-/**
- * The set of trait Scores used within the system.
- * @enum {TraitConfiguration}
- */
-/*
 
 /**
  * Configure which trait as the base for rolls,

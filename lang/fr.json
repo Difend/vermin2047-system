@@ -52,7 +52,17 @@
       "Handicap": "Handicap",
       "Moral": "Moral",
       "Deadline": "Date limite",
-      "Objectives": "Objectifs"
+      "Objectives": "Objectifs",
+      "Size": "Taille",
+      "Status": "Etat",
+      "Gauges": "Jauges",
+      "Workforce": "Effectifs",
+      "Personnality": "Personnalité",
+      "Profile": "Profil",
+      "Objective": "Objectif",
+      "Threat": "Menace",
+      "Companies": "Compagnies",
+      "Figures": "Figures"
     },
     "Feature": {
       "His": "Elément d'historique",
@@ -224,6 +234,28 @@
       "Medium": "Moyen (7)",
       "Hard": "Difficile (9)",
       "VeryHard": "Très difficile (10)"
+    },
+    "CommunityDomain": {
+      "Res": "Ressources",
+      "Sec": "Securité",
+      "Dyn": "Dynamisme",
+      "Rel": "Rapports"
+    },
+    "CommunityGauge": {
+      "Foo": "Vivres",
+      "Sup": "Fournitures",
+      "Def": "Défenses",
+      "Car": "Soins",
+      "Coh": "Cohésion",
+      "Pro": "Productivité",
+      "Hum": "Humain",
+      "Eco": "Ecologie"
+    },
+    "GaugeStatus": {
+      "Opu": "Opulent",
+      "Sta": "Stable",
+      "Low": "Bas",
+      "Cri": "Crise"
     }
   },
 
@@ -243,7 +275,10 @@
       "capacity": "Capacité",
       "injury": "Blessure",
       "disease": "Maladie",
-      "special": "Carac- Spéciale"
+      "special": "Carac- Spéciale",
+      "objective": "Objectif",
+      "company": "Compagnie",
+      "figure": "Figure"
     }
   }
 }

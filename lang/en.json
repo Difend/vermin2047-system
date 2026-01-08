@@ -52,7 +52,17 @@
       "Handicap": "Handicap",
       "Moral": "Moral",
       "Deadline": "Deadline",
-      "Objectives": "Objectives"
+      "Objectives": "Objectives",
+      "Size": "Size",
+      "Status": "Status",
+      "Gauges": "Gauges",
+      "Workforce": "Workforce",
+      "Personnality": "Personnality",
+      "Profile": "Profile",
+      "Objective": "Objective",
+      "Threat": "Threat",
+      "Companies": "Companies",
+      "Figures": "Figures"
     },
     "Feature": {
       "His": "Historical element",
@@ -224,6 +234,28 @@
       "Medium": "Medium (7)",
       "Hard": "Hard (9)",
       "VeryHard": "Very hard (10)"
+    },
+    "CommunityDomain": {
+      "Res": "Resources",
+      "Sec": "Security",
+      "Dyn": "Dynamism",
+      "Rel": "Relationships"
+    },
+    "CommunityGauge": {
+      "Foo": "Food",
+      "Sup": "Supplies",
+      "Def": "Defenses",
+      "Car": "Care",
+      "Coh": "Cohesion",
+      "Pro": "Productivity",
+      "Hum": "Human",
+      "Eco": "Ecology"
+    },
+    "GaugeStatus": {
+      "Opu": "Opulent",
+      "Sta": "Stable",
+      "Low": "Low",
+      "Cri": "Crisis"
     }
   },
 
@@ -243,7 +275,10 @@
       "capacity": "Capacity",
       "injury": "Injury",
       "disease": "Disease",
-      "special": "Special Feature"
+      "special": "Special Feature",
+      "objective": "Objective",
+      "company": "Company",
+      "figure": "Figure"
     }
   }
 }
