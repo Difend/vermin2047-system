@@ -1,23 +1,5 @@
 <div class="flexcol">
     <div class="flexrow">
-        <label for="system.lvl.value" class="resource-label">{{localize @root.config.labels.level}}</label>
-        <input type="text" name="system.lvl.value" value="{{system.lvl.value}}" data-dtype="String"/>
-    </div>
-    <div class="flexrow">
-        <label for="system.reputation.value" class="resource-label">{{localize @root.config.identity.rep}}</label>
-        <select name="system.reputation.value" data-dtype="String">
-            {{selectOptions @root.config.identityValues.rep selected=system.reputation.value localize=true}}
-        </select>
-    </div>
-    <div class="flexrow">
-        <label for="system.tot.value" class="resource-label">{{localize @root.config.identity.tot}}</label>
-        <select name="system.tot.value" data-dtype="String">
-            {{selectOptions @root.config.identityValues.tot selected=system.tot.value localize=true}}
-        </select>
-    </div>
-</div>
-<div class="flexcol">
-    <div class="flexrow">
         <label for="system.pool.value" class="resource-label">{{localize @root.config.labels.pool}}</label>
         <input type="text" name="system.pool.value" value="{{system.pool.value}}" data-dtype="String"/>
     </div>

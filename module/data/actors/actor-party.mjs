@@ -33,7 +33,7 @@ export default class Vermin2047Party extends Vermin2047ActorBase {
       this.moral.value = 'hig'
     else if (this.pool.value < 7 && this.pool.value > 2) 
       this.moral.value = 'reg'
-    else if (this.pool < 3 && this.pool.value > 0)
+    else if (this.pool.value < 3 && this.pool.value > 0)
       this.moral.value = 'low'
     else this.moral.value = 'cri'
   }
