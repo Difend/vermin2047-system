@@ -8,8 +8,7 @@ export default class Vermin2047Party extends Vermin2047ActorBase {
     const schema = super.defineSchema();
 
     schema.lvl = new fields.SchemaField({
-      value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1 }),
-      max: new fields.NumberField({ ...requiredInteger, initial: 3 })
+      value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 3 }),
     })
     schema.totem = new fields.SchemaField({
       value: new fields.StringField({ initial: '' }),

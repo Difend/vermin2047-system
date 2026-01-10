@@ -10,7 +10,7 @@ export default class Vermin2047Community extends Vermin2047ActorBase {
     schema.lvl = new fields.SchemaField({
       value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 3 }),
     })
-    schema.totem = new fields.SchemaField({
+    schema.tot = new fields.SchemaField({
       value: new fields.StringField({ initial: '' }),
     })
     schema.globalStatus = new fields.SchemaField({
@@ -41,7 +41,6 @@ export default class Vermin2047Community extends Vermin2047ActorBase {
     let sum = 0;
 
     for(const key in this.domains) {
-      console.log(this.domains[key])
       for(const key2 in this.domains[key].gauges) {
         sum+=this.domains[key].gauges[key2].value
         this.domains[key].gauges[key2].status = this.getStatus(this.domains[key].gauges[key2].value)
