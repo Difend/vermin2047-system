@@ -60,7 +60,11 @@ VERMIN_2047.labels = {
   objective: 'VERMIN_2047.Labels.Objective',
   threat: 'VERMIN_2047.Labels.Threat',
   companies: 'VERMIN_2047.Labels.Companies',
-  figures: 'VERMIN_2047.Labels.Figures'
+  figures: 'VERMIN_2047.Labels.Figures',
+  maintenance: 'VERMIN_2047.Labels.Maintenance',
+  speed: 'VERMIN_2047.Labels.Speed',
+  distance: 'VERMIN_2047.Labels.Distance',
+  kilometers: 'VERMIN_2047.Labels.Kilometers'
 };
 
 ////////////////////////////////////////////////////////////////////////////
@@ -284,6 +288,20 @@ VERMIN_2047.domainSkills = {
     rui: 'VERMIN_2047.Skill.Rui'
   }
 };
+
+VERMIN_2047.vehiculeTypes = {
+  mot: 'VERMIN_2047.VehiculeType.Mot',
+  ani: 'VERMIN_2047.VehiculeType.Ani'
+}
+
+VERMIN_2047.maintenanceSkills = {
+  non: '-',
+  ani: 'VERMIN_2047.Skill.Ani',
+  cra: 'VERMIN_2047.Skill.Cra',
+  jur: 'VERMIN_2047.Skill.Jur',
+  mec: 'VERMIN_2047.Skill.Mec',
+  tec: 'VERMIN_2047.Skill.Tec'
+}
 
 VERMIN_2047.skills = {
   art: 'VERMIN_2047.Skill.Art',

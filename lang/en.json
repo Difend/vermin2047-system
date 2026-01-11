@@ -62,7 +62,11 @@
       "Objective": "Objective",
       "Threat": "Threat",
       "Companies": "Companies",
-      "Figures": "Figures"
+      "Figures": "Figures",
+      "Maintenance": "Maintenance",
+      "Speed": "Speed",
+      "Distance": "Distance",
+      "Kilometers": "km"
     },
     "Feature": {
       "His": "Historical element",
@@ -256,6 +260,10 @@
       "Sta": "Stable",
       "Low": "Low",
       "Cri": "Crisis"
+    },
+    "VehiculeType": {
+      "Mot": "Motorized",
+      "Ani": "Animal"
     }
   },
 
