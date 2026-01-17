@@ -2,6 +2,7 @@ import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
 } from '../helpers/effects.mjs';
+import ExperienceRoll from '../rolls/experience.mjs';
 import FeatureRoll from '../rolls/feature.mjs';
 
 /**
@@ -252,6 +253,9 @@ export class Vermin2047ActorSheet extends ActorSheet {
     // Rollable abilities.
     html.on('click', '.trait-check', this._onFeatureCheck.bind(this));
 
+    // Rollable abilities.
+    html.on('click', '.experience-test', this._onExperienceCheck.bind(this));
+
     // Drag events for macros.
     if (this.actor.isOwner) {
       let handler = (ev) => this._onDragStart(ev);
@@ -331,24 +335,7 @@ export class Vermin2047ActorSheet extends ActorSheet {
     });
 
     const difficultyInput = fields.createSelectInput({
-      options: [
-        {
-          label: game.i18n.localize('VERMIN_2047.RollDifficulty.Medium'),
-          value: 7
-        }, {
-          label: game.i18n.localize('VERMIN_2047.RollDifficulty.VeryEasy'),
-          value: 3
-        }, {
-          label: game.i18n.localize('VERMIN_2047.RollDifficulty.Easy'),
-          value: 5
-        }, {
-          label: game.i18n.localize('VERMIN_2047.RollDifficulty.Hard'),
-          value: 9
-        }, {
-          label: game.i18n.localize('VERMIN_2047.RollDifficulty.VeryHard'),
-          value: 10
-        }
-      ],
+      options: this.getOptionsFromConfig(CONFIG.VERMIN_2047.difficulty),
       name: 'difficulty'
     })
 
@@ -386,28 +373,28 @@ export class Vermin2047ActorSheet extends ActorSheet {
         options: [
           {
             label: game.i18n.localize('VERMIN_2047.Trait.Vig'),
-            value: '@vig.mod'
+            value: '@vig.mod;'+game.i18n.localize('VERMIN_2047.Trait.Vig')
           }, {
             label: game.i18n.localize('VERMIN_2047.Trait.Acc'),
-            value: '@acc.mod'
+            value: '@acc.mod;'+game.i18n.localize('VERMIN_2047.Trait.Acc')
           }, {
             label: game.i18n.localize('VERMIN_2047.Trait.Kno'),
-            value: '@kno.mod'
+            value: '@kno.mod;'+game.i18n.localize('VERMIN_2047.Trait.Kno')
           }, {
             label: game.i18n.localize('VERMIN_2047.Trait.Wil'),
-            value: '@wil.mod'
+            value: '@wil.mod;'+game.i18n.localize('VERMIN_2047.Trait.Wil')
           }, {
             label: game.i18n.localize('VERMIN_2047.Trait.Hea'),
-            value: '@hea.mod'
+            value: '@hea.mod;'+game.i18n.localize('VERMIN_2047.Trait.Hea')
           }, {
             label: game.i18n.localize('VERMIN_2047.Trait.Ref'),
-            value: '@ref.mod'
+            value: '@ref.mod;'+game.i18n.localize('VERMIN_2047.Trait.Ref')
           }, {
             label: game.i18n.localize('VERMIN_2047.Trait.Per'),
-            value: '@per.mod'
+            value: '@per.mod;'+game.i18n.localize('VERMIN_2047.Trait.Per')
           }, {
             label: game.i18n.localize('VERMIN_2047.Trait.Emp'),
-            value: '@emp.mod'
+            value: '@emp.mod;'+game.i18n.localize('VERMIN_2047.Trait.Emp')
           }
         ],
         name: 'trait'
@@ -415,13 +402,92 @@ export class Vermin2047ActorSheet extends ActorSheet {
 
       const traitGroup = fields.createFormGroup({
         input: traitInput,
-        label: game.i18n.localize('VERMIN_2047.Labels.Trait')
+        label: game.i18n.localize('VERMIN_2047.Labels.Trait'),
       })
 
       return `${traitGroup.outerHTML} ${bonusGroup.outerHTML} ${difficultyGroup.outerHTML} ${handicapGroup.outerHTML}`
     }
 
     return `${bonusGroup.outerHTML} ${difficultyGroup.outerHTML} ${handicapGroup.outerHTML}`
+  }
+
+  getExperienceModalContent(expDices) {
+    const fields = foundry.applications.fields;
+
+    const poolGroup = fields.createFormGroup({
+      input: fields.createNumberInput({ name: 'pool', value: expDices, max: expDices}),
+      label: game.i18n.localize('VERMIN_2047.Labels.Pool')
+    });
+
+    const difficultyInput = fields.createSelectInput({
+      options: this.getOptionsFromConfig(CONFIG.VERMIN_2047.difficulty),
+      name: 'difficulty'
+    })
+
+    const difficultyGroup = fields.createFormGroup({
+      input: difficultyInput,
+      label: game.i18n.localize('VERMIN_2047.Labels.Difficulty')
+    });
+
+    const handicapInput = fields.createSelectInput({
+      options: [
+        {
+          label: game.i18n.localize('VERMIN_2047.Labels.None'),
+          value: 0
+        }, {
+          label: '(I)',
+          value: 1
+        }, {
+          label: '(II)',
+          value: 2
+        }, {
+          label: '(III)',
+          value: 3
+        }, 
+      ],
+      name: 'handicap'
+    })
+
+    const handicapGroup = fields.createFormGroup({
+      input: handicapInput,
+      label: game.i18n.localize('VERMIN_2047.Labels.Handicap')
+    });
+
+    /*
+    const skillInput = fields.createSelectInput({
+      options: this.getOptionsFromConfig(CONFIG.VERMIN_2047.skills),
+      name: 'skills'
+    })
+
+    const skillGroup = fields.createFormGroup({
+      input: skillInput,
+      label: game.i18n.localize('VERMIN_2047.Labels.Skill')
+    })
+
+    const skillLevelInput = fields.createSelectInput({
+      options: this.getOptionsFromConfig(CONFIG.VERMIN_2047.skillValues),
+      name: 'skillLevels'
+    })
+
+    const skillLevelGroup = fields.createFormGroup({
+      input: skillLevelInput,
+      label: game.i18n.localize('VERMIN_2047.Labels.Level')
+    })
+      
+    ${skillGroup.outerHTML} ${skillLevelGroup.outerHTML}*/
+
+    return `${poolGroup.outerHTML} ${difficultyGroup.outerHTML} ${handicapGroup.outerHTML}`
+  }
+
+  getOptionsFromConfig(fullPath) {
+    let optionsValues = []
+    Object.entries(fullPath).forEach(([key, value]) => {
+      optionsValues.push({
+        label: game.i18n.localize(value),
+        value: key
+      })
+    });
+    return optionsValues;
   }
 
   /**
@@ -434,6 +500,7 @@ export class Vermin2047ActorSheet extends ActorSheet {
     const element = event.currentTarget;
     const dataset = element.dataset;
     event.handleObj.selector == '.skill-check'
+    
 
     const results =  await foundry.applications.api.DialogV2.input({
       window: { title: (event.handleObj.selector == '.skill-check') ? game.i18n.localize('VERMIN_2047.Labels.SkillCheck')+': '+dataset.label : game.i18n.localize('VERMIN_2047.Labels.TraitCheck')+': '+dataset.label},
@@ -445,13 +512,60 @@ export class Vermin2047ActorSheet extends ActorSheet {
     })
 
     if(results) {
+      console.log(results)
       if(results.bonus==null) results.bonus=0;
       const options = {difficulty: results.difficulty, handicap: results.handicap}
+      if(results.trait!=null) {
+        const split = results.trait.split(';')
+        dataset.label = split[1]+'+'+dataset.label;
+        results.trait = split[0];
+      }
 
       // Handle rolls that supply the formula directly.
       if (dataset.roll) {
         let label = (event.handleObj.selector == '.skill-check') ? game.i18n.localize('VERMIN_2047.Labels.SkillCheck')+`: ${dataset.label}` : game.i18n.localize('VERMIN_2047.Labels.TraitCheck')+`: ${dataset.label}`;
-        let roll = new FeatureRoll((event.handleObj.selector == '.skill-check') ? `(${results.trait}+${dataset.roll}.mod+${results.bonus})d10x${dataset.roll}.rer<${results.difficulty}` : `(${dataset.roll}.mod+${results.bonus})d10`, this.actor.getRollData(), options);
+        let roll = new FeatureRoll((event.handleObj.selector == '.skill-check') ? `(${results.trait}+${dataset.roll}.mod+${results.bonus})d10x${dataset.roll}.rer<${parseInt(results.difficulty)}` : `(${dataset.roll}.mod+${results.bonus})d10<${parseInt(results.difficulty)}`, this.actor.getRollData(), options);
+        roll.toMessage({
+          speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+          flavor: label,
+          rollMode: game.settings.get('core', 'rollMode'),
+        });
+        return roll;
+      }
+    }
+  }
+
+  /**
+   * Handle clickable rolls for experience (skills only)
+   * @param {Event} event   The originating click event
+   * @private
+   */
+  async _onExperienceCheck(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+    event.handleObj.selector == '.experience-test'
+    console.log(event)
+
+    const results =  await foundry.applications.api.DialogV2.input({
+      window: { title: game.i18n.localize('VERMIN_2047.Labels.ExperienceRoll')},
+      content: this.getExperienceModalContent(parseInt(dataset.pool), dataset.age),
+      ok: {
+        label: game.i18n.localize('VERMIN_2047.Labels.Roll'),
+        icon: "fa-solid fa-dice",
+      }
+    })
+
+    if(results) {
+      // TODO: CONFIG.VERMIN_2047.skillRarity[results.skill] - Adding experience roll for skills
+      const options = {difficulty: results.difficulty, handicap: results.handicap}
+      // Handle rolls that supply the formula directly.
+      if (dataset.pool) {
+        console.log(dataset)
+        let label = game.i18n.localize('VERMIN_2047.Labels.ExperienceRoll');
+        let roll = new ExperienceRoll(`(${results.pool})d10<${parseInt(results.difficulty)}`, this.actor.getRollData(), options);
+        console.log(this.actor)
+        // TODO: this.actor.system.exp.value-=results.pool - Remove experience pool used for the roll
         roll.toMessage({
           speaker: ChatMessage.getSpeaker({ actor: this.actor }),
           flavor: label,

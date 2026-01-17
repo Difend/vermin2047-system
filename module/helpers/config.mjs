@@ -76,6 +76,18 @@ VERMIN_2047.labels = {
 /* -------------------------------------------- */
 
 /**
+ * Scale used to rank the difficulty of actions, to retrieve an item etc...
+ * @enum {difficulty}
+ */
+VERMIN_2047.difficulty = {
+  3: 'VERMIN_2047.RollDifficulty.VeryEasy',
+  5: 'VERMIN_2047.RollDifficulty.Easy',
+  7: 'VERMIN_2047.RollDifficulty.Medium',
+  9: 'VERMIN_2047.RollDifficulty.Hard',
+  10: 'VERMIN_2047.RollDifficulty.VeryHard'
+}
+
+/**
  * Scale used to rank handicaps of actions, rarity of items etc...
  * @enum {ranks}
  */
