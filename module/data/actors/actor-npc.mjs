@@ -1,12 +1,13 @@
-import Vermin2047ActorBase from "./base-actor.mjs";
+import Vermin2047HumanBase from "./base-human.mjs";
 
-export default class Vermin2047NPC extends Vermin2047ActorBase {
+export default class Vermin2047NPC extends Vermin2047HumanBase {
 
   static defineSchema() {
     const fields = foundry.data.fields;
     const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = super.defineSchema();
 
+    // Defines NPC attack, vigor and damage values
     schema.att = new fields.NumberField({ ...requiredInteger, initial: 1, min: 0 });
     schema.vig = new fields.NumberField({ ...requiredInteger, initial: 1, min: 1 });
     schema.dam = new fields.NumberField({ ...requiredInteger, initial: 1, min: 0 });
@@ -15,6 +16,7 @@ export default class Vermin2047NPC extends Vermin2047ActorBase {
   }
 
   prepareDerivedData() {
+    // Set empty wounds arrays (no pools for NPC)
     this.arrays = {
       wounds: {
         light: [],
@@ -23,6 +25,7 @@ export default class Vermin2047NPC extends Vermin2047ActorBase {
       }
     };
 
+    // Filling empty wounds arrays with 0 or 1 depending on the current wounds values
     for(let i = 1; i <= this.wounds.light.limit; i++) {
       this.arrays.wounds.light[i] = (i <= this.wounds.light.value)
     }

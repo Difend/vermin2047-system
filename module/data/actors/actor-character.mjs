@@ -1,29 +1,33 @@
-import Vermin2047ActorBase from "./base-actor.mjs";
+import Vermin2047HumanBase from "./base-human.mjs";
 
-export default class Vermin2047Character extends Vermin2047ActorBase {
+export default class Vermin2047Character extends Vermin2047HumanBase {
 
   static defineSchema() {
     const fields = foundry.data.fields;
     const requiredInteger = { required: true, nullable: false, integer: true };
     const requiredString = { required: true, blank: false };
+    const blankString = { required: true, blank: true };
     const schema = super.defineSchema();
 
+    // Defines character archetype (or profile)
     schema.arc = new fields.SchemaField({
-      value: new fields.StringField({ initial: '' })
+      value: new fields.StringField({ ...blankString })
     });
 
+    // Defines character available experience dice pool
     schema.exp = new fields.SchemaField({
-      value: new fields.StringField({ initial: '' })
+      value: new fields.StringField({ ...blankString })
     });
 
+    // Iterate over identity names and create a new SchemaField for each (Totem, Reputation and Age)
     schema.identity = new fields.SchemaField(Object.keys(CONFIG.VERMIN_2047.identity).reduce((obj, info) => {
       obj[info] = new fields.SchemaField({
-        value: new fields.StringField({ initial: '' })
+        value: new fields.StringField({ ...blankString })
       });
       return obj;
     }, {}));
 
-    // Iterate over pools names and create a new SchemaField for each.
+    // Iterate over pools names and create a new SchemaField for each (Strain and Nerve)
     schema.pools = new fields.SchemaField(Object.keys(CONFIG.VERMIN_2047.pools).reduce((obj, pool) => {
       obj[pool] = new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
@@ -32,7 +36,7 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
       return obj;
     }, {}));
 
-    // Iterate over traits names and create a new SchemaField for each.
+    // Iterate over traits names and create a new SchemaField for each (Vigor, Accuracy, Knowledge, Willpower, Heal, Reflexes, Perception and Empathy)
     schema.traits = new fields.SchemaField(Object.keys(CONFIG.VERMIN_2047.traits).reduce((obj, trait) => {
       obj[trait] = new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 0, max: 3 }),
@@ -40,6 +44,7 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
       return obj;
     }, {}));
 
+    // Iterate over domains and skills names and create a new SchemaField for each (6 domains + 29 skills)
     schema.domains = new fields.SchemaField(Object.keys(CONFIG.VERMIN_2047.domains).reduce((obj, domain) => {
       obj[domain] = new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
@@ -56,11 +61,14 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
     return schema;
   }
 
-  prepareBaseData() {
-
-  }
-
   prepareDerivedData() {
+    for(const key in this.traits) {
+      // Handle ability label localization.
+      this.traits[key].label = game.i18n.localize(CONFIG.VERMIN_2047.traits[key]) ?? key;
+      this.traits[key].mod = this.traits[key].value;
+    }
+
+    // Set empty wounds and pools arrays
     this.arrays = {
       wounds: {
         light: [],
@@ -73,12 +81,7 @@ export default class Vermin2047Character extends Vermin2047ActorBase {
       }
     };
 
-    for(const key in this.traits) {
-      // Handle ability label localization.
-      this.traits[key].label = game.i18n.localize(CONFIG.VERMIN_2047.traits[key]) ?? key;
-      this.traits[key].mod = this.traits[key].value;
-    }
-
+    // Filling empty wounds and pools arrays with 0 or 1 depending on the current wounds and pools values
     for(let i = 1; i <= this.wounds.light.limit; i++) {
       this.arrays.wounds.light[i] = (i <= this.wounds.light.value)
     }

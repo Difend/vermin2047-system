@@ -6,15 +6,18 @@ export default class Vermin2047Weapon extends Vermin2047ItemBase {
     const fields = foundry.data.fields;
     const schema = super.defineSchema();
 
+    // Defines which fight skill is linked to this weapon
     schema.skill = new fields.SchemaField({
       value: new fields.StringField({ required: true, blank: false, initial: 'art' })
     });
 
+    // Defines the amount and type of damage with this weapon (if it hits)
     schema.damage = new fields.SchemaField({
       amount: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 1, max: 20 }),
       type: new fields.StringField({ required: true, blank: false, initial: 'sho' }),
     });
 
+    // Defines the reliability of the protection, value is reduced by 1 each time it takes a damage or is used too much
     schema.reliability = new fields.SchemaField({
       value: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 0, max: 10 }),
       max: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 0, max: 10 }),
@@ -29,12 +32,13 @@ export default class Vermin2047Weapon extends Vermin2047ItemBase {
       max_medium: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0 }),
     });
 
-    // Defines rarity for the loot actions value (criteria)
+    // Defines rarity for the loot actions value (criteria). It is the skill check required to find the item compared to the rarity of the item into the location.
     schema.rarity = new fields.SchemaField({
       value: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 3, min: 3, max: 10 }),
       criteria: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0, max: 2 }),
     });
 
+    // Defines the formula required to hit the target
     schema.formula = new fields.StringField({ blank: true });
 
     return schema;
