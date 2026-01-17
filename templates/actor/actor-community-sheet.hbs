@@ -44,10 +44,10 @@
       {{> "systems/vermin-2047/templates/actor/parts/actor-figures.hbs"}}
     </div>
 
-    {{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="biography">
+    {{!-- Description Tab --}}
+    <div class="tab description" data-group="primary" data-tab="description">
       {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
-      {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+      {{editor enrichedBiography target="system.description" engine="prosemirror" button=true editable=editable}}
     </div>
 
     {{!-- Active Effects Tab --}}

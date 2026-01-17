@@ -23,7 +23,7 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="features">{{localize @root.config.labels.features}}</a>
-    <a class="item" data-tab="biography">{{localize @root.config.labels.biography}}</a>
+    <a class="item" data-tab="description">{{localize @root.config.labels.description}}</a>
     <a class="item" data-tab="effects">{{localize @root.config.labels.effects}}</a>
   </nav>
 
@@ -38,10 +38,10 @@
       
     </div>
 
-    {{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="biography">
+    {{!-- Description Tab --}}
+    <div class="tab description" data-group="primary" data-tab="description">
       {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
-      {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+      {{editor enrichedBiography target="system.description" engine="prosemirror" button=true editable=editable}}
     </div>
 
     {{!-- Active Effects Tab --}}
