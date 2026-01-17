@@ -561,11 +561,11 @@ export class Vermin2047ActorSheet extends ActorSheet {
       const options = {difficulty: results.difficulty, handicap: results.handicap}
       // Handle rolls that supply the formula directly.
       if (dataset.pool) {
-        console.log(dataset)
         let label = game.i18n.localize('VERMIN_2047.Labels.ExperienceRoll');
         let roll = new ExperienceRoll(`(${results.pool})d10<${parseInt(results.difficulty)}`, this.actor.getRollData(), options);
-        console.log(this.actor)
-        // TODO: this.actor.system.exp.value-=results.pool - Remove experience pool used for the roll
+
+        // After the roll, even if it fails, remove the XP dices
+        this.actor.update({'system.exp.value': this.actor.system.exp.value-results.pool})
         roll.toMessage({
           speaker: ChatMessage.getSpeaker({ actor: this.actor }),
           flavor: label,
