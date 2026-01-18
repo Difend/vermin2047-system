@@ -45,6 +45,7 @@
       "TraitCheck": "Trait check",
       "SkillCheck": "Skill check",
       "ExperienceRoll": "Experience roll",
+      "FightRoll": "Fight roll",
       "Roll": "Roll",
       "Success": "Success",
       "Failure": "Failure",
@@ -67,7 +68,8 @@
       "Maintenance": "Maintenance",
       "Speed": "Speed",
       "Distance": "Distance",
-      "Kilometers": "km"
+      "Kilometers": "km",
+      "Cover": "Cover (target)"
     },
     "Feature": {
       "His": "Historical element",
@@ -239,6 +241,17 @@
       "Medium": "Medium (7)",
       "Hard": "Hard (9)",
       "VeryHard": "Very hard (10)"
+    },
+    "Range": {
+      "Short": "Short (5)",
+      "Medium": "Medium (7)",
+      "Long": "Long (9)"
+    },
+    "Cover": {
+      "None": "None (-)",
+      "Minor": "Minor (I)",
+      "Partial": "Partial (II)",
+      "Major": "Major (III)"
     },
     "CommunityDomain": {
       "Res": "Resources",

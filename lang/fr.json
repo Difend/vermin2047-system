@@ -45,6 +45,7 @@
       "TraitCheck": "Jet de caractéristique",
       "SkillCheck": "Jet de compétence",
       "ExperienceRoll": "Jet d'expérience",
+      "FightRoll": "Jet de combat",
       "Roll": "Lancer",
       "Success": "Succès",
       "Failure": "Echec",
@@ -67,7 +68,8 @@
       "Maintenance": "Maintenance",
       "Speed": "Vitesse",
       "Distance": "Distance",
-      "Kilometers": "km"
+      "Kilometers": "km",
+      "Cover": "Couverture (cible)"
     },
     "Feature": {
       "His": "Elément d'historique",
@@ -239,6 +241,17 @@
       "Medium": "Moyen (7)",
       "Hard": "Difficile (9)",
       "VeryHard": "Très difficile (10)"
+    },
+    "Range": {
+      "Short": "Courte (5)",
+      "Medium": "Moyenne (7)",
+      "Long": "Longue (9)"
+    },
+    "Cover": {
+      "None": "Aucune (-)",
+      "Minor": "Mineure (I)",
+      "Partial": "Partielle (II)",
+      "Major": "Majeure (III)"
     },
     "CommunityDomain": {
       "Res": "Ressources",

@@ -89,6 +89,17 @@ VERMIN_2047.difficulty = {
 
 /**
  * Scale used to rank handicaps of actions, rarity of items etc...
+ * @enum {handicaps}
+ */
+VERMIN_2047.handicaps = {
+  0: "VERMIN_2047.Labels.None",
+  1: "(I)",
+  2: "(II)",
+  3: "(III)"
+}
+
+/**
+ * Scale used to rank handicaps of actions, rarity of items etc...
  * @enum {ranks}
  */
 VERMIN_2047.ranks = [
@@ -98,6 +109,27 @@ VERMIN_2047.ranks = [
   "(III)",
   "(IV)"
 ]
+
+/**
+ * Scale used to rank the distance of a shot
+ * @enum {range}
+ */
+VERMIN_2047.range = {
+  5: 'VERMIN_2047.Range.Short',
+  7: 'VERMIN_2047.Range.Medium',
+  9: 'VERMIN_2047.Range.Long'
+}
+
+/**
+ * Scale used to rank the cover of a target
+ * @enum {cover}
+ */
+VERMIN_2047.cover = {
+  0: 'VERMIN_2047.Cover.None',
+  1: 'VERMIN_2047.Cover.Minor',
+  2: 'VERMIN_2047.Cover.Partial',
+  3: 'VERMIN_2047.Cover.Major'
+}
 
 /* -------------------------------------------- */
 /*  Character & NPC config                      */

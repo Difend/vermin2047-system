@@ -29,5 +29,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/vermin-2047/templates/item/parts/item-effects.hbs',
     // Roll partials
     'systems/vermin-2047/templates/rolls/features.hbs',
+    'systems/vermin-2047/templates/rolls/experience.hbs',
+    'systems/vermin-2047/templates/rolls/fight.hbs',
   ]);
 };
