@@ -26,7 +26,7 @@ Hooks.once('init', function () {
 
   // Add custom constants for configuration.
   CONFIG.VERMIN_2047 = VERMIN_2047;
-  CONFIG.Dice.rolls = [dices.FeatureRoll, dices.ExperienceRoll]
+  CONFIG.Dice.rolls = [dices.FeatureRoll, dices.ExperienceRoll, dices.FightRoll, dices.DefenseRoll]
 
   /**
    * Set an initiative formula for the system

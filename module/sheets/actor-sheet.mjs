@@ -2,9 +2,7 @@ import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
 } from '../helpers/effects.mjs';
-import ExperienceRoll from '../rolls/experience.mjs';
-import FeatureRoll from '../rolls/feature.mjs';
-import FightRoll from '../rolls/fight.mjs';
+import { FeatureRoll, ExperienceRoll, FightRoll, DefenseRoll } from '../rolls/_module.mjs';
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -259,6 +257,9 @@ export class Vermin2047ActorSheet extends ActorSheet {
 
     // Rollable attacks.
     html.on('click', '.fight-roll', this._onFightRoll.bind(this));
+
+    // Rollable defense.
+    html.on('click', '.defense-roll', this._onDefenseRoll.bind(this));
 
     // Drag events for macros.
     if (this.actor.isOwner) {
@@ -530,7 +531,66 @@ export class Vermin2047ActorSheet extends ActorSheet {
       input: handicapInput,
       label: game.i18n.localize(handicapLabel)
     });
+
     return `${traitGroup.outerHTML} ${bonusGroup.outerHTML} ${difficultyGroup.outerHTML} ${handicapGroup.outerHTML}`
+  }
+
+  getDefenseModalContent() {
+    const fields = foundry.applications.fields;
+
+    const bonusGroup = fields.createFormGroup({
+      input: fields.createNumberInput({ name: 'bonus', value: 0}),
+      label: game.i18n.localize('VERMIN_2047.Labels.Bonus')
+    });
+
+    const skillInput = fields.createSelectInput({
+      options: [
+        {
+          label: game.i18n.localize('VERMIN_2047.Skill.Fir'),
+          value: '@wea.skills.fir.mod;'+game.i18n.localize('VERMIN_2047.Skill.Fir')
+        }, {
+          label: game.i18n.localize('VERMIN_2047.Skill.Ran'),
+          value: '@wea.skills.ran.mod;'+game.i18n.localize('VERMIN_2047.Skill.Ran')
+        }, {
+          label: game.i18n.localize('VERMIN_2047.Skill.Thr'),
+          value: '@wea.skills.thr.mod;'+game.i18n.localize('VERMIN_2047.Skill.Thr')
+        }, {
+          label: game.i18n.localize('VERMIN_2047.Skill.Clo'),
+          value: '@wea.skills.clo.mod;'+game.i18n.localize('VERMIN_2047.Skill.Clo')
+        }, {
+          label: game.i18n.localize('VERMIN_2047.Skill.Bra'),
+          value: '@wea.skills.bra.mod;'+game.i18n.localize('VERMIN_2047.Skill.Bra')
+        }
+      ],
+      name: 'skill'
+    })
+
+    const skillGroup = fields.createFormGroup({
+      input: skillInput,
+      label: game.i18n.localize('VERMIN_2047.Labels.Skill'),
+    })
+
+    const difficultyInput = fields.createSelectInput({
+      options: this.getOptionsFromConfig(CONFIG.VERMIN_2047.difficulty),
+      name: 'difficulty'
+    })
+
+    const handicapInput = fields.createSelectInput({
+      options: this.getOptionsFromConfig(CONFIG.VERMIN_2047.handicaps),
+      name: 'handicap'
+    })
+
+    const difficultyGroup = fields.createFormGroup({
+      input: difficultyInput,
+      label: game.i18n.localize('VERMIN_2047.Labels.Difficulty')
+    });
+
+    const handicapGroup = fields.createFormGroup({
+      input: handicapInput,
+      label: game.i18n.localize('VERMIN_2047.Labels.Handicap')
+    });
+
+    return `${skillGroup.outerHTML} ${bonusGroup.outerHTML} ${difficultyGroup.outerHTML} ${handicapGroup.outerHTML}`
   }
 
   getOptionsFromConfig(fullPath) {
@@ -679,6 +739,62 @@ export class Vermin2047ActorSheet extends ActorSheet {
       if (dataset.skill) {
         let label = game.i18n.localize('VERMIN_2047.Labels.FightRoll')+": "+trait_split[1]+'+'+skill_split[1];
         let roll = new FightRoll(`(${results.trait}+${results.skill}+${results.bonus})d10<${parseInt(results.difficulty)}`, this.actor.getRollData(), options);
+        
+        roll.toMessage({
+          speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+          flavor: label,
+          rollMode: game.settings.get('core', 'rollMode'),
+        });
+        return roll;
+      }
+    }
+  }
+
+  /**
+   * Handle clickable rolls for defense
+   * @param {Event} event   The originating click event
+   * @private
+   */
+  async _onDefenseRoll(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+    event.handleObj.selector == '.defense-roll'
+
+    const results =  await foundry.applications.api.DialogV2.input({
+      window: { title: game.i18n.localize('VERMIN_2047.Labels.DefenseRoll')},
+      content: this.getDefenseModalContent(),
+      ok: {
+        label: game.i18n.localize('VERMIN_2047.Labels.Roll'),
+        icon: "fa-solid fa-dice",
+      }
+    })
+
+    switch(dataset.trait) {
+      case 'vig':
+        dataset.trait = '@vig.mod;'+game.i18n.localize('VERMIN_2047.Trait.Vig')
+        dataset.label = game.i18n.localize('VERMIN_2047.Labels.Parry')
+        break;
+      case 'ref':
+      default:
+        dataset.trait = '@ref.mod;'+game.i18n.localize('VERMIN_2047.Trait.Ref')
+        dataset.label = game.i18n.localize('VERMIN_2047.Labels.Dodge')
+        break;
+    }  
+
+    if(results) {
+      console.log(results)
+      const trait_split = dataset.trait.split(';')
+      const skill_split = results.skill.split(';')
+      results.trait = trait_split[0];
+      results.skill = skill_split[0];
+
+      const options = {difficulty: results.difficulty, handicap: results.handicap}
+      // Handle rolls that supply the formula directly.
+      console.log(`(${results.trait}+${results.skill}+${results.bonus})d10<${parseInt(results.difficulty)}`)
+      if (dataset.trait) {
+        let label = game.i18n.localize('VERMIN_2047.Labels.DefenseRoll')+" ("+dataset.label+"): "+trait_split[1]+'+'+skill_split[1];
+        let roll = new DefenseRoll(`(${results.trait}+${results.skill}+${results.bonus})d10<${parseInt(results.difficulty)}`, this.actor.getRollData(), options);
         
         roll.toMessage({
           speaker: ChatMessage.getSpeaker({ actor: this.actor }),

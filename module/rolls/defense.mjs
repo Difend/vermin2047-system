@@ -1,6 +1,6 @@
 import VerminRoll from "./base.mjs";
 
-export default class FightRoll extends VerminRoll {
+export default class DefenseRoll extends VerminRoll {
   /**
    * @param {string} [formula="1d10"]        Default feature check is a flat 1d10.
    * @param {Record<string, any>} [data]     Roll data.
@@ -12,7 +12,7 @@ export default class FightRoll extends VerminRoll {
 
   /* -------------------------------------------------- */
 
-  static CHAT_TEMPLATE = "systems/vermin-2047/templates/rolls/fight.hbs"
+  static CHAT_TEMPLATE = "systems/vermin-2047/templates/rolls/defense.hbs"
 
   /* -------------------------------------------------- */
 

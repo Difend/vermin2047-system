@@ -45,6 +45,7 @@
       "TraitCheck": "Jet de caractéristique",
       "SkillCheck": "Jet de compétence",
       "ExperienceRoll": "Jet d'expérience",
+      "DefenseRoll": "Jet de défense",
       "FightRoll": "Jet de combat",
       "Roll": "Lancer",
       "Success": "Succès",
@@ -69,7 +70,9 @@
       "Speed": "Vitesse",
       "Distance": "Distance",
       "Kilometers": "km",
-      "Cover": "Couverture (cible)"
+      "Cover": "Couverture (cible)",
+      "Parry": "Parade",
+      "Dodge": "Esquive"
     },
     "Feature": {
       "His": "Elément d'historique",

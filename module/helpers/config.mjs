@@ -68,7 +68,9 @@ VERMIN_2047.labels = {
   maintenance: 'VERMIN_2047.Labels.Maintenance',
   speed: 'VERMIN_2047.Labels.Speed',
   distance: 'VERMIN_2047.Labels.Distance',
-  kilometers: 'VERMIN_2047.Labels.Kilometers'
+  kilometers: 'VERMIN_2047.Labels.Kilometers',
+  parry: 'VERMIN_2047.Labels.Parry',
+  dodge: 'VERMIN_2047.Labels.Dodge'
 };
 
 /* -------------------------------------------- */
