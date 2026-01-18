@@ -547,19 +547,19 @@ export class Vermin2047ActorSheet extends ActorSheet {
       options: [
         {
           label: game.i18n.localize('VERMIN_2047.Skill.Fir'),
-          value: '@wea.skills.fir.mod;'+game.i18n.localize('VERMIN_2047.Skill.Fir')
+          value: '@wea.skills.fir;'+game.i18n.localize('VERMIN_2047.Skill.Fir')
         }, {
           label: game.i18n.localize('VERMIN_2047.Skill.Ran'),
-          value: '@wea.skills.ran.mod;'+game.i18n.localize('VERMIN_2047.Skill.Ran')
+          value: '@wea.skills.ran;'+game.i18n.localize('VERMIN_2047.Skill.Ran')
         }, {
           label: game.i18n.localize('VERMIN_2047.Skill.Thr'),
-          value: '@wea.skills.thr.mod;'+game.i18n.localize('VERMIN_2047.Skill.Thr')
+          value: '@wea.skills.thr;'+game.i18n.localize('VERMIN_2047.Skill.Thr')
         }, {
           label: game.i18n.localize('VERMIN_2047.Skill.Clo'),
-          value: '@wea.skills.clo.mod;'+game.i18n.localize('VERMIN_2047.Skill.Clo')
+          value: '@wea.skills.clo;'+game.i18n.localize('VERMIN_2047.Skill.Clo')
         }, {
           label: game.i18n.localize('VERMIN_2047.Skill.Bra'),
-          value: '@wea.skills.bra.mod;'+game.i18n.localize('VERMIN_2047.Skill.Bra')
+          value: '@wea.skills.bra;'+game.i18n.localize('VERMIN_2047.Skill.Bra')
         }
       ],
       name: 'skill'
@@ -625,7 +625,6 @@ export class Vermin2047ActorSheet extends ActorSheet {
     })
 
     if(results) {
-      console.log(results)
       if(results.bonus==null) results.bonus=0;
       const options = {difficulty: results.difficulty, handicap: results.handicap}
       if(results.trait!=null) {
@@ -701,20 +700,20 @@ export class Vermin2047ActorSheet extends ActorSheet {
 
     switch(dataset.skill) {
       case 'fir':
-        dataset.skill = '@wea.skills.fir.mod;'+game.i18n.localize('VERMIN_2047.Skill.Fir')
+        dataset.skill = '@wea.skills.fir;'+game.i18n.localize('VERMIN_2047.Skill.Fir')
         break;
       case 'clo':
-        dataset.skill = '@wea.skills.clo.mod;'+game.i18n.localize('VERMIN_2047.Skill.Clo')
+        dataset.skill = '@wea.skills.clo;'+game.i18n.localize('VERMIN_2047.Skill.Clo')
         break;
       case 'ran':
-        dataset.skill = '@wea.skills.ran.mod;'+game.i18n.localize('VERMIN_2047.Skill.Ran')
+        dataset.skill = '@wea.skills.ran;'+game.i18n.localize('VERMIN_2047.Skill.Ran')
         break;
       case 'thr':
-        dataset.skill = '@wea.skills.thr.mod;'+game.i18n.localize('VERMIN_2047.Skill.Thr')
+        dataset.skill = '@wea.skills.thr;'+game.i18n.localize('VERMIN_2047.Skill.Thr')
         break;
       case 'bra':
       default:
-        dataset.skill = '@wea.skills.bra.mod;'+game.i18n.localize('VERMIN_2047.Skill.Bra')
+        dataset.skill = '@wea.skills.bra;'+game.i18n.localize('VERMIN_2047.Skill.Bra')
         break;
     }    
 
@@ -728,7 +727,6 @@ export class Vermin2047ActorSheet extends ActorSheet {
     })
 
     if(results) {
-      console.log(results)
       const trait_split = results.trait.split(';')
       const skill_split = dataset.skill.split(';')
       results.trait = trait_split[0];
@@ -738,7 +736,7 @@ export class Vermin2047ActorSheet extends ActorSheet {
       // Handle rolls that supply the formula directly.
       if (dataset.skill) {
         let label = game.i18n.localize('VERMIN_2047.Labels.FightRoll')+": "+trait_split[1]+'+'+skill_split[1];
-        let roll = new FightRoll(`(${results.trait}+${results.skill}+${results.bonus})d10<${parseInt(results.difficulty)}`, this.actor.getRollData(), options);
+        let roll = new FightRoll(`(${results.trait}+${results.skill}.mod+${results.bonus})d10x${results.skill}.rer<${parseInt(results.difficulty)}`, this.actor.getRollData(), options);
         
         roll.toMessage({
           speaker: ChatMessage.getSpeaker({ actor: this.actor }),
@@ -783,7 +781,6 @@ export class Vermin2047ActorSheet extends ActorSheet {
     }  
 
     if(results) {
-      console.log(results)
       const trait_split = dataset.trait.split(';')
       const skill_split = results.skill.split(';')
       results.trait = trait_split[0];
@@ -791,10 +788,9 @@ export class Vermin2047ActorSheet extends ActorSheet {
 
       const options = {difficulty: results.difficulty, handicap: results.handicap}
       // Handle rolls that supply the formula directly.
-      console.log(`(${results.trait}+${results.skill}+${results.bonus})d10<${parseInt(results.difficulty)}`)
       if (dataset.trait) {
         let label = game.i18n.localize('VERMIN_2047.Labels.DefenseRoll')+" ("+dataset.label+"): "+trait_split[1]+'+'+skill_split[1];
-        let roll = new DefenseRoll(`(${results.trait}+${results.skill}+${results.bonus})d10<${parseInt(results.difficulty)}`, this.actor.getRollData(), options);
+        let roll = new DefenseRoll(`(${results.trait}+${results.skill}.mod+${results.bonus})d10x${dataset.skill}.rer<${parseInt(results.difficulty)}`, this.actor.getRollData(), options);
         
         roll.toMessage({
           speaker: ChatMessage.getSpeaker({ actor: this.actor }),
