@@ -22,13 +22,13 @@
               </div>
             </div>
             <div class="flexcol">
-              <label for="system.vig" class="resource-label rollable" data-roll="(@vig)d10" data-label="{{localize @root.config.npcTraits.vig}}">{{localize @root.config.npcTraits.vig}}</label>
+              <label for="system.vig" class="resource-label npc-roll" data-roll="@vig" data-label="{{localize @root.config.npcTraits.vig}}">{{localize @root.config.npcTraits.vig}}</label>
               <div class="resource-content flexrow flex-center flex-between">
                 <input type="text" name="system.vig" value="{{system.vig}}" data-dtype="Number"/>
               </div>
             </div>
             <div class="flexcol">
-              <label for="system.att" class="resource-label rollable" data-roll="(@att)d10" data-label="{{localize @root.config.npcTraits.att}}">{{localize @root.config.npcTraits.att}}</label>
+              <label for="system.att" class="resource-label npc-roll" data-roll="@att" data-label="{{localize @root.config.npcTraits.att}}">{{localize @root.config.npcTraits.att}}</label>
               <div class="resource-content flexrow flex-center flex-between">
                 <input type="text" name="system.att" value="{{system.att}}" data-dtype="Number"/>
               </div>
@@ -43,10 +43,10 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="pools">Pools</a>
-    <a class="item" data-tab="items">Items</a>
-    <a class="item" data-tab="effects">Effects</a>
+    <a class="item" data-tab="description">{{localize @root.config.labels.description}}</a>
+    <a class="item" data-tab="pools">{{localize @root.config.labels.pools}}</a>
+    <a class="item" data-tab="items">{{localize @root.config.labels.items}}</a>
+    <a class="item" data-tab="effects">{{localize @root.config.labels.effects}}</a>
   </nav>
 
   {{!-- Sheet Body --}}

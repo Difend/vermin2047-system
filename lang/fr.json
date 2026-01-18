@@ -47,6 +47,7 @@
       "ExperienceRoll": "Jet d'expérience",
       "DefenseRoll": "Jet de défense",
       "FightRoll": "Jet de combat",
+      "NpcRoll": "Jet de PNJ",
       "Roll": "Lancer",
       "Success": "Succès",
       "Failure": "Echec",

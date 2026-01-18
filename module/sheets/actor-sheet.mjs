@@ -2,7 +2,7 @@ import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
 } from '../helpers/effects.mjs';
-import { FeatureRoll, ExperienceRoll, FightRoll, DefenseRoll } from '../rolls/_module.mjs';
+import { FeatureRoll, ExperienceRoll, FightRoll, DefenseRoll, NpcRoll } from '../rolls/_module.mjs';
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -260,6 +260,9 @@ export class Vermin2047ActorSheet extends ActorSheet {
 
     // Rollable defense.
     html.on('click', '.defense-roll', this._onDefenseRoll.bind(this));
+
+    // Rollable NPC actions.
+    html.on('click', '.npc-roll', this._onNpcRoll.bind(this));
 
     // Drag events for macros.
     if (this.actor.isOwner) {
@@ -593,6 +596,37 @@ export class Vermin2047ActorSheet extends ActorSheet {
     return `${skillGroup.outerHTML} ${bonusGroup.outerHTML} ${difficultyGroup.outerHTML} ${handicapGroup.outerHTML}`
   }
 
+  getNpcModalContent() {
+const fields = foundry.applications.fields;
+
+    const bonusGroup = fields.createFormGroup({
+      input: fields.createNumberInput({ name: 'bonus', value: 0}),
+      label: game.i18n.localize('VERMIN_2047.Labels.Bonus')
+    });
+
+    const difficultyInput = fields.createSelectInput({
+      options: this.getOptionsFromConfig(CONFIG.VERMIN_2047.difficulty),
+      name: 'difficulty'
+    })
+
+    const handicapInput = fields.createSelectInput({
+      options: this.getOptionsFromConfig(CONFIG.VERMIN_2047.handicaps),
+      name: 'handicap'
+    })
+
+    const difficultyGroup = fields.createFormGroup({
+      input: difficultyInput,
+      label: game.i18n.localize('VERMIN_2047.Labels.Difficulty')
+    });
+
+    const handicapGroup = fields.createFormGroup({
+      input: handicapInput,
+      label: game.i18n.localize('VERMIN_2047.Labels.Handicap')
+    });
+
+    return `${bonusGroup.outerHTML} ${difficultyGroup.outerHTML} ${handicapGroup.outerHTML}`
+  }
+
   getOptionsFromConfig(fullPath) {
     let optionsValues = []
     Object.entries(fullPath).forEach(([key, value]) => {
@@ -791,6 +825,44 @@ export class Vermin2047ActorSheet extends ActorSheet {
       if (dataset.trait) {
         let label = game.i18n.localize('VERMIN_2047.Labels.DefenseRoll')+" ("+dataset.label+"): "+trait_split[1]+'+'+skill_split[1];
         let roll = new DefenseRoll(`(${results.trait}+${results.skill}.mod+${results.bonus})d10x${dataset.skill}.rer<${parseInt(results.difficulty)}`, this.actor.getRollData(), options);
+        
+        roll.toMessage({
+          speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+          flavor: label,
+          rollMode: game.settings.get('core', 'rollMode'),
+        });
+        return roll;
+      }
+    }
+  }
+
+  /**
+   * Handle clickable rolls for defense
+   * @param {Event} event   The originating click event
+   * @private
+   */
+  async _onNpcRoll(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+    event.handleObj.selector == '.npc-roll'
+
+    const results =  await foundry.applications.api.DialogV2.input({
+      window: { title: game.i18n.localize('VERMIN_2047.Labels.NpcRoll')},
+      content: this.getNpcModalContent(),
+      ok: {
+        label: game.i18n.localize('VERMIN_2047.Labels.Roll'),
+        icon: "fa-solid fa-dice",
+      }
+    })
+
+    if(results) {
+
+      const options = {difficulty: results.difficulty, handicap: results.handicap}
+      // Handle rolls that supply the formula directly.
+      if (dataset.roll) {
+        let label = game.i18n.localize('VERMIN_2047.Labels.NpcRoll')+": "+dataset.label
+        let roll = new NpcRoll(`(${dataset.roll}+${results.bonus})d10<${parseInt(results.difficulty)}`, this.actor.getRollData(), options);
         
         roll.toMessage({
           speaker: ChatMessage.getSpeaker({ actor: this.actor }),
