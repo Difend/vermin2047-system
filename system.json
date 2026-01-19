@@ -16,11 +16,11 @@
   "media": [
     {
       "type": "setup",
-      "url": "systems/vermin-2047/assets/horde.png",
-      "thumbnail": "systems/vermin-2047/assets/horde.png"
+      "url": "systems/vermin-2047/assets/system-thumbnail.jpg",
+      "thumbnail": "systems/vermin-2047/assets/system-thumbnail.jpg"
     }
   ],
-  "version": "0.1.0",
+  "version": "1.0.0",
   "compatibility": {
     "minimum": 11,
     "verified": "13.347"
@@ -42,9 +42,9 @@
   "packs": [],
   "packFolders": [],
   "socket": false,
-  "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
-  "download": "This must link to a .zip file of the current version",
-  "background": "systems/vermin-2047/assets/horde.png",
+  "manifest": "https://https://raw.githubusercontent.com/Difend/vermin2047-system/master/system.json",
+  "download": "https://github.com/Difend/vermin2047-system/releases/download/v1.0.0/vermin-2047.zip",
+  "background": "systems/vermin-2047/assets/system-background.jpg",
   "grid.distance": 2,
   "grid.units": "m",
   "primaryTokenAttribute": "health",
